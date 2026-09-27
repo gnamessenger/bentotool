@@ -52,6 +52,8 @@ function layout({ lang, path, title, desc, main, T = null, libs = [], script = n
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${url(lang)}">
+${config.verify?.google ? `<meta name="google-site-verification" content="${esc(config.verify.google)}">` : ""}
+${config.verify?.naver ? `<meta name="naver-site-verification" content="${esc(config.verify.naver)}">` : ""}
 <link rel="alternate" hreflang="ko" href="${url("ko")}">
 <link rel="alternate" hreflang="en" href="${url("en")}">
 <link rel="alternate" hreflang="x-default" href="${url("en")}">
