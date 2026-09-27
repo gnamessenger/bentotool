@@ -23,6 +23,23 @@ export function fmtBytes(n) {
   if (n < 1024 * 1024) return (n / 1024).toFixed(1) + " KB";
   return (n / 1024 / 1024).toFixed(1) + " MB";
 }
+export const fill = (s, vars) => String(s).replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? "");
+
+// 진행 상태 표시 (스피너 + 막대 + 문구)
+export function progressBox() {
+  const text = h("p", { class: "progress-text" });
+  const bar = h("div");
+  const el = h("div", { class: "progress" }, h("div", { class: "spinner" }), text, h("div", { class: "bar" }, bar));
+  return { el, set(t, ratio = 0) { text.textContent = t; bar.style.width = Math.round(Math.min(1, Math.max(0, ratio)) * 100) + "%"; } };
+}
+
+// pdf.js 준비 (페이지를 그림으로 그릴 때)
+export function pdfjs() {
+  const lib = window.pdfjsLib;
+  lib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  return lib;
+}
+
 export const stripExt = (name) => (name || "file").replace(/\.[^.]+$/, "") || "file";
 export const EXT = { "image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp" };
 

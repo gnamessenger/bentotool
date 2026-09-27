@@ -13,7 +13,13 @@ const LIBS = {
   jszip: "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js",
   jspdf: "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js",
   pdflib: "https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js",
+  pdfjs: "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js",
+  lamejs: "https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.1/lame.min.js",
+  qrcode: "https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js",
+  cropper: "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js",
+  cropperCss: "https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css",
 };
+const isCss = (l) => LIBS[l].endsWith(".css");
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const json = (o) => JSON.stringify(o).replace(/</g, "\\u003c");
@@ -58,6 +64,7 @@ function layout({ lang, path, title, desc, main, T = null, libs = [], script = n
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="${root}assets/style.css">
+${libs.filter(isCss).map((l) => `<link rel="stylesheet" href="${LIBS[l]}">`).join("\n")}
 ${config.adsenseClient ? `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${config.adsenseClient}" crossorigin="anonymous"></script>` : ""}
 ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ""}
 </head>
@@ -79,7 +86,7 @@ ${main}
   <p><a href="${root}${pathFor(lang, "privacy/")}">${S.footer.privacy}</a> · © ${new Date().getFullYear()} ${esc(config.name[lang])}</p>
 </footer>
 ${T ? `<script>window.T=${json(T)};</script>` : ""}
-${libs.map((l) => `<script src="${LIBS[l]}"></script>`).join("\n")}
+${libs.filter((l) => !isCss(l)).map((l) => `<script src="${LIBS[l]}"></script>`).join("\n")}
 ${script ? `<script type="module" src="${root}assets/tools/${script}.js"></script>` : ""}
 </body>
 </html>
@@ -144,7 +151,8 @@ ${promo(lang)}
 ${adSlot("bottom")}
 <section class="related">
   <h2>${S.related}</h2>
-  <div class="bento">${tools.filter((x) => x !== t).map((x) => toolCard(lang, x, root)).join("")}</div>
+  <div class="bento">${[...tools.filter((x) => x !== t && x.cat === t.cat), ...tools.filter((x) => x.cat !== t.cat)]
+    .slice(0, 8).map((x) => toolCard(lang, x, root)).join("")}</div>
 </section>`;
   return layout({
     lang, path, title: c.title, desc: c.desc, main,
