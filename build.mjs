@@ -85,7 +85,7 @@ ${main}
 </main>
 <footer class="site-footer">
   <p>${S.footer.note}</p>
-  <p><a href="${root}${pathFor(lang, "privacy/")}">${S.footer.privacy}</a> · © ${new Date().getFullYear()} ${esc(config.name[lang])}</p>
+  <p><a href="${root}${pathFor(lang, "privacy/")}">${S.footer.privacy}</a> · ${S.footer.contact} <a href="mailto:${config.contact}">${config.contact}</a> · © ${new Date().getFullYear()} ${esc(config.name[lang])}</p>
 </footer>
 ${T ? `<script>window.T=${json(T)};</script>` : ""}
 ${libs.filter((l) => !isCss(l)).map((l) => `<script src="${LIBS[l]}"></script>`).join("\n")}
@@ -177,7 +177,7 @@ ${adSlot("bottom")}
 
 function privacyPage(lang) {
   const P = site[lang].privacy;
-  return layout({ lang, path: "privacy/", title: P.title, desc: P.desc, main: `<article class="doc"><h1>${P.h1}</h1>${P.body}</article>` });
+  return layout({ lang, path: "privacy/", title: P.title, desc: P.desc, main: `<article class="doc"><h1>${P.h1}</h1>${P.body}<h2>${P.contactTitle}</h2><p>${P.contactText} <a href="mailto:${config.contact}">${config.contact}</a></p></article>` });
 }
 
 // ---------- 출력 ----------

@@ -24,12 +24,15 @@ export const site = {
     related: "다른 도구도 써보세요",
     footer: {
       privacy: "개인정보처리방침",
+      contact: "문의",
       note: "모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.",
     },
     privacy: {
       title: "개인정보처리방침 | 벤토툴",
       desc: "벤토툴 개인정보처리방침",
       h1: "개인정보처리방침",
+      contactTitle: "7. 문의",
+      contactText: "개인정보 및 서비스 이용에 관한 문의는 아래 이메일로 보내 주세요.",
       body: `
 <p>벤토툴(이하 "사이트")은 이용자의 개인정보를 소중히 여기며, 다음과 같이 처리합니다.</p>
 <h2>1. 파일 처리</h2>
@@ -85,12 +88,15 @@ export const site = {
     related: "Try other tools",
     footer: {
       privacy: "Privacy Policy",
+      contact: "Contact",
       note: "All files are processed in your browser and never stored anywhere.",
     },
     privacy: {
       title: "Privacy Policy | BentoTool",
       desc: "BentoTool privacy policy",
       h1: "Privacy Policy",
+      contactTitle: "7. Contact",
+      contactText: "For questions about privacy or the service, email us at",
       body: `
 <p>BentoTool ("the Site") respects your privacy. This policy explains how we handle information.</p>
 <h2>1. Your files</h2>
