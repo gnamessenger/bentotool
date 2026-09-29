@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../../assets/style.css">
 
 
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Compress Image","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much smaller will my images get?","acceptedAnswer":{"@type":"Answer","text":"Usually 50–80% smaller, depending on the photo. Lower quality means smaller files."}},{"@type":"Question","name":"Does it work with PNG?","acceptedAnswer":{"@type":"Answer","text":"Yes. Saving PNGs as WEBP or JPG shrinks them a lot. Choose WEBP to keep transparency."}},{"@type":"Question","name":"Are my images uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Compression happens in your browser and nothing is sent anywhere."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Compress Image","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much smaller will my images get?","acceptedAnswer":{"@type":"Answer","text":"Usually 50–80% smaller, depending on the photo. Lower quality means smaller files."}},{"@type":"Question","name":"Does it work with PNG?","acceptedAnswer":{"@type":"Answer","text":"Yes. Saving PNGs as WEBP or JPG shrinks them a lot. Choose WEBP to keep transparency."}},{"@type":"Question","name":"Are my images uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Compression happens in your browser and nothing is sent anywhere."}},{"@type":"Question","name":"What if the result is bigger than the original?","acceptedAnswer":{"@type":"Answer","text":"If the format and size are unchanged and the result is larger, the original is returned as is. Try a lower quality or a smaller max width."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -43,12 +43,15 @@
 </section>
 
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
-
 <section class="tool-info">
+  <h2>What this tool does</h2>
+  <p class="tool-intro">This tool reduces file size by adjusting save quality — and optionally the maximum width — while keeping your photos looking the same. Use it for upload limits on blogs and shops, email attachments, or faster web pages. Drop many images at once; they're compressed one after another and saved as JPG or WEBP.</p>
   <h2>How to use</h2>
   <ol class="steps"><li>Pick quality and output format (the defaults work great).</li><li>Drop your photos — they're compressed instantly, many at once.</li><li>Download one by one or use 'Download all'.</li></ol>
   <h2>FAQ</h2>
-  <div class="faq"><details><summary>How much smaller will my images get?</summary><p>Usually 50–80% smaller, depending on the photo. Lower quality means smaller files.</p></details><details><summary>Does it work with PNG?</summary><p>Yes. Saving PNGs as WEBP or JPG shrinks them a lot. Choose WEBP to keep transparency.</p></details><details><summary>Are my images uploaded?</summary><p>No. Compression happens in your browser and nothing is sent anywhere.</p></details></div>
+  <div class="faq"><details><summary>How much smaller will my images get?</summary><p>Usually 50–80% smaller, depending on the photo. Lower quality means smaller files.</p></details><details><summary>Does it work with PNG?</summary><p>Yes. Saving PNGs as WEBP or JPG shrinks them a lot. Choose WEBP to keep transparency.</p></details><details><summary>Are my images uploaded?</summary><p>No. Compression happens in your browser and nothing is sent anywhere.</p></details><details><summary>What if the result is bigger than the original?</summary><p>If the format and size are unchanged and the result is larger, the original is returned as is. Try a lower quality or a smaller max width.</p></details></div>
+  <h2>Tips</h2>
+  <ul class="tips"><li>Quality between 60 and 80 is usually indistinguishable to the eye (the default is 70).</li><li>For phone photos, setting max width to 1920px or 1280px shrinks files far more.</li><li>JPG turns transparent areas white. Choose WEBP to keep transparency.</li></ul>
 </section>
 
 <section class="related">
@@ -87,10 +90,11 @@
     <span>Combine multiple PDFs into one</span>
   </a></div>
 </section>
+
 </main>
 <footer class="site-footer">
   <p>All files are processed in your browser and never stored anywhere.</p>
-  <p><a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
+  <p><a href="../../en/about/">About</a> · <a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
 </footer>
 <script>window.T={"lang":"en","ui":{"choose":"Choose files","orDrop":"or drop them here","pasteHint":"You can also paste with Ctrl+V","processing":"Processing…","waiting":"Waiting","failed":"Failed","download":"Download","downloadAll":"Download all","clear":"Clear all","remove":"Remove","moveUp":"Move up","moveDown":"Move down","privacyBadge":"🔒 Files never leave your device","addMore":"Add files"},"tool":{"quality":"Quality","format":"Format","maxWidth":"Max width","original":"Keep original","keptOriginal":"Original was smaller — kept as is"}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>

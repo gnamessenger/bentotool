@@ -4,6 +4,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { config } from "./src/config.mjs";
 import { site, tools } from "./src/content.mjs";
+import { guides } from "./src/guides.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, "docs");
@@ -33,13 +34,14 @@ function adSlot(name) {
   return `<div class="ad-slot"><ins class="adsbygoogle" style="display:block" data-ad-client="${config.adsenseClient}" data-ad-slot="${config.adSlots[name]}" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>`;
 }
 
+// 한 줄짜리 안내 문장 + 글자 링크 (광고처럼 보이지 않게 버튼·배너 모양은 쓰지 않음)
 function promo(lang) {
   const p = config.promo[lang];
   if (!p) return "";
-  return `<aside class="promo"><div><strong>${esc(p.title)}</strong><p>${esc(p.text)}</p></div><a class="btn small" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.cta)}</a></aside>`;
+  return `<aside class="promo-note"><p>${esc(p.text)} → <a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.cta)}</a></p></aside>`;
 }
 
-function layout({ lang, path, title, desc, main, T = null, libs = [], script = null, schema = null }) {
+function layout({ lang, path, title, desc, main, T = null, libs = [], script = null, schema = null, showPromo = true }) {
   const S = site[lang];
   const root = rootFor(lang, path);
   const other = lang === "ko" ? "en" : "ko";
@@ -82,10 +84,11 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ""}
 </header>
 <main>
 ${main}
+${showPromo ? promo(lang) : ""}
 </main>
 <footer class="site-footer">
   <p>${S.footer.note}</p>
-  <p><a href="${root}${pathFor(lang, "privacy/")}">${S.footer.privacy}</a> · ${S.footer.contact} <a href="mailto:${config.contact}">${config.contact}</a> · © ${new Date().getFullYear()} ${esc(config.name[lang])}</p>
+  <p><a href="${root}${pathFor(lang, "about/")}">${S.footer.about}</a> · <a href="${root}${pathFor(lang, "privacy/")}">${S.footer.privacy}</a> · ${S.footer.contact} <a href="mailto:${config.contact}">${config.contact}</a> · © ${new Date().getFullYear()} ${esc(config.name[lang])}</p>
 </footer>
 ${T ? `<script>window.T=${json(T)};</script>` : ""}
 ${libs.filter((l) => !isCss(l)).map((l) => `<script src="${LIBS[l]}"></script>`).join("\n")}
@@ -119,7 +122,6 @@ function homePage(lang) {
     ${tools.filter((t) => t.cat === c).map((t) => toolCard(lang, t, root)).join("")}
   </div>`).join("")}
 </section>
-${promo(lang)}
 <section class="features">
   ${S.home.features.map(([icon, h, p]) => `<div><span>${icon}</span><strong>${esc(h)}</strong><p>${esc(p)}</p></div>`).join("")}
 </section>
@@ -133,6 +135,8 @@ ${adSlot("bottom")}`;
 function toolPage(lang, t) {
   const S = site[lang];
   const c = t[lang];
+  const g = guides[t.slug]?.[lang] || {};
+  const faq = [...c.faq, ...(g.faq || [])];
   const path = t.slug + "/";
   const root = rootFor(lang, path);
   const main = `
@@ -143,12 +147,15 @@ function toolPage(lang, t) {
 </section>
 ${adSlot("top")}
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
-${promo(lang)}
 <section class="tool-info">
+  ${g.intro ? `<h2>${S.about}</h2>
+  <p class="tool-intro">${esc(g.intro)}</p>` : ""}
   <h2>${S.how}</h2>
   <ol class="steps">${c.steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>
   <h2>${S.faq}</h2>
-  <div class="faq">${c.faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div>
+  <div class="faq">${faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div>
+  ${g.tips?.length ? `<h2>${S.tips}</h2>
+  <ul class="tips">${g.tips.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
 </section>
 ${adSlot("bottom")}
 <section class="related">
@@ -169,7 +176,7 @@ ${adSlot("bottom")}
       },
       {
         "@context": "https://schema.org", "@type": "FAQPage",
-        mainEntity: c.faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+        mainEntity: faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
       },
     ],
   });
@@ -177,7 +184,16 @@ ${adSlot("bottom")}
 
 function privacyPage(lang) {
   const P = site[lang].privacy;
-  return layout({ lang, path: "privacy/", title: P.title, desc: P.desc, main: `<article class="doc"><h1>${P.h1}</h1>${P.body}<h2>${P.contactTitle}</h2><p>${P.contactText} <a href="mailto:${config.contact}">${config.contact}</a></p></article>` });
+  return layout({ lang, path: "privacy/", title: P.title, desc: P.desc, showPromo: false, main: `<article class="doc"><h1>${P.h1}</h1>${P.body}<h2>${P.contactTitle}</h2><p>${P.contactText} <a href="mailto:${config.contact}">${config.contact}</a></p></article>` });
+}
+
+function aboutPage(lang) {
+  const P = site[lang].aboutPage;
+  return layout({
+    lang, path: "about/", title: P.title, desc: P.desc,
+    main: `<article class="doc"><h1>${P.h1}</h1>${P.body}<h2>${P.contactTitle}</h2><p>${P.contactText} <a href="mailto:${config.contact}">${config.contact}</a></p></article>`,
+    schema: { "@context": "https://schema.org", "@type": "AboutPage", name: P.h1, url: `${config.domain}/${pathFor(lang, "about/")}` },
+  });
 }
 
 // ---------- 출력 ----------
@@ -204,7 +220,9 @@ for (const lang of LANGS) {
     write(pathFor(lang, `${t.slug}/index.html`), toolPage(lang, t));
     urls.push(pathFor(lang, t.slug + "/"));
   }
+  write(pathFor(lang, "about/index.html"), aboutPage(lang));
   write(pathFor(lang, "privacy/index.html"), privacyPage(lang));
+  urls.push(pathFor(lang, "about/"), pathFor(lang, "privacy/"));
 }
 
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
@@ -215,4 +233,4 @@ ${urls.map((u) => `  <url><loc>${config.domain}/${u}</loc></url>`).join("\n")}
 write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${config.domain}/sitemap.xml\n`);
 write(".nojekyll", "");
 
-console.log(`빌드 완료: 페이지 ${urls.length + LANGS.length}개 → docs/`);
+console.log(`빌드 완료: 페이지 ${urls.length}개 → docs/`);

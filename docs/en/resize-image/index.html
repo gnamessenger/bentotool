@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../../assets/style.css">
 
 
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Resize Image","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will my photos get stretched?","acceptedAnswer":{"@type":"Answer","text":"No. The aspect ratio is always preserved."}},{"@type":"Question","name":"Can I make many images the same width?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose 'Width (px)' and every image gets the same width."}},{"@type":"Question","name":"Are my images uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Everything happens in your browser."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Resize Image","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will my photos get stretched?","acceptedAnswer":{"@type":"Answer","text":"No. The aspect ratio is always preserved."}},{"@type":"Question","name":"Can I make many images the same width?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose 'Width (px)' and every image gets the same width."}},{"@type":"Question","name":"Are my images uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Everything happens in your browser."}},{"@type":"Question","name":"Can I enlarge small images?","acceptedAnswer":{"@type":"Answer","text":"Values above 100% will enlarge them, but no new detail is created, so they may look soft."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -43,12 +43,15 @@
 </section>
 
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
-
 <section class="tool-info">
+  <h2>What this tool does</h2>
+  <p class="tool-intro">This tool changes the pixel dimensions of your images. Scale them by a percentage, or set a width in pixels to make a batch of photos the same width. Height is calculated from the original aspect ratio, so nothing gets stretched. PNG and WEBP keep their format; other formats are saved as JPG.</p>
   <h2>How to use</h2>
   <ol class="steps"><li>Choose to scale by percentage or set a width in pixels.</li><li>Drop your photos — height adjusts automatically to keep the aspect ratio.</li><li>Download one by one or use 'Download all'.</li></ol>
   <h2>FAQ</h2>
-  <div class="faq"><details><summary>Will my photos get stretched?</summary><p>No. The aspect ratio is always preserved.</p></details><details><summary>Can I make many images the same width?</summary><p>Yes. Choose 'Width (px)' and every image gets the same width.</p></details><details><summary>Are my images uploaded?</summary><p>No. Everything happens in your browser.</p></details></div>
+  <div class="faq"><details><summary>Will my photos get stretched?</summary><p>No. The aspect ratio is always preserved.</p></details><details><summary>Can I make many images the same width?</summary><p>Yes. Choose 'Width (px)' and every image gets the same width.</p></details><details><summary>Are my images uploaded?</summary><p>No. Everything happens in your browser.</p></details><details><summary>Can I enlarge small images?</summary><p>Values above 100% will enlarge them, but no new detail is created, so they may look soft.</p></details></div>
+  <h2>Tips</h2>
+  <ul class="tips"><li>For blogs and product pages, a width of 1000–1280px works well.</li><li>The output size is added to the file name (e.g. _1280x960), so you won't mix it up with the original.</li><li>To cut file size too, run the result through 'Compress Image'.</li></ul>
 </section>
 
 <section class="related">
@@ -87,10 +90,11 @@
     <span>Combine multiple PDFs into one</span>
   </a></div>
 </section>
+
 </main>
 <footer class="site-footer">
   <p>All files are processed in your browser and never stored anywhere.</p>
-  <p><a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
+  <p><a href="../../en/about/">About</a> · <a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
 </footer>
 <script>window.T={"lang":"en","ui":{"choose":"Choose files","orDrop":"or drop them here","pasteHint":"You can also paste with Ctrl+V","processing":"Processing…","waiting":"Waiting","failed":"Failed","download":"Download","downloadAll":"Download all","clear":"Clear all","remove":"Remove","moveUp":"Move up","moveDown":"Move down","privacyBadge":"🔒 Files never leave your device","addMore":"Add files"},"tool":{"mode":"Mode","byPercent":"Percent (%)","byWidth":"Width (px)","value":"Value"}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>

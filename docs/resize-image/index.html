@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../assets/style.css">
 
 
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"이미지 크기 조절","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"사진이 찌그러지지 않나요?","acceptedAnswer":{"@type":"Answer","text":"가로세로 비율을 그대로 지켜서 찌그러지지 않아요."}},{"@type":"Question","name":"여러 장을 같은 크기로 맞출 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. '가로 크기(px)'를 고르면 모든 사진의 가로 폭이 같아져요."}},{"@type":"Question","name":"사진이 업로드되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 내 브라우저 안에서만 처리돼요."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"이미지 크기 조절","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"사진이 찌그러지지 않나요?","acceptedAnswer":{"@type":"Answer","text":"가로세로 비율을 그대로 지켜서 찌그러지지 않아요."}},{"@type":"Question","name":"여러 장을 같은 크기로 맞출 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. '가로 크기(px)'를 고르면 모든 사진의 가로 폭이 같아져요."}},{"@type":"Question","name":"사진이 업로드되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 내 브라우저 안에서만 처리돼요."}},{"@type":"Question","name":"작은 사진을 크게 늘려도 되나요?","acceptedAnswer":{"@type":"Answer","text":"100%보다 큰 값을 넣으면 늘어나긴 하지만, 없던 디테일이 생기지는 않아서 흐릿해 보일 수 있어요."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -43,12 +43,15 @@
 </section>
 
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
-
 <section class="tool-info">
+  <h2>이 도구로 할 수 있는 일</h2>
+  <p class="tool-intro">사진의 가로·세로 픽셀 크기를 바꾸는 도구예요. 비율(%)로 한 번에 줄이거나, 가로 폭을 픽셀로 정해서 여러 장을 같은 폭으로 맞출 수 있어요. 세로는 원래 비율에 맞춰 자동으로 계산되기 때문에 사진이 찌그러지지 않아요. PNG·WEBP는 같은 형식으로, 그 밖의 형식은 JPG로 저장돼요.</p>
   <h2>사용 방법</h2>
   <ol class="steps"><li>비율(%)로 줄일지, 가로 크기(px)를 정할지 고르세요.</li><li>사진을 올리면 바로 크기가 바뀌어요. 세로는 비율에 맞춰 자동으로 정해져요.</li><li>한 장씩 받거나 '모두 다운로드'로 한 번에 받으세요.</li></ol>
   <h2>자주 묻는 질문</h2>
-  <div class="faq"><details><summary>사진이 찌그러지지 않나요?</summary><p>가로세로 비율을 그대로 지켜서 찌그러지지 않아요.</p></details><details><summary>여러 장을 같은 크기로 맞출 수 있나요?</summary><p>네. '가로 크기(px)'를 고르면 모든 사진의 가로 폭이 같아져요.</p></details><details><summary>사진이 업로드되나요?</summary><p>아니요. 내 브라우저 안에서만 처리돼요.</p></details></div>
+  <div class="faq"><details><summary>사진이 찌그러지지 않나요?</summary><p>가로세로 비율을 그대로 지켜서 찌그러지지 않아요.</p></details><details><summary>여러 장을 같은 크기로 맞출 수 있나요?</summary><p>네. '가로 크기(px)'를 고르면 모든 사진의 가로 폭이 같아져요.</p></details><details><summary>사진이 업로드되나요?</summary><p>아니요. 내 브라우저 안에서만 처리돼요.</p></details><details><summary>작은 사진을 크게 늘려도 되나요?</summary><p>100%보다 큰 값을 넣으면 늘어나긴 하지만, 없던 디테일이 생기지는 않아서 흐릿해 보일 수 있어요.</p></details></div>
+  <h2>알아두면 좋은 팁</h2>
+  <ul class="tips"><li>블로그·상세페이지용이라면 가로 1000~1280px 정도가 무난해요.</li><li>파일 이름 뒤에 결과 크기(예: _1280x960)가 붙어서 원본과 헷갈리지 않아요.</li><li>용량까지 줄이고 싶다면 크기 조절 뒤 '이미지 용량 줄이기'를 한 번 더 써 보세요.</li></ul>
 </section>
 
 <section class="related">
@@ -87,10 +90,11 @@
     <span>PDF 여러 개를 하나로</span>
   </a></div>
 </section>
+<aside class="promo-note"><p>🔧 이 도구 사이트, 코딩 몰라도 AI로 만들었어요 → <a href="https://salesscript-mauve.vercel.app/store.html#free-list" target="_blank" rel="noopener">무료로 만드는 법 보기</a></p></aside>
 </main>
 <footer class="site-footer">
   <p>모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.</p>
-  <p><a href="../privacy/">개인정보처리방침</a> · 문의 <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 벤토툴</p>
+  <p><a href="../about/">소개</a> · <a href="../privacy/">개인정보처리방침</a> · 문의 <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 벤토툴</p>
 </footer>
 <script>window.T={"lang":"ko","ui":{"choose":"파일 선택","orDrop":"또는 여기로 끌어다 놓기","pasteHint":"Ctrl+V로 붙여넣기도 돼요","processing":"처리 중…","waiting":"대기 중","failed":"실패","download":"다운로드","downloadAll":"모두 다운로드","clear":"모두 지우기","remove":"빼기","moveUp":"위로","moveDown":"아래로","privacyBadge":"🔒 파일은 서버로 전송되지 않아요","addMore":"파일 추가"},"tool":{"mode":"방식","byPercent":"비율(%)","byWidth":"가로 크기(px)","value":"값"}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>

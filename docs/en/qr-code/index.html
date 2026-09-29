@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../../assets/style.css">
 
 
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"QR Code Generator","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do these QR codes expire?","acceptedAnswer":{"@type":"Answer","text":"Never. The content is encoded directly in the code, so it works forever (as long as the link itself still exists)."}},{"@type":"Question","name":"Which format is best for printing?","acceptedAnswer":{"@type":"Answer","text":"SVG — it stays sharp at any size."}},{"@type":"Question","name":"Will colored codes still scan?","acceptedAnswer":{"@type":"Answer","text":"Keep the background light and the code dark. Inverted colors fail on some phones."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"QR Code Generator","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do these QR codes expire?","acceptedAnswer":{"@type":"Answer","text":"Never. The content is encoded directly in the code, so it works forever (as long as the link itself still exists)."}},{"@type":"Question","name":"Which format is best for printing?","acceptedAnswer":{"@type":"Answer","text":"SVG — it stays sharp at any size."}},{"@type":"Question","name":"Will colored codes still scan?","acceptedAnswer":{"@type":"Answer","text":"Keep the background light and the code dark. Inverted colors fail on some phones."}},{"@type":"Question","name":"Can I edit a QR code later?","acceptedAnswer":{"@type":"Answer","text":"No. The content is inside the code itself, so you'll need to make a new one. Always test-scan with a phone before printing."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -43,12 +43,15 @@
 </section>
 
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
-
 <section class="tool-info">
+  <h2>What this tool does</h2>
+  <p class="tool-intro">This tool creates QR codes for links, text or Wi-Fi details. They're great for business cards, flyers, café tables and event signs. Change the code and background colors, and download a PNG (256–2048px) or an SVG for print. The content is encoded directly in the code, with no server in between.</p>
   <h2>How to use</h2>
   <ol class="steps"><li>Enter a link or text. For Wi-Fi, enter the network name and password.</li><li>Pick colors and size — the preview updates instantly.</li><li>Download PNG (everyday) or SVG (print).</li></ol>
   <h2>FAQ</h2>
-  <div class="faq"><details><summary>Do these QR codes expire?</summary><p>Never. The content is encoded directly in the code, so it works forever (as long as the link itself still exists).</p></details><details><summary>Which format is best for printing?</summary><p>SVG — it stays sharp at any size.</p></details><details><summary>Will colored codes still scan?</summary><p>Keep the background light and the code dark. Inverted colors fail on some phones.</p></details></div>
+  <div class="faq"><details><summary>Do these QR codes expire?</summary><p>Never. The content is encoded directly in the code, so it works forever (as long as the link itself still exists).</p></details><details><summary>Which format is best for printing?</summary><p>SVG — it stays sharp at any size.</p></details><details><summary>Will colored codes still scan?</summary><p>Keep the background light and the code dark. Inverted colors fail on some phones.</p></details><details><summary>Can I edit a QR code later?</summary><p>No. The content is inside the code itself, so you'll need to make a new one. Always test-scan with a phone before printing.</p></details></div>
+  <h2>Tips</h2>
+  <ul class="tips"><li>With a Wi-Fi QR code, most phones can join just by scanning it with the camera — no typing the password.</li><li>Longer links make denser codes. Use a short URL if you'll print it small.</li><li>Don't crop the white margin around the code — scanners need it.</li></ul>
 </section>
 
 <section class="related">
@@ -87,10 +90,11 @@
     <span>Crop to 1:1, 4:5, 16:9 or any ratio</span>
   </a></div>
 </section>
+
 </main>
 <footer class="site-footer">
   <p>All files are processed in your browser and never stored anywhere.</p>
-  <p><a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
+  <p><a href="../../en/about/">About</a> · <a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
 </footer>
 <script>window.T={"lang":"en","ui":{"choose":"Choose files","orDrop":"or drop them here","pasteHint":"You can also paste with Ctrl+V","processing":"Processing…","waiting":"Waiting","failed":"Failed","download":"Download","downloadAll":"Download all","clear":"Clear all","remove":"Remove","moveUp":"Move up","moveDown":"Move down","privacyBadge":"🔒 Files never leave your device","addMore":"Add files"},"tool":{"tabText":"Link / text","tabWifi":"Wi-Fi","textPh":"https://… or any text","ssid":"Network name","password":"Password","security":"Security","none":"None","fg":"Code color","bg":"Background","size":"Size","png":"Download PNG","svg":"Download SVG","empty":"Type something to see your QR code","tooLong":"Content is too long"}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>

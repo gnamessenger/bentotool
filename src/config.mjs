@@ -11,7 +11,15 @@ export const config = {
   adsenseClient: null,
   adSlots: { top: "", bottom: "" },   // 애드센스에서 만든 광고 단위 ID
 
-  // 내 상품·제휴 배너. null이면 안 보여요.
-  // 예: { title: "...", text: "...", cta: "자세히 보기", url: "https://..." }
-  promo: { ko: null, en: null },
+  // 내 상품·안내 링크. null이면 안 보여요. 도구 설명 아래(푸터 위)에 한 줄짜리 안내 문장 + 글자 링크로 나와요.
+  // (애드센스 광고와 헷갈리지 않도록 버튼·배너 모양은 쓰지 않아요)
+  // 예: { text: "...", cta: "자세히 보기", url: "https://..." }
+  promo: {
+    ko: {
+      text: "🔧 이 도구 사이트, 코딩 몰라도 AI로 만들었어요",
+      cta: "무료로 만드는 법 보기",
+      url: "https://salesscript-mauve.vercel.app/store.html#free-list",
+    },
+    en: null,   // 영어 페이지는 광고만 둘 예정
+  },
 };

@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../../assets/style.css">
 
 
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Image to PDF","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many images can I add?","acceptedAnswer":{"@type":"Answer","text":"There's no fixed limit, though hundreds of images may take a while depending on your device."}},{"@type":"Question","name":"Can I fit scans to A4?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose 'A4' and every image is fitted onto an A4 page."}},{"@type":"Question","name":"Are my images uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The PDF is created inside your browser."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Image to PDF","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many images can I add?","acceptedAnswer":{"@type":"Answer","text":"There's no fixed limit, though hundreds of images may take a while depending on your device."}},{"@type":"Question","name":"Can I fit scans to A4?","acceptedAnswer":{"@type":"Answer","text":"Yes. Choose 'A4' and every image is fitted onto an A4 page."}},{"@type":"Question","name":"Are my images uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. The PDF is created inside your browser."}},{"@type":"Question","name":"My PDF is too large.","acceptedAnswer":{"@type":"Answer","text":"Very large images are scaled so the long side is 2500px, but many pages can still add up. Shrink them first with 'Compress Image'."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -43,12 +43,15 @@
 </section>
 
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
-
 <section class="tool-info">
+  <h2>What this tool does</h2>
+  <p class="tool-intro">This tool combines photos or scanned images into a single PDF, in the order you choose. It's useful for submitting receipts and documents, tidying up scanned homework, or bundling a portfolio. Choose a page size: 'Fit to image' or 'A4' (centered with a margin).</p>
   <h2>How to use</h2>
   <ol class="steps"><li>Add the images you want in your PDF — many at once is fine.</li><li>Reorder with ▲▼ and pick a page size.</li><li>Click 'Create PDF' and it downloads right away.</li></ol>
   <h2>FAQ</h2>
-  <div class="faq"><details><summary>How many images can I add?</summary><p>There's no fixed limit, though hundreds of images may take a while depending on your device.</p></details><details><summary>Can I fit scans to A4?</summary><p>Yes. Choose 'A4' and every image is fitted onto an A4 page.</p></details><details><summary>Are my images uploaded?</summary><p>No. The PDF is created inside your browser.</p></details></div>
+  <div class="faq"><details><summary>How many images can I add?</summary><p>There's no fixed limit, though hundreds of images may take a while depending on your device.</p></details><details><summary>Can I fit scans to A4?</summary><p>Yes. Choose 'A4' and every image is fitted onto an A4 page.</p></details><details><summary>Are my images uploaded?</summary><p>No. The PDF is created inside your browser.</p></details><details><summary>My PDF is too large.</summary><p>Very large images are scaled so the long side is 2500px, but many pages can still add up. Shrink them first with 'Compress Image'.</p></details></div>
+  <h2>Tips</h2>
+  <ul class="tips"><li>Choose 'A4' for documents you'll print or submit.</li><li>Images are stored as JPG inside the PDF, so transparent areas become white.</li><li>The list order is the page order — check it with ▲▼ before creating.</li></ul>
 </section>
 
 <section class="related">
@@ -87,10 +90,11 @@
     <span>Convert between JPG, PNG and WEBP</span>
   </a></div>
 </section>
+
 </main>
 <footer class="site-footer">
   <p>All files are processed in your browser and never stored anywhere.</p>
-  <p><a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
+  <p><a href="../../en/about/">About</a> · <a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
 </footer>
 <script>window.T={"lang":"en","ui":{"choose":"Choose files","orDrop":"or drop them here","pasteHint":"You can also paste with Ctrl+V","processing":"Processing…","waiting":"Waiting","failed":"Failed","download":"Download","downloadAll":"Download all","clear":"Clear all","remove":"Remove","moveUp":"Move up","moveDown":"Move down","privacyBadge":"🔒 Files never leave your device","addMore":"Add files"},"tool":{"pageSize":"Page size","fit":"Fit to image","a4":"A4","make":"Create PDF","outName":"images"}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>

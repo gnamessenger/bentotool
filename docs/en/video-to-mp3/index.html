@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../../assets/style.css">
 
 
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Video to MP3","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which videos work?","acceptedAnswer":{"@type":"Answer","text":"Anything Chrome or Edge can play: MP4, WEBM and most MOV files."}},{"@type":"Question","name":"Do large videos work?","acceptedAnswer":{"@type":"Answer","text":"Yes, but they use a lot of memory. Videos over 1 GB may be slow."}},{"@type":"Question","name":"Is my video uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Conversion happens in your browser."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Video to MP3","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which videos work?","acceptedAnswer":{"@type":"Answer","text":"Anything Chrome or Edge can play: MP4, WEBM and most MOV files."}},{"@type":"Question","name":"Do large videos work?","acceptedAnswer":{"@type":"Answer","text":"Yes, but they use a lot of memory. Videos over 1 GB may be slow."}},{"@type":"Question","name":"Is my video uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Conversion happens in your browser."}},{"@type":"Question","name":"Can I use a YouTube link?","acceptedAnswer":{"@type":"Answer","text":"No. Only video files on your own device can be added. Use copyrighted content only as the rights holder allows."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -43,12 +43,15 @@
 </section>
 
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
-
 <section class="tool-info">
+  <h2>What this tool does</h2>
+  <p class="tool-intro">This tool extracts the audio from a video file and saves it as MP3. It's handy for listening to recorded lectures or meetings, or reusing the sound from a vlog. Choose 96, 128, 192 or 320 kbps, then preview and download the result. Audio files can be converted to MP3 too.</p>
   <h2>How to use</h2>
   <ol class="steps"><li>Add the video you want the audio from.</li><li>Choose the quality (128 kbps is usually plenty).</li><li>Download the MP3 when it's done.</li></ol>
   <h2>FAQ</h2>
-  <div class="faq"><details><summary>Which videos work?</summary><p>Anything Chrome or Edge can play: MP4, WEBM and most MOV files.</p></details><details><summary>Do large videos work?</summary><p>Yes, but they use a lot of memory. Videos over 1 GB may be slow.</p></details><details><summary>Is my video uploaded?</summary><p>No. Conversion happens in your browser.</p></details></div>
+  <div class="faq"><details><summary>Which videos work?</summary><p>Anything Chrome or Edge can play: MP4, WEBM and most MOV files.</p></details><details><summary>Do large videos work?</summary><p>Yes, but they use a lot of memory. Videos over 1 GB may be slow.</p></details><details><summary>Is my video uploaded?</summary><p>No. Conversion happens in your browser.</p></details><details><summary>Can I use a YouTube link?</summary><p>No. Only video files on your own device can be added. Use copyrighted content only as the rights holder allows.</p></details></div>
+  <h2>Tips</h2>
+  <ul class="tips"><li>96–128 kbps is fine for speech; use 192 kbps or higher for music.</li><li>Output is up to stereo — videos with more channels keep the first two.</li><li>Long videos are decoded into memory at once and may be slow. Close other apps if needed.</li></ul>
 </section>
 
 <section class="related">
@@ -87,10 +90,11 @@
     <span>Combine multiple PDFs into one</span>
   </a></div>
 </section>
+
 </main>
 <footer class="site-footer">
   <p>All files are processed in your browser and never stored anywhere.</p>
-  <p><a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
+  <p><a href="../../en/about/">About</a> · <a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
 </footer>
 <script>window.T={"lang":"en","ui":{"choose":"Choose files","orDrop":"or drop them here","pasteHint":"You can also paste with Ctrl+V","processing":"Processing…","waiting":"Waiting","failed":"Failed","download":"Download","downloadAll":"Download all","clear":"Clear all","remove":"Remove","moveUp":"Move up","moveDown":"Move down","privacyBadge":"🔒 Files never leave your device","addMore":"Add files"},"tool":{"bitrate":"Quality","decoding":"Reading audio…","encoding":"Creating MP3… {p}%","done":"Done! {size}","fail":"Couldn't read audio from this video. It may have no sound or an unsupported format.","another":"Another video"}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lamejs/1.2.1/lame.min.js"></script>

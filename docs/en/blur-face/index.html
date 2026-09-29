@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../../assets/style.css">
 
 
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Blur Faces","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What if a face isn't detected?","acceptedAnswer":{"@type":"Answer","text":"Just drag on the photo to draw a box over it. Works for license plates, name tags and addresses too."}},{"@type":"Question","name":"Is my photo sent to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Face detection runs inside your browser, so it's safe for sensitive photos."}},{"@type":"Question","name":"Can the blur be undone from the saved image?","acceptedAnswer":{"@type":"Answer","text":"No. The pixels are permanently changed in the saved file."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Blur Faces","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What if a face isn't detected?","acceptedAnswer":{"@type":"Answer","text":"Just drag on the photo to draw a box over it. Works for license plates, name tags and addresses too."}},{"@type":"Question","name":"Is my photo sent to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Face detection runs inside your browser, so it's safe for sensitive photos."}},{"@type":"Question","name":"Can the blur be undone from the saved image?","acceptedAnswer":{"@type":"Answer","text":"No. The pixels are permanently changed in the saved file."}},{"@type":"Question","name":"Does it find every face?","acceptedAnswer":{"@type":"Answer","text":"Not always. Profiles and very small or partly hidden faces can be missed. Always check before saving and draw boxes over anything it missed."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -43,12 +43,15 @@
 </section>
 
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
-
 <section class="tool-info">
+  <h2>What this tool does</h2>
+  <p class="tool-intro">This tool uses AI to find faces in a photo and hide them with pixelation or blur. It's useful when posting event photos or sharing screenshots without exposing other people. Beyond faces, you can drag on the photo to cover license plates, name tags or addresses.</p>
   <h2>How to use</h2>
   <ol class="steps"><li>Upload a photo — AI finds faces and blurs them automatically.</li><li>Drag on the photo to add areas, or remove boxes with ✕.</li><li>Choose pixelate or blur, set strength, and save.</li></ol>
   <h2>FAQ</h2>
-  <div class="faq"><details><summary>What if a face isn't detected?</summary><p>Just drag on the photo to draw a box over it. Works for license plates, name tags and addresses too.</p></details><details><summary>Is my photo sent to a server?</summary><p>No. Face detection runs inside your browser, so it's safe for sensitive photos.</p></details><details><summary>Can the blur be undone from the saved image?</summary><p>No. The pixels are permanently changed in the saved file.</p></details></div>
+  <div class="faq"><details><summary>What if a face isn't detected?</summary><p>Just drag on the photo to draw a box over it. Works for license plates, name tags and addresses too.</p></details><details><summary>Is my photo sent to a server?</summary><p>No. Face detection runs inside your browser, so it's safe for sensitive photos.</p></details><details><summary>Can the blur be undone from the saved image?</summary><p>No. The pixels are permanently changed in the saved file.</p></details><details><summary>Does it find every face?</summary><p>Not always. Profiles and very small or partly hidden faces can be missed. Always check before saving and draw boxes over anything it missed.</p></details></div>
+  <h2>Tips</h2>
+  <ul class="tips"><li>Higher strength means bigger mosaic blocks and a stronger blur.</li><li>PNG and WEBP keep their format; other photos are saved as JPG.</li><li>The face detection program is downloaded from a public CDN, but your photo itself is never sent anywhere.</li></ul>
 </section>
 
 <section class="related">
@@ -87,10 +90,11 @@
     <span>Combine multiple PDFs into one</span>
   </a></div>
 </section>
+
 </main>
 <footer class="site-footer">
   <p>All files are processed in your browser and never stored anywhere.</p>
-  <p><a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
+  <p><a href="../../en/about/">About</a> · <a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
 </footer>
 <script>window.T={"lang":"en","ui":{"choose":"Choose files","orDrop":"or drop them here","pasteHint":"You can also paste with Ctrl+V","processing":"Processing…","waiting":"Waiting","failed":"Failed","download":"Download","downloadAll":"Download all","clear":"Clear all","remove":"Remove","moveUp":"Move up","moveDown":"Move down","privacyBadge":"🔒 Files never leave your device","addMore":"Add files"},"tool":{"loading":"Finding faces…","found":"Found {n} face(s)","none":"No faces found. Drag on the photo to add areas.","mode":"Style","mosaic":"Pixelate","blur":"Blur","strength":"Strength","save":"Save","another":"Another photo","hint":"Drag on the photo to add an area · Remove boxes with ✕","redetect":"Detect again","clearAll":"Remove all"}};</script>
 

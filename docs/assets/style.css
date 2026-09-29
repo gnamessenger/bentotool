@@ -12,6 +12,7 @@
   --checker: #E9E9EE;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }   /* display:flex 등이 hidden 속성을 덮어써서 숨긴 버튼이 보이던 문제 방지 */
 body {
   font-family: 'Noto Sans KR', system-ui, sans-serif;
   color: var(--ink); background: var(--bg);
@@ -182,12 +183,14 @@ body.dragging .dropzone { border-color: var(--purple); background: var(--purple-
 .faq summary { cursor: pointer; font-weight: 700; }
 .faq details p { margin-top: 8px; color: var(--muted); font-size: 15px; }
 
-.promo {
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  margin-top: 32px; padding: 20px 24px; border-radius: 18px;
-  background: linear-gradient(135deg, var(--purple-light), #F3EEFB); border: 1px solid #D9CCF0;
-}
-.promo p { font-size: 14px; color: var(--muted); }
+.tool-intro { color: #4A4460; }
+.tips { padding-left: 22px; display: grid; gap: 6px; }
+.tips li::marker { color: var(--purple); }
+
+/* 한 줄 안내 링크 (광고와 헷갈리지 않게 평범한 글자 링크로) */
+.promo-note { margin-top: 40px; padding-top: 16px; border-top: 1px dashed var(--line); text-align: center; }
+.promo-note p { font-size: 14px; color: var(--muted); }
+.promo-note a { font-weight: 500; }
 .ad-slot { margin: 28px 0; min-height: 90px; }
 
 .doc { max-width: 760px; margin: 48px auto 0; }
@@ -316,7 +319,6 @@ body.dragging .dropzone { border-color: var(--purple); background: var(--purple-
   .tool-card { padding: 18px; border-radius: 18px; }
   .features { grid-template-columns: 1fr; }
   .rb-result { grid-template-columns: 1fr; }
-  .promo { flex-direction: column; align-items: flex-start; }
   .file-row { grid-template-columns: 44px 1fr auto; gap: 10px; }
   .file-row .thumb { width: 44px; height: 44px; }
 }

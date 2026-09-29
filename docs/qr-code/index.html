@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../assets/style.css">
 
 
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"QR코드 만들기","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"QR코드에 유효기간이 있나요?","acceptedAnswer":{"@type":"Answer","text":"없어요. 여기서 만든 QR코드는 내용이 코드 안에 직접 들어 있어서 영원히 작동해요. (링크 주소 자체가 사라지면 그 링크는 안 열려요)"}},{"@type":"Question","name":"인쇄용은 어떤 걸 받나요?","acceptedAnswer":{"@type":"Answer","text":"SVG를 받으세요. 아무리 크게 인쇄해도 깨지지 않아요."}},{"@type":"Question","name":"색을 바꿔도 잘 찍히나요?","acceptedAnswer":{"@type":"Answer","text":"배경은 밝게, 코드는 진하게 해야 잘 찍혀요. 반대로 하면 못 읽는 휴대폰이 있어요."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"QR코드 만들기","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"QR코드에 유효기간이 있나요?","acceptedAnswer":{"@type":"Answer","text":"없어요. 여기서 만든 QR코드는 내용이 코드 안에 직접 들어 있어서 영원히 작동해요. (링크 주소 자체가 사라지면 그 링크는 안 열려요)"}},{"@type":"Question","name":"인쇄용은 어떤 걸 받나요?","acceptedAnswer":{"@type":"Answer","text":"SVG를 받으세요. 아무리 크게 인쇄해도 깨지지 않아요."}},{"@type":"Question","name":"색을 바꿔도 잘 찍히나요?","acceptedAnswer":{"@type":"Answer","text":"배경은 밝게, 코드는 진하게 해야 잘 찍혀요. 반대로 하면 못 읽는 휴대폰이 있어요."}},{"@type":"Question","name":"만든 QR코드를 나중에 수정할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 내용이 코드 안에 직접 들어가서, 바꾸려면 새로 만들어야 해요. 인쇄하기 전에 휴대폰으로 꼭 한 번 찍어 보세요."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -43,12 +43,15 @@
 </section>
 
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
-
 <section class="tool-info">
+  <h2>이 도구로 할 수 있는 일</h2>
+  <p class="tool-intro">링크·글·와이파이 정보를 담은 QR코드를 만드는 도구예요. 명함, 전단지, 매장 테이블, 행사 안내문에 넣기 좋아요. 코드 색과 배경 색을 바꿀 수 있고, PNG(256~2048px)나 인쇄용 SVG로 받을 수 있어요. 내용이 코드 안에 직접 들어가서 따로 서버를 거치지 않아요.</p>
   <h2>사용 방법</h2>
   <ol class="steps"><li>링크나 글을 입력하세요. 와이파이 탭에서는 이름과 비밀번호를 넣으세요.</li><li>색상과 크기를 고르면 미리보기가 바로 바뀌어요.</li><li>PNG(일반용)나 SVG(인쇄용)로 받으세요.</li></ol>
   <h2>자주 묻는 질문</h2>
-  <div class="faq"><details><summary>QR코드에 유효기간이 있나요?</summary><p>없어요. 여기서 만든 QR코드는 내용이 코드 안에 직접 들어 있어서 영원히 작동해요. (링크 주소 자체가 사라지면 그 링크는 안 열려요)</p></details><details><summary>인쇄용은 어떤 걸 받나요?</summary><p>SVG를 받으세요. 아무리 크게 인쇄해도 깨지지 않아요.</p></details><details><summary>색을 바꿔도 잘 찍히나요?</summary><p>배경은 밝게, 코드는 진하게 해야 잘 찍혀요. 반대로 하면 못 읽는 휴대폰이 있어요.</p></details></div>
+  <div class="faq"><details><summary>QR코드에 유효기간이 있나요?</summary><p>없어요. 여기서 만든 QR코드는 내용이 코드 안에 직접 들어 있어서 영원히 작동해요. (링크 주소 자체가 사라지면 그 링크는 안 열려요)</p></details><details><summary>인쇄용은 어떤 걸 받나요?</summary><p>SVG를 받으세요. 아무리 크게 인쇄해도 깨지지 않아요.</p></details><details><summary>색을 바꿔도 잘 찍히나요?</summary><p>배경은 밝게, 코드는 진하게 해야 잘 찍혀요. 반대로 하면 못 읽는 휴대폰이 있어요.</p></details><details><summary>만든 QR코드를 나중에 수정할 수 있나요?</summary><p>아니요. 내용이 코드 안에 직접 들어가서, 바꾸려면 새로 만들어야 해요. 인쇄하기 전에 휴대폰으로 꼭 한 번 찍어 보세요.</p></details></div>
+  <h2>알아두면 좋은 팁</h2>
+  <ul class="tips"><li>와이파이 QR은 대부분의 휴대폰에서 카메라로 찍기만 하면 비밀번호를 입력하지 않고 연결돼요.</li><li>링크가 길수록 코드가 촘촘해져요. 작게 인쇄할 거라면 짧은 주소를 쓰세요.</li><li>코드 주변 흰 여백은 인식에 필요하니 잘라내지 마세요.</li></ul>
 </section>
 
 <section class="related">
@@ -87,10 +90,11 @@
     <span>인스타 1:1, 4:5 등 원하는 비율로 자르기</span>
   </a></div>
 </section>
+<aside class="promo-note"><p>🔧 이 도구 사이트, 코딩 몰라도 AI로 만들었어요 → <a href="https://salesscript-mauve.vercel.app/store.html#free-list" target="_blank" rel="noopener">무료로 만드는 법 보기</a></p></aside>
 </main>
 <footer class="site-footer">
   <p>모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.</p>
-  <p><a href="../privacy/">개인정보처리방침</a> · 문의 <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 벤토툴</p>
+  <p><a href="../about/">소개</a> · <a href="../privacy/">개인정보처리방침</a> · 문의 <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 벤토툴</p>
 </footer>
 <script>window.T={"lang":"ko","ui":{"choose":"파일 선택","orDrop":"또는 여기로 끌어다 놓기","pasteHint":"Ctrl+V로 붙여넣기도 돼요","processing":"처리 중…","waiting":"대기 중","failed":"실패","download":"다운로드","downloadAll":"모두 다운로드","clear":"모두 지우기","remove":"빼기","moveUp":"위로","moveDown":"아래로","privacyBadge":"🔒 파일은 서버로 전송되지 않아요","addMore":"파일 추가"},"tool":{"tabText":"링크·글","tabWifi":"와이파이","textPh":"https://… 또는 아무 글","ssid":"와이파이 이름","password":"비밀번호","security":"보안","none":"없음","fg":"코드 색","bg":"배경 색","size":"크기","png":"PNG 다운로드","svg":"SVG 다운로드","empty":"내용을 입력하면 QR코드가 나타나요","tooLong":"내용이 너무 길어요"}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>

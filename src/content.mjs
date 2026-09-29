@@ -19,13 +19,34 @@ export const site = {
     },
     cats: { image: "이미지 도구", pdf: "PDF 도구", video: "동영상·오디오 도구", util: "글자·유틸리티" },
     nav: { tools: "모든 도구" },
+    about: "이 도구로 할 수 있는 일",
     how: "사용 방법",
     faq: "자주 묻는 질문",
+    tips: "알아두면 좋은 팁",
     related: "다른 도구도 써보세요",
     footer: {
+      about: "소개",
       privacy: "개인정보처리방침",
       contact: "문의",
       note: "모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.",
+    },
+    aboutPage: {
+      title: "벤토툴 소개 | 누가, 왜 만들었나요",
+      desc: "벤토툴은 1인 사업자가 AI와 함께 만든 무료 파일 도구 모음이에요. 모든 파일은 내 브라우저 안에서만 처리되고 서버로 전송되지 않아요.",
+      h1: "벤토툴 소개",
+      contactTitle: "문의",
+      contactText: "고장 신고, 필요한 도구 제안, 그 밖의 문의는 아래 이메일로 보내 주세요.",
+      body: `
+<p>벤토툴은 일하면서 자주 필요한 파일 도구를 한곳에 모은 무료 사이트예요. 도시락(벤토) 한 통에 반찬을 골고루 담듯, 배경 제거·이미지 압축·PDF 합치기·동영상 변환·글자 수 세기·QR코드 같은 도구를 한 상자에 담았어요.</p>
+<h2>누가 만들었나요</h2>
+<p>세일즈 교육 브랜드 <strong>아우라세일즈</strong>를 운영하는 1인 사업자가 만들었어요. 개발자는 아니지만, AI(Claude)와 함께 기획하고 코드를 짜고 고쳐 가며 하나씩 만들었어요. 강의 자료를 만들고 상세페이지를 꾸미고 서류를 정리하면서 "이거 하나 하려고 매번 회원가입하고 파일을 남의 서버에 올려야 하나?" 싶었던 순간들이 출발점이었어요.</p>
+<h2>파일은 서버로 가지 않아요</h2>
+<p>벤토툴의 원칙은 하나예요. <strong>여러분의 파일은 여러분의 컴퓨터 밖으로 나가지 않는다.</strong> 모든 도구는 웹 브라우저 안에서 파일을 처리해요. 계약서, 신분증 사진, 고객 자료처럼 민감한 파일도 안심하고 쓸 수 있도록, 파일을 받아 저장하는 서버 자체를 두지 않았어요.</p>
+<p>다만 솔직하게 알려 드릴 점이 있어요. 배경 제거·얼굴 모자이크처럼 AI를 쓰는 도구는 처음 한 번 AI 프로그램 파일을 공개 CDN에서 내려받아요(이때도 여러분의 파일은 전송되지 않아요). '무료 사진 찾기'는 입력한 검색어를 Openverse로 보내 결과를 받아와요. 자세한 내용은 <a href="../privacy/">개인정보처리방침</a>에 적어 두었어요.</p>
+<h2>무료로 운영하는 방법</h2>
+<p>회원가입, 횟수 제한, 워터마크 없이 누구나 무료로 쓸 수 있어요. 사이트 운영비는 앞으로 페이지에 표시될 광고로 충당할 계획이에요.</p>
+<h2>계속 고쳐 나가요</h2>
+<p>도구가 잘 안 되거나, 이런 도구가 있으면 좋겠다는 의견이 있으면 알려 주세요. 하나씩 확인하고 고쳐 나갈게요.</p>`,
     },
     privacy: {
       title: "개인정보처리방침 | 벤토툴",
@@ -83,13 +104,34 @@ export const site = {
     },
     cats: { image: "Image tools", pdf: "PDF tools", video: "Video & audio tools", util: "Text & utilities" },
     nav: { tools: "All tools" },
+    about: "What this tool does",
     how: "How to use",
     faq: "FAQ",
+    tips: "Tips",
     related: "Try other tools",
     footer: {
+      about: "About",
       privacy: "Privacy Policy",
       contact: "Contact",
       note: "All files are processed in your browser and never stored anywhere.",
+    },
+    aboutPage: {
+      title: "About BentoTool | Who made it and why",
+      desc: "BentoTool is a free collection of file tools built by a solo business owner with AI. Every file is processed in your browser and never uploaded to a server.",
+      h1: "About BentoTool",
+      contactTitle: "Contact",
+      contactText: "For bug reports, tool suggestions or anything else, email us at",
+      body: `
+<p>BentoTool is a free site that gathers everyday file tools in one place. Like a bento box with a little of everything, it packs background removal, image compression, PDF merging, video conversion, word counting, QR codes and more into a single box.</p>
+<h2>Who made it</h2>
+<p>BentoTool was made by a solo business owner who runs the sales-education brand <strong>Aura Sales (아우라세일즈)</strong>. Not a professional developer — every tool was planned, coded and fixed step by step together with AI (Claude). It started from a simple frustration while making course materials and documents: why do I have to sign up and upload my files to someone else's server just to do one small thing?</p>
+<h2>Your files stay on your device</h2>
+<p>BentoTool has one rule: <strong>your files never leave your computer.</strong> Every tool processes files inside your web browser. There is no server that receives or stores your files, so you can use sensitive documents with peace of mind.</p>
+<p>To be fully transparent: AI tools such as background removal and face blur download their AI program files from a public CDN the first time (your files are not sent). 'Free Stock Photos' sends your search keywords to Openverse to fetch results. See the <a href="../privacy/">Privacy Policy</a> for details.</p>
+<h2>How it stays free</h2>
+<p>Anyone can use it for free, with no sign-up, limits or watermarks. We plan to cover running costs with ads shown on the pages.</p>
+<h2>Always improving</h2>
+<p>If a tool doesn't work for you, or there's a tool you wish existed, let us know. We read every message and keep improving.</p>`,
     },
     privacy: {
       title: "Privacy Policy | BentoTool",
@@ -468,7 +510,7 @@ export const tools = [
       ],
       faq: [
         ["인스타그램에 맞는 비율은 뭔가요?", "피드는 1:1(정사각형)이나 4:5(세로), 릴스·스토리는 9:16이에요."],
-        ["화질이 떨어지나요?", "자른 부분은 원본 화질 그대로 저장돼요."],
+        ["화질이 떨어지나요?", "자른 부분의 픽셀 크기(해상도)는 원본 그대로예요. PNG·WEBP는 같은 형식으로, 그 밖의 사진은 JPG(품질 95%)로 저장돼서 눈으로는 차이를 느끼기 어려워요."],
         ["사진이 업로드되나요?", "아니요. 내 브라우저 안에서만 처리돼요."],
       ],
       ui: { free: "자유", rotate: "↻ 회전", flipH: "⇋ 좌우 반전", save: "자르고 저장", another: "다른 사진", size: "결과 크기" },
@@ -487,7 +529,7 @@ export const tools = [
       ],
       faq: [
         ["Which ratio should I use for Instagram?", "Feed posts: 1:1 (square) or 4:5 (portrait). Reels and Stories: 9:16."],
-        ["Will the quality drop?", "No. The cropped area keeps the original resolution."],
+        ["Will the quality drop?", "The cropped area keeps its original resolution. PNG and WEBP keep their format; other photos are saved as JPG at 95% quality, so the difference is hard to see."],
         ["Is my photo uploaded?", "No. Everything happens in your browser."],
       ],
       ui: { free: "Free", rotate: "↻ Rotate", flipH: "⇋ Flip", save: "Crop & save", another: "Another photo", size: "Output size" },

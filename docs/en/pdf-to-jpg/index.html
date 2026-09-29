@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../../assets/style.css">
 
 
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"PDF to JPG","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which quality should I pick?","acceptedAnswer":{"@type":"Answer","text":"'Normal' is fine for social media and blogs. Choose 'High' for printing or zooming into small text."}},{"@type":"Question","name":"JPG or PNG?","acceptedAnswer":{"@type":"Answer","text":"JPG for photo-heavy pages, PNG for text and diagrams — it's sharper."}},{"@type":"Question","name":"Is my file uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Conversion happens in your browser."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"PDF to JPG","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which quality should I pick?","acceptedAnswer":{"@type":"Answer","text":"'Normal' is fine for social media and blogs. Choose 'High' for printing or zooming into small text."}},{"@type":"Question","name":"JPG or PNG?","acceptedAnswer":{"@type":"Answer","text":"JPG for photo-heavy pages, PNG for text and diagrams — it's sharper."}},{"@type":"Question","name":"Is my file uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Conversion happens in your browser."}},{"@type":"Question","name":"How different are 'Normal' and 'High'?","acceptedAnswer":{"@type":"Answer","text":"'High' is twice the width and height of 'Normal'. Files are larger and conversion takes longer."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -43,12 +43,15 @@
 </section>
 
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
-
 <section class="tool-info">
+  <h2>What this tool does</h2>
+  <p class="tool-intro">This tool turns every page of a PDF into a JPG or PNG image. It's handy for posting PDF content on social media, reusing slides as images, or adding pages to a web page. When it's done you'll see a preview of each page and can download them one by one or all at once as a ZIP.</p>
   <h2>How to use</h2>
   <ol class="steps"><li>Add the PDF you want to convert.</li><li>Choose quality and format (JPG or PNG).</li><li>Download pages one by one or all at once.</li></ol>
   <h2>FAQ</h2>
-  <div class="faq"><details><summary>Which quality should I pick?</summary><p>'Normal' is fine for social media and blogs. Choose 'High' for printing or zooming into small text.</p></details><details><summary>JPG or PNG?</summary><p>JPG for photo-heavy pages, PNG for text and diagrams — it's sharper.</p></details><details><summary>Is my file uploaded?</summary><p>No. Conversion happens in your browser.</p></details></div>
+  <div class="faq"><details><summary>Which quality should I pick?</summary><p>'Normal' is fine for social media and blogs. Choose 'High' for printing or zooming into small text.</p></details><details><summary>JPG or PNG?</summary><p>JPG for photo-heavy pages, PNG for text and diagrams — it's sharper.</p></details><details><summary>Is my file uploaded?</summary><p>No. Conversion happens in your browser.</p></details><details><summary>How different are 'Normal' and 'High'?</summary><p>'High' is twice the width and height of 'Normal'. Files are larger and conversion takes longer.</p></details></div>
+  <h2>Tips</h2>
+  <ul class="tips"><li>The pixel size of each image is shown under its preview.</li><li>Long PDFs take a while — wait until the progress bar finishes.</li><li>To convert only certain pages, extract them first with 'Split PDF'.</li></ul>
 </section>
 
 <section class="related">
@@ -87,10 +90,11 @@
     <span>Convert between JPG, PNG and WEBP</span>
   </a></div>
 </section>
+
 </main>
 <footer class="site-footer">
   <p>All files are processed in your browser and never stored anywhere.</p>
-  <p><a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
+  <p><a href="../../en/about/">About</a> · <a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
 </footer>
 <script>window.T={"lang":"en","ui":{"choose":"Choose files","orDrop":"or drop them here","pasteHint":"You can also paste with Ctrl+V","processing":"Processing…","waiting":"Waiting","failed":"Failed","download":"Download","downloadAll":"Download all","clear":"Clear all","remove":"Remove","moveUp":"Move up","moveDown":"Move down","privacyBadge":"🔒 Files never leave your device","addMore":"Add files"},"tool":{"quality":"Quality","normal":"Normal","high":"High","format":"Format","page":"Page","rendering":"Converting… {i}/{n}","another":"Another PDF","encrypted":"Can't open this PDF (password?)"}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>

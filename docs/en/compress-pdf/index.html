@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../../assets/style.css">
 
 
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Compress PDF","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which PDFs shrink the most?","acceptedAnswer":{"@type":"Answer","text":"Scanned documents and image-heavy PDFs. Text-only PDFs are already small and may not shrink much."}},{"@type":"Question","name":"What changes after compressing?","acceptedAnswer":{"@type":"Answer","text":"Each page is rebuilt as an image, so text in the compressed PDF can't be selected or searched. Keep your original."}},{"@type":"Question","name":"Is my file uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Compression happens in your browser."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"Compress PDF","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which PDFs shrink the most?","acceptedAnswer":{"@type":"Answer","text":"Scanned documents and image-heavy PDFs. Text-only PDFs are already small and may not shrink much."}},{"@type":"Question","name":"What changes after compressing?","acceptedAnswer":{"@type":"Answer","text":"Each page is rebuilt as an image, so text in the compressed PDF can't be selected or searched. Keep your original."}},{"@type":"Question","name":"Is my file uploaded?","acceptedAnswer":{"@type":"Answer","text":"No. Compression happens in your browser."}},{"@type":"Question","name":"What if the result is bigger?","acceptedAnswer":{"@type":"Answer","text":"If compression doesn't help, you get the original file back with a note saying it didn't get smaller."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -43,12 +43,15 @@
 </section>
 
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
-
 <section class="tool-info">
+  <h2>What this tool does</h2>
+  <p class="tool-intro">This tool shrinks scanned and image-heavy PDFs. Each page is redrawn as a compressed image and rebuilt into a new PDF, which works well when you hit email or upload size limits. Choose Strong, Medium or Light, and the result screen shows the before and after size.</p>
   <h2>How to use</h2>
   <ol class="steps"><li>Add the PDF you want to shrink.</li><li>Choose a compression level — stronger means smaller with slightly lower quality.</li><li>Click 'Compress' to download the smaller PDF.</li></ol>
   <h2>FAQ</h2>
-  <div class="faq"><details><summary>Which PDFs shrink the most?</summary><p>Scanned documents and image-heavy PDFs. Text-only PDFs are already small and may not shrink much.</p></details><details><summary>What changes after compressing?</summary><p>Each page is rebuilt as an image, so text in the compressed PDF can't be selected or searched. Keep your original.</p></details><details><summary>Is my file uploaded?</summary><p>No. Compression happens in your browser.</p></details></div>
+  <div class="faq"><details><summary>Which PDFs shrink the most?</summary><p>Scanned documents and image-heavy PDFs. Text-only PDFs are already small and may not shrink much.</p></details><details><summary>What changes after compressing?</summary><p>Each page is rebuilt as an image, so text in the compressed PDF can't be selected or searched. Keep your original.</p></details><details><summary>Is my file uploaded?</summary><p>No. Compression happens in your browser.</p></details><details><summary>What if the result is bigger?</summary><p>If compression doesn't help, you get the original file back with a note saying it didn't get smaller.</p></details></div>
+  <h2>Tips</h2>
+  <ul class="tips"><li>Start with 'Medium' and switch to 'Strong' if it's still too large.</li><li>Compressed PDFs lose selectable text, search and links — keep your original.</li><li>Text-only PDFs are already small and usually won't shrink this way.</li></ul>
 </section>
 
 <section class="related">
@@ -87,10 +90,11 @@
     <span>Convert between JPG, PNG and WEBP</span>
   </a></div>
 </section>
+
 </main>
 <footer class="site-footer">
   <p>All files are processed in your browser and never stored anywhere.</p>
-  <p><a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
+  <p><a href="../../en/about/">About</a> · <a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
 </footer>
 <script>window.T={"lang":"en","ui":{"choose":"Choose files","orDrop":"or drop them here","pasteHint":"You can also paste with Ctrl+V","processing":"Processing…","waiting":"Waiting","failed":"Failed","download":"Download","downloadAll":"Download all","clear":"Clear all","remove":"Remove","moveUp":"Move up","moveDown":"Move down","privacyBadge":"🔒 Files never leave your device","addMore":"Add files"},"tool":{"level":"Level","strong":"Strong (smallest)","medium":"Medium (recommended)","light":"Light (best quality)","run":"Compress","working":"Compressing… page {i}/{n}","result":"{a} → {b}","notSmaller":"This PDF is already small, so it didn't get smaller.","another":"Another PDF","note":"※ Text in the compressed PDF can't be selected or searched. Keep your original.","encrypted":"Can't open this PDF (password?)","download":"Download compressed PDF"}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
