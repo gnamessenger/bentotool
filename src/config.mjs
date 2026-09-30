@@ -8,7 +8,7 @@ export const config = {
   verify: { google: "FaPamoQVMZjes4f4_X2-MeLNNxnu2NcGe6pQE8Z2KxA", naver: "5c69044b719c940fa3668f9390e518f1aadfc9d2" },
 
   // 구글 애드센스 승인 후 "ca-pub-..." 값을 넣으면 광고 자리에 광고가 나와요. null이면 광고 자리가 안 보여요.
-  adsenseClient: null,
+  adsenseClient: "ca-pub-2722446823587481",   // 2026-09-30 애드센스 가입, 심사 대기
   adSlots: { top: "", bottom: "" },   // 애드센스에서 만든 광고 단위 ID
 
   // 내 상품·안내 링크. null이면 안 보여요. 도구 설명 아래(푸터 위)에 한 줄짜리 안내 문장 + 글자 링크로 나와요.

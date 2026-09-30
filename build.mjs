@@ -231,6 +231,8 @@ ${urls.map((u) => `  <url><loc>${config.domain}/${u}</loc></url>`).join("\n")}
 </urlset>
 `);
 write("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${config.domain}/sitemap.xml\n`);
+// 애드센스 판매자 인증 파일 (빌드 때마다 docs를 새로 만들므로 여기서 생성)
+if (config.adsenseClient) write("ads.txt", `google.com, ${config.adsenseClient.replace(/^ca-/, "")}, DIRECT, f08c47fec0942fa0\n`);
 write(".nojekyll", "");
 
 console.log(`빌드 완료: 페이지 ${urls.length}개 → docs/`);
