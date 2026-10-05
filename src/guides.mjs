@@ -359,4 +359,274 @@ export const guides = {
       ],
     },
   },
+
+  "heic-to-jpg": {
+    ko: {
+      intro: "아이폰으로 찍은 HEIC(HEIF) 사진을 JPG나 PNG로 바꾸는 도구예요. HEIC는 용량이 작아 좋지만 윈도우 PC, 회사 메일, 쇼핑몰·관공서 업로드 같은 곳에서 안 열리는 일이 많아요. 사진을 올리면 내 브라우저 안에서 바로 바뀌고, 여러 장을 한꺼번에 올려 ZIP으로 받을 수도 있어요. 가로세로 크기는 원본 그대로예요.",
+      faq: [
+        ["변환하면 촬영 날짜·위치 정보도 남나요?", "아니요. 바뀐 JPG·PNG에는 촬영 날짜, GPS 위치 같은 사진 정보(EXIF)가 들어가지 않아요. 위치 정보를 지우고 보내고 싶을 때는 오히려 편해요."],
+        ["변환이 '실패'로 나와요.", "파일이 손상됐거나, 아주 드문 HEIC 종류(연속 촬영 묶음, 특수 HDR 등)일 수 있어요. 같은 사진이 계속 안 되면 하단 문의 메일로 알려 주세요. 확인해서 고쳐 나갈게요."],
+      ],
+      tips: [
+        "품질 90이면 눈으로 원본과 차이를 느끼기 어려워요. 용량을 더 줄이고 싶으면 80 정도로 낮춰 보세요.",
+        "앞으로 JPG로 찍고 싶다면 아이폰 설정 > 카메라 > 포맷에서 '높은 호환성'을 고르세요.",
+        "업로드 사이트에 용량 제한이 있다면 '사진 용량 KB 맞추기'로 한 번 더 줄이면 돼요. 그 도구도 HEIC를 바로 받아요.",
+      ],
+    },
+    en: {
+      intro: "This tool converts iPhone HEIC (HEIF) photos to JPG or PNG. HEIC files are small, but they often won't open on Windows PCs, in work email, or on shopping and government upload forms. Conversion happens right inside your browser, and you can drop many photos at once and download them as a ZIP. Dimensions stay the same as the original.",
+      faq: [
+        ["Is the date and location info kept?", "No. The converted JPG/PNG doesn't include photo metadata (EXIF) such as capture date or GPS location — handy when you want to share without location data."],
+        ["A photo shows 'Failed'.", "The file may be damaged or an unusual HEIC variant (burst sequences, special HDR, etc.). If it keeps failing, email us via the link at the bottom so we can look into it."],
+      ],
+      tips: [
+        "Quality 90 is practically indistinguishable from the original. Try around 80 for smaller files.",
+        "To shoot JPG from now on, set iPhone Settings > Camera > Formats to 'Most Compatible'.",
+        "If a site has a file-size limit, run the result through 'Resize Image to KB' — it accepts HEIC directly too.",
+      ],
+    },
+  },
+
+  "image-to-kb": {
+    ko: {
+      intro: "사진 파일을 내가 정한 용량(예: 100KB, 200KB, 1MB) 이하로 자동으로 맞춰 주는 도구예요. 공공기관 민원, 입사 지원, 자격증·시험 접수처럼 '사진은 ○○KB 이하'라는 조건이 있을 때 쓰면 돼요. 먼저 화질을 조금씩 낮춰 보고, 그래도 크면 가로세로 크기를 줄여서 목표 안에서 가장 좋은 화질을 찾아요. 결과마다 '목표 이하'인지 확인해서 표시하고, 아이폰 HEIC 사진도 바로 받아요.",
+      faq: [
+        ["사이트가 '가로 ○○px'처럼 크기도 정해 뒀어요.", "먼저 '이미지 크기 조절'로 가로 크기를 맞춘 다음, 여기서 '가로세로 크기 그대로'를 골라 용량만 줄이세요."],
+        ["목표를 못 맞췄다고 나와요.", "목표가 아주 작거나 '가로세로 크기 그대로'를 골랐을 때 생길 수 있어요. 목표 용량을 조금 늘리거나 '자동'으로 바꿔 보세요. 못 맞춘 결과는 ⚠ 표시로 알려 드려요."],
+      ],
+      tips: [
+        "1KB를 1,000바이트로 계산해서, 1,024바이트로 계산하는 사이트에서도 넉넉히 통과해요.",
+        "증명사진처럼 얼굴이 중요한 사진은 목표를 너무 작게 잡으면 흐려져요. 허용되는 최대 용량을 고르는 게 가장 선명해요.",
+        "대부분의 접수 사이트는 JPG만 받아요. 특별히 WEBP를 요구하지 않으면 JPG로 두세요.",
+      ],
+    },
+    en: {
+      intro: "This tool automatically shrinks photos to a file size you choose — 100KB, 200KB, 1MB or any custom value. Use it whenever a form says 'photo must be under ___KB': government services, job applications, exam registrations. It first lowers the quality step by step and, if that's not enough, reduces the dimensions, keeping the best quality that still fits. Each result is checked and marked if it's under the target, and iPhone HEIC photos are accepted directly.",
+      faq: [
+        ["The site also requires a specific width in pixels.", "First set the width with 'Resize Image', then come back and choose 'Keep dimensions' so only the file size is reduced."],
+        ["It says it couldn't reach the target.", "This happens with very small targets or when 'Keep dimensions' is selected. Try a slightly larger target or switch to 'Auto'. Results that miss the target are clearly marked with ⚠."],
+      ],
+      tips: [
+        "1KB is counted as 1,000 bytes, so results also pass on sites that count 1KB as 1,024 bytes.",
+        "For ID photos, a very small target makes faces blurry. Choosing the largest allowed size gives the sharpest result.",
+        "Most application sites only accept JPG. Keep JPG unless WEBP is specifically requested.",
+      ],
+    },
+  },
+
+  "id-photo": {
+    ko: {
+      intro: "집에서 찍은 사진으로 이력서·자격증·비자 서류용 증명사진을 만드는 도구예요. 반명함(3×4cm), 여권(3.5×4.5cm), 명함판(5×7cm), 미국 비자(2×2인치) 규격 중 하나를 고르면 그 비율로 크롭 틀이 고정되고, 300dpi 기준 픽셀 크기의 JPG로 저장돼요. 배경은 AI가 지운 뒤 흰색·연파랑·연회색이나 원하는 색으로 바꿀 수 있고, 원본 배경을 그대로 둘 수도 있어요. 4×6인치(약 10×15cm) 인화지 한 장에 여러 장을 배치한 인화용 시트도 만들 수 있어요.",
+      faq: [["인화용 시트 한 장에 몇 장 들어가요?", "인화용 시트 한 장에 반명함은 9장, 여권 규격은 8장, 미국 비자 규격은 2장, 명함판은 2장이 들어가요."]],
+      tips: [
+        "밝고 단색인 벽 앞에서, 그림자 없이 정면으로 찍으면 배경 지우기가 가장 깔끔해요.",
+        "머리카락 끝처럼 가는 부분은 AI가 완벽하게 지우지 못할 수 있어요. 결과를 확대해서 꼭 확인하세요.",
+        "여권·비자처럼 공식 요건이 있는 사진은 편집한 사진을 받지 않는 곳이 있어요. 제출 전에 기관 안내를 꼭 확인하세요.",
+      ],
+    },
+    en: {
+      intro: "This tool turns a photo taken at home into an ID photo for résumés, certificates or visa paperwork. Pick a size — Korean résumé size (3×4 cm), Korean passport (3.5×4.5 cm), 5×7 cm or US visa (2×2 in) — and the crop frame locks to that ratio, then saves a JPG at the 300 dpi pixel size. AI can remove the background and replace it with white, light blue, light gray or any color, or you can keep the original. You can also make a print sheet with several copies on one 4×6 inch (about 10×15 cm) print.",
+      faq: [["How many photos fit on the print sheet?", "9 résumé-size (3×4 cm) photos, 8 passport-size photos, 2 US visa photos or 2 photos at 5×7 cm."]],
+      tips: [
+        "Shoot facing the camera in front of a bright, plain wall with no shadows for the cleanest cutout.",
+        "Fine strands of hair may not be removed perfectly. Zoom in and check the result.",
+        "Passport and visa offices often reject edited photos. Always check the official requirements before submitting.",
+      ],
+    },
+  },
+
+  "image-to-text": {
+    ko: {
+      intro: "사진이나 화면 캡처 속 글자를 읽어서, 복사하고 고칠 수 있는 텍스트로 바꿔 주는 도구예요(OCR). 카톡 캡처 내용을 문서로 옮기거나, 책·안내문 사진에서 문장을 따올 때 일일이 다시 치지 않아도 돼요. 한국어와 영어를 함께 읽을 수 있고, 결과는 복사하거나 .txt 파일로 저장할 수 있어요. 글자 인식은 내 브라우저 안에서 이뤄져서 사진이 서버로 올라가지 않아요.",
+      faq: [["줄바꿈이나 띄어쓰기가 원본과 달라요.", "사진 속 줄 모양대로 줄이 바뀌고, 띄어쓰기가 가끔 빠지거나 더 들어가요. 결과 칸에서 바로 고친 뒤 복사하세요."]],
+      tips: [
+        "글자가 화면에 크게, 반듯하게 보이도록 찍거나 캡처하면 훨씬 정확해요. 필요한 부분만 잘라서 올리면 더 좋아요.",
+        "영어만 있는 사진은 언어를 '영어만'으로 바꾸면 더 빠르고 정확할 수 있어요.",
+        "손글씨, 아주 작은 글씨, 기울어진 사진, 무늬 있는 배경 위 글자는 잘 못 읽어요. 이름·숫자·계좌번호는 꼭 원본과 대조하세요.",
+      ],
+    },
+    en: {
+      intro: "This tool reads the text in a photo or screenshot and turns it into text you can copy and edit (OCR). Use it to grab sentences from a picture of a book or notice, or to move chat screenshots into a document without retyping. It reads Korean and English together, and you can copy the result or save it as a .txt file. Recognition runs inside your browser, so your image is never uploaded.",
+      faq: [["Line breaks and spacing don't match the original.", "Lines break where they do in the image, and spaces are sometimes missed or added. Fix them in the result box before copying."]],
+      tips: [
+        "Large, straight, sharp text gives much better results. Cropping to just the part you need helps too.",
+        "For English-only images, switch the language to 'English only' — it can be faster and more accurate.",
+        "Handwriting, tiny text, tilted photos and text on busy backgrounds are hard to read. Always double-check names, numbers and account numbers.",
+      ],
+    },
+  },
+
+  "add-watermark": {
+    ko: {
+      intro: "사진과 PDF에 글자나 로고 워터마크를 넣는 도구예요. 상품 사진에 브랜드 이름을 넣거나, 신분증·통장 사본에 '○○ 제출용'을 표시하거나, 강의 자료 PDF에 로고를 찍을 때 쓰면 좋아요. 크기·색·투명도·각도를 조절하고 9곳 중 원하는 위치에 두거나 바둑판처럼 반복해서 채울 수 있어요. 여러 파일에 같은 설정을 한 번에 적용하고, 파일은 업로드되지 않아요.",
+      faq: [["사진마다 크기가 다른데 워터마크 크기는 어떻게 되나요?", "워터마크 크기는 각 사진의 짧은 변을 기준으로 정해져서, 큰 사진이든 작은 사진이든 비슷한 비율로 들어가요."]],
+      tips: [
+        "사본 악용을 막으려면 '바둑판 반복'에 투명도 30~50% 정도가 좋아요. 내용은 읽히면서 잘라 내기는 어려워요.",
+        "로고는 배경이 투명한 PNG로 고르세요. 흰 배경 로고는 네모난 흰 상자가 같이 찍혀요.",
+        "JPG 사진은 품질 92%의 JPG로, PNG·WEBP는 같은 형식으로 저장돼요. PDF는 모든 쪽에 워터마크 그림이 얹히고 원래 글자는 그대로 남아요.",
+      ],
+    },
+    en: {
+      intro: "This tool adds a text or logo watermark to images and PDFs. Use it to brand product photos, mark ID or bank-statement copies as 'for submission only', or stamp a logo on course PDFs. Adjust size, color, opacity and angle, place it in one of 9 spots or repeat it as a tiled pattern. The same settings apply to every file at once, and nothing is uploaded.",
+      faq: [["My images are different sizes. How big will the watermark be?", "The watermark is sized relative to each image's shorter side, so it looks proportionally the same on large and small images."]],
+      tips: [
+        "To discourage misuse of document copies, use 'Tile' with about 30–50% opacity — still readable, but hard to crop out.",
+        "Use a PNG logo with a transparent background. A logo on a white background will stamp a white box too.",
+        "JPG photos are saved as JPG at 92% quality; PNG and WEBP keep their format. For PDFs, the watermark is placed on every page as an image and the original text stays intact.",
+      ],
+    },
+  },
+
+  "remove-object": {
+    ko: {
+      intro: "사진에서 필요 없는 사람·물체·잡동사니를 붓으로 칠하면, AI가 그 자리를 주변 배경과 어울리게 새로 채워 주는 도구예요. 여행 사진에 끼어든 행인, 하늘을 가로지르는 전선, 바닥의 쓰레기나 얼룩을 지울 때 쓰면 좋아요. 한 번 지운 뒤에도 남은 자국을 다시 칠해서 여러 번 이어서 지울 수 있고, 되돌리기로 앞 단계로 돌아갈 수도 있어요. AI 모델이 내 브라우저 안에서 돌아가서 사진이 서버로 올라가지 않아요.",
+      faq: [["지운 자리가 뭉개져 보여요.", "AI는 가려진 뒤쪽을 실제로 아는 게 아니라 주변을 보고 그럴듯하게 그려 넣어요. 하늘·바다·잔디·벽처럼 단순한 배경의 작은 물체는 자연스럽지만, 사진에서 아주 큰 부분이나 글자·얼굴처럼 복잡한 곳은 흐릿하거나 어색할 수 있어요. 이럴 땐 조금씩 나눠서 여러 번 지워 보세요."]],
+      tips: [
+        "물체보다 조금 넉넉하게, 그림자까지 같이 칠하면 자국이 덜 남아요.",
+        "큰 물체는 한 번에 칠하기보다 부분부분 나눠서 지우면 더 깔끔할 때가 많아요.",
+        "긴 변이 4096px보다 큰 사진은 4096px로 줄여서 작업하고, 저장도 그 크기로 돼요.",
+      ],
+    },
+    en: {
+      intro: "Brush over unwanted people, objects or clutter, and AI repaints that spot to blend in with the surroundings. It's great for photobombers in travel shots, power lines across the sky, or litter and stains on the ground. After each erase you can paint over leftovers and erase again, and Undo takes you back a step. The AI model runs inside your browser, so your photo is never uploaded.",
+      faq: [["The erased area looks smudged.", "The AI doesn't know what was really behind the object — it paints in something plausible from the surroundings. Small objects on simple backgrounds like sky, sea, grass or walls look natural, but very large areas or detailed spots like text and faces can look blurry or odd. Try erasing in several smaller passes."]],
+      tips: [
+        "Paint a little beyond the object and include its shadow to avoid leftover outlines.",
+        "For large objects, erasing piece by piece often looks cleaner than doing it all at once.",
+        "Photos larger than 4096px on the long side are reduced to 4096px for editing and saved at that size.",
+      ],
+    },
+  },
+
+  "upscale-image": {
+    ko: {
+      intro: "작거나 흐린 사진을 AI(Real-ESRGAN)로 2배 또는 4배 크게 만들면서, 뭉개진 경계와 노이즈를 다듬어 더 또렷하게 보여 주는 도구예요. 오래된 사진, 메신저로 받아 작아진 사진, 썸네일을 크게 써야 할 때 좋아요. 큰 사진도 작은 조각으로 나눠 하나씩 처리해서 브라우저가 멈추지 않게 했고, 진행률과 남은 시간을 보여 줘요. 사진은 서버로 올라가지 않고 내 브라우저 안에서만 처리돼요.",
+      faq: [["원래 없던 디테일도 살아나나요?", "아니요. AI가 사진을 보고 그럴듯하게 선명하게 다듬는 것이라, 너무 작아서 알아볼 수 없는 글자나 얼굴이 원래 모습으로 되살아나지는 않아요. 피부나 잔디처럼 결이 고운 부분은 매끈하게(그림처럼) 바뀔 수 있어요."]],
+      tips: [
+        "원본이 작을수록 효과가 커요. 이미 큰 사진은 2배만으로도 충분한 경우가 많아요.",
+        "결과 화면에서 그림을 끌어 여러 부분을 비교해 보고, 마음에 들 때 저장하세요.",
+        "CPU 모드에서는 시간이 꽤 걸려요. 크롬·엣지 최신 버전에서는 그래픽 가속(WebGPU)이 켜져 훨씬 빨라질 수 있어요.",
+      ],
+    },
+    en: {
+      intro: "This tool uses AI (Real-ESRGAN) to enlarge small or blurry photos 2× or 4× while cleaning up soft edges and noise, so they look sharper. It's handy for old photos, images shrunk by messaging apps, or thumbnails you need bigger. Large photos are split into small tiles and processed one by one so your browser doesn't freeze, with progress and time remaining shown. Your photo is processed only in your browser and never uploaded.",
+      faq: [["Can it recover details that weren't there?", "No. The AI sharpens the photo in a plausible way, but text or faces too small to make out won't come back as they really were. Fine textures like skin or grass can turn smoother, a bit like a painting."]],
+      tips: [
+        "The smaller the original, the bigger the improvement. For already-large photos, 2× is often enough.",
+        "Drag the result to compare different areas before you save.",
+        "CPU mode takes a while. In the latest Chrome or Edge, graphics acceleration (WebGPU) may kick in and make it much faster.",
+      ],
+    },
+  },
+
+  "organize-pdf": {
+    ko: {
+      intro: "PDF의 모든 페이지를 작은 그림으로 펼쳐 놓고, 눈으로 보면서 페이지를 돌리고·빼고·순서를 바꾸는 도구예요. 옆으로 누운 스캔 페이지 바로잡기, 빈 페이지나 필요 없는 페이지 빼기, 순서가 뒤섞인 서류 정리에 쓰면 돼요. 페이지를 그림으로 바꾸지 않고 그대로 옮겨 담기 때문에 글자 선택과 화질은 원본과 같아요. 파일은 내 브라우저 안에서만 처리돼요.",
+      faq: [["페이지가 아주 많은 PDF도 되나요?", "네. 썸네일은 화면에 보이는 페이지부터 작게 한 장씩 그려서 무겁지 않게 했어요. 다만 아주 큰 파일은 컴퓨터·휴대폰 메모리에 따라 열고 저장하는 데 시간이 걸릴 수 있어요."]],
+      tips: [
+        "실수로 뺀 페이지는 '처음 상태로'를 누르면 모두 돌아와요. (회전·순서도 처음으로 돌아가요)",
+        "카드 아래 '원래 n쪽' 표시로 원본에서 몇 쪽이었는지 확인할 수 있어요.",
+        "필요한 페이지만 따로 뽑고 싶다면 'PDF 나누기'가, 여러 PDF를 하나로 묶으려면 'PDF 합치기'가 더 빨라요.",
+      ],
+    },
+    en: {
+      intro: "This tool lays out every page of your PDF as a thumbnail so you can rotate, remove and reorder pages while you look at them. Use it to fix sideways scans, drop blank or unwanted pages, or sort a jumbled document. Pages are copied as they are rather than turned into images, so text stays selectable and quality is unchanged. Everything happens inside your browser.",
+      faq: [["Does it work with very long PDFs?", "Yes. Thumbnails are drawn small, one at a time, starting with the pages on screen, to keep things light. Very large files may still take a while to open and save depending on your device's memory."]],
+      tips: [
+        "Removed a page by mistake? 'Start over' brings every page back (and resets rotation and order).",
+        "The 'orig. p.n' label under each card shows where the page was in the original file.",
+        "To pull out just a few pages use 'Split PDF'; to combine several PDFs use 'Merge PDF'.",
+      ],
+    },
+  },
+
+  "sign-pdf": {
+    ko: {
+      intro: "계약서·신청서·동의서 같은 PDF에 서명이나 도장을 넣는 도구예요. 마우스나 손가락으로 직접 서명을 그리거나, 서명·도장 이미지를 올리거나, 이름·날짜를 글자로 적어서 원하는 페이지의 원하는 자리에 놓으면 돼요. 여러 개를 넣을 수 있고, 같은 서명을 모든 쪽 같은 자리에 한 번에 넣을 수도 있어요. 파일은 내 브라우저 안에서만 처리돼요.",
+      faq: [["넣은 글자도 PDF에서 검색되나요?", "아니요. 한글 글꼴을 PDF에 넣지 않고 글자를 그림으로 바꿔서 넣기 때문에, 넣은 이름·날짜는 선택하거나 검색할 수 없어요. 원래 PDF에 있던 글자는 그대로예요."]],
+      tips: [
+        "도장은 흰 종이에 찍어 밝은 곳에서 위에서 똑바로 찍은 사진이 가장 깔끔하게 투명해져요.",
+        "직접 그릴 때는 서명 칸을 넉넉히 쓰고 크게 그린 뒤, 페이지에서 크기를 줄이면 더 매끈해 보여요.",
+        "한 번 만든 서명은 '만든 서명'에 남아 있어서, 다른 페이지로 넘어가 눌러 주면 또 넣을 수 있어요. (새로고침하면 사라져요)",
+      ],
+    },
+    en: {
+      intro: "This tool adds a signature or stamp to PDFs such as contracts, applications and consent forms. Draw your signature with a mouse or finger, upload a signature or stamp image, or type a name or date, then place it wherever you need on any page. You can add several, and even put the same signature in the same spot on every page at once. Everything happens inside your browser.",
+      faq: [["Is the text I add searchable?", "No. Text is turned into an image instead of embedding a font, so the names and dates you add can't be selected or searched. The original text in the PDF is unchanged."]],
+      tips: [
+        "For stamps, a well-lit, straight-on photo of the stamp on white paper becomes transparent most cleanly.",
+        "Draw your signature large in the box, then shrink it on the page — it looks smoother.",
+        "Signatures you make stay under 'Your signatures', so you can go to another page and click to add them again (they're cleared when you reload).",
+      ],
+    },
+  },
+
+  "trim-video": {
+    ko: {
+      intro: "동영상에서 필요한 구간만 잘라 MP4로 저장하는 도구예요. 강의·회의 녹화에서 필요한 부분만 남기거나, 긴 영상을 SNS용으로 짧게 자를 때 쓰면 좋아요. 영상 편집 프로그램 ffmpeg를 브라우저용(ffmpeg.wasm)으로 만든 엔진을 써서, 설치 없이 내 컴퓨터 안에서 처리돼요. '빠르게'는 화질 그대로 몇 초 만에, '정확하게'는 원하는 시점에 딱 맞게 잘라요.",
+      faq: [
+        ["처음에 시간이 걸리는 이유는요?", "처음 한 번은 변환 엔진(약 9MB 다운로드, 압축을 풀면 약 32MB)을 받아야 해요. 그다음부터는 브라우저에 저장돼서 바로 시작돼요."],
+        ["큰 영상도 자를 수 있나요?", "원본은 통째로 메모리에 올리지 않아서 테스트에서 2GB 영상의 10초 구간도 몇 초 만에 잘렸어요. 다만 잘라낸 결과가 1GB를 넘을 만큼 길면 메모리 부족으로 실패할 수 있어요."],
+      ],
+      tips: [
+        "영상을 재생하다 원하는 장면에서 멈추고 '지금 위치를 시작으로'를 누르면 편해요. '구간 미리보기'로 확인한 뒤 자르세요.",
+        "'빠르게'로 잘랐는데 앞부분이 조금 더 들어갔다면 '정확하게'로 다시 잘라 보세요.",
+        "AVI처럼 브라우저가 미리보기를 못 하는 형식도 시작·끝을 숫자(초)로 적으면 자를 수 있어요.",
+      ],
+    },
+    en: {
+      intro: "This tool cuts out the part of a video you need and saves it as MP4. Use it to keep just the key part of a lecture or meeting recording, or to shorten a long video for social media. It runs ffmpeg compiled for the browser (ffmpeg.wasm), so everything happens on your own device without installing anything. Fast keeps the original quality and finishes in seconds; Exact cuts precisely where you set it.",
+      faq: [
+        ["Why does the first run take longer?", "The first time, your browser downloads the video engine (about 9 MB, roughly 32 MB unpacked). After that it's cached and starts right away."],
+        ["Can I trim large videos?", "The original isn't loaded into memory all at once — in our test, a 10-second clip from a 2 GB video was cut in a few seconds. But if the trimmed result itself is over about 1 GB, it may fail when memory runs out."],
+      ],
+      tips: [
+        "Pause at the moment you want and click 'Set start here', then use 'Preview clip' to check before trimming.",
+        "If a Fast trim starts a bit early, trim again with Exact.",
+        "Formats your browser can't preview, like AVI, can still be trimmed — just type the start and end in seconds.",
+      ],
+    },
+  },
+
+  "convert-video": {
+    ko: {
+      intro: "아이폰 MOV, AVI, MKV, WEBM 같은 동영상을 어디서나 잘 열리는 MP4(H.264·AAC)나 WEBM으로 바꾸는 도구예요. '이 파일은 재생이 안 돼요', '업로드가 안 돼요' 할 때 MP4로 바꾸면 대부분 해결돼요. 해상도를 1080p·720p·480p로 낮춰서 용량도 함께 줄일 수 있어요. 영상 편집 프로그램 ffmpeg를 브라우저용(ffmpeg.wasm)으로 만든 엔진이 내 컴퓨터 안에서 처리해요.",
+      faq: [["처음에 시간이 걸리는 이유는요?", "처음 한 번은 변환 엔진(약 9MB 다운로드, 압축을 풀면 약 32MB)을 받아야 해요. 그다음부터는 브라우저에 저장돼서 바로 시작돼요."]],
+      tips: [
+        "이미 H.264로 된 MKV·MOV를 '원본 그대로' MP4로 바꾸면 다시 만들지 않고 옮겨 담기만 해서 몇 초 만에 끝나요.",
+        "아이폰 영상(HEVC)이 윈도우나 다른 기기에서 안 열리면 MP4로 바꿔 보세요. H.264로 다시 만들어져요.",
+        "변환하는 동안 이 탭을 닫지 마세요. 오래 걸리면 '취소'를 누르고 해상도를 낮추거나 영상을 잘라서 나눠 변환하세요.",
+      ],
+    },
+    en: {
+      intro: "This tool converts videos such as iPhone MOV, AVI, MKV and WEBM into MP4 (H.264 · AAC) that opens almost everywhere, or into WEBM. When a file won't play or won't upload, converting it to MP4 usually fixes it. You can also lower the resolution to 1080p, 720p or 480p to make the file smaller. It runs ffmpeg compiled for the browser (ffmpeg.wasm) on your own device.",
+      faq: [["Why does the first run take longer?", "The first time, your browser downloads the video engine (about 9 MB, roughly 32 MB unpacked). After that it's cached and starts right away."]],
+      tips: [
+        "MKV or MOV files that already use H.264, converted to MP4 at 'Keep original', are just repackaged — it takes seconds.",
+        "If iPhone (HEVC) videos won't open on Windows or other devices, convert them to MP4 — they're re-encoded to H.264.",
+        "Keep this tab open while converting. If it's taking too long, click Cancel and lower the resolution, or trim the video into parts first.",
+      ],
+    },
+  },
+
+  "video-to-subtitles": {
+    ko: {
+      intro: "영상이나 녹음 파일의 말소리를 AI(OpenAI가 공개한 Whisper 모델)가 받아써서, 시간이 붙은 자막(SRT·VTT)과 글(TXT)로 만들어 주는 도구예요. 유튜브·릴스 자막, 강의·회의 녹취록, 상담 녹음 정리에 쓰면 좋아요. 받아쓴 자막은 영상과 함께 미리 보면서 글자와 시간을 바로 고친 뒤 저장할 수 있어요. AI가 내 브라우저 안에서 돌아가기 때문에 영상과 소리는 어디로도 올라가지 않아요.",
+      faq: [["긴 영상도 되나요?", "돼요. 다만 속도는 컴퓨터마다 크게 달라요. 저희 테스트 컴퓨터에서 11분 영상은 그래픽카드를 쓰면 '정확'으로 약 1분 30초, 그래픽카드 없이(CPU) '빠름'으로 약 4분 걸렸어요. CPU로 '정확'을 쓰면 영상 길이만큼 걸릴 수 있어요. 영상 전체 소리를 메모리에 올려서 처리하므로 1시간이 넘는 영상이나 1GB가 넘는 파일은 브라우저가 멈추거나 실패할 수 있어요. 그럴 땐 'MP3 추출'로 소리만 뽑거나 영상을 나눠서 올려 주세요."]],
+      tips: [
+        "작은 모델('빠름')은 한국어에서 틀리는 글자가 꽤 많아요. 한국어 영상은 '정확' 이상을 쓰고, 그래픽카드가 있는 컴퓨터라면 '가장 정확'이 훨씬 좋아요.",
+        "배경음악이 크거나 여러 사람이 동시에 말하면 정확도가 떨어져요. 끝부분이나 조용한 구간에 '시청해 주셔서 감사합니다' 같은 엉뚱한 문장이 생기면 ✕로 지우세요.",
+        "자막 시간은 1초 안팎으로 어긋날 수 있어요. ▶로 재생해 보면서 시간 칸을 고치면 돼요. 캡컷·프리미어·유튜브에는 SRT 파일을 그대로 올리면 돼요.",
+      ],
+    },
+    en: {
+      intro: "This tool uses AI (OpenAI's open Whisper model) to transcribe the speech in a video or audio file into timed subtitles (SRT, VTT) and plain text (TXT). Use it for YouTube or Reels captions, lecture and meeting transcripts, or call recordings. You can preview the subtitles with your video and fix any words or timings before saving. The AI runs inside your browser, so your video and audio are never uploaded.",
+      faq: [["Does it work with long videos?", "Yes, but speed varies a lot between computers. On our test PC an 11-minute video took about 1.5 minutes with Accurate on the graphics card, and about 4 minutes with Fast on the CPU alone. Accurate on the CPU can take about as long as the video itself. The whole soundtrack is held in memory, so videos over an hour or files over 1 GB may make the browser stall or fail — extract the audio with 'Video to MP3' first or split the video."]],
+      tips: [
+        "Clear English speech came out well even with Fast in our tests. For other languages such as Korean, the smaller model makes noticeably more mistakes — use Accurate or Most accurate.",
+        "Loud background music or people talking over each other lowers accuracy. If an odd line like 'Thanks for watching' appears at the end or in a silent part, delete it with ✕.",
+        "Timings can be off by about a second. Play a line with ▶ and adjust the time boxes. SRT files can be uploaded directly to YouTube, CapCut or Premiere.",
+      ],
+    },
+  },
 };
