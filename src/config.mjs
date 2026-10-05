@@ -18,7 +18,7 @@ export const config = {
     ko: {
       text: "🔧 이 도구 사이트, 코딩 몰라도 AI로 만들었어요",
       cta: "무료로 만드는 법 보기",
-      url: "https://salesscript-mauve.vercel.app/store.html#free-list",
+      url: "https://salesscript-mauve.vercel.app/free-ai-tool-site.html",
     },
     en: null,   // 영어 페이지는 광고만 둘 예정
   },
