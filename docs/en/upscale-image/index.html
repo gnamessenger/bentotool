@@ -31,6 +31,7 @@
   </a>
   <nav>
     <a href="../../en/#tools">All tools</a>
+    
     <a class="lang" href="../../upscale-image/" hreflang="ko">🌐 한국어</a>
   </nav>
 </header>
@@ -46,12 +47,14 @@
 <section class="tool-info">
   <h2>What this tool does</h2>
   <p class="tool-intro">This tool uses AI (Real-ESRGAN) to enlarge small or blurry photos 2× or 4× while cleaning up soft edges and noise, so they look sharper. It's handy for old photos, images shrunk by messaging apps, or thumbnails you need bigger. Large photos are split into small tiles and processed one by one so your browser doesn't freeze, with progress and time remaining shown. Your photo is processed only in your browser and never uploaded.</p>
+  
   <h2>How to use</h2>
   <ol class="steps"><li>Upload your photo.</li><li>Choose 2× or 4× and click 'Start upscaling'.</li><li>Zoom in to compare with the original, then save.</li></ol>
   <h2>FAQ</h2>
   <div class="faq"><details><summary>Is my photo uploaded?</summary><p>No. The AI runs inside your browser, so your photo is never sent anywhere.</p></details><details><summary>Why is the first run slow?</summary><p>The first time, your browser downloads the AI model (about 5 MB) and its runtime (about 6 MB). After that they're stored in your browser.</p></details><details><summary>How long does it take?</summary><p>It depends a lot on the photo size and your device. On our PC (Chrome), with graphics acceleration (WebGPU) a 2-megapixel photo took about 5 seconds and a 4-megapixel one about 10 seconds. In CPU mode (no graphics acceleration), about 1 megapixel took around 2 minutes. Phones and older computers may be slower; the time remaining is shown while it works.</p></details><details><summary>How big can my photo be?</summary><p>Results are kept under about 16 megapixels. With graphics acceleration, 2× handles originals up to about 4 megapixels (e.g. 2448×1632) and 4× up to about 1 megapixel (e.g. 1152×864). In CPU mode both are limited to about 1 megapixel so it doesn't take too long. Larger photos are automatically reduced to that size first.</p></details><details><summary>Can it recover details that weren't there?</summary><p>No. The AI sharpens the photo in a plausible way, but text or faces too small to make out won't come back as they really were. Fine textures like skin or grass can turn smoother, a bit like a painting.</p></details></div>
   <h2>Tips</h2>
   <ul class="tips"><li>The smaller the original, the bigger the improvement. For already-large photos, 2× is often enough.</li><li>Drag the result to compare different areas before you save.</li><li>CPU mode takes a while. In the latest Chrome or Edge, graphics acceleration (WebGPU) may kick in and make it much faster.</li></ul>
+  
 </section>
 
 <section class="related">
@@ -95,6 +98,7 @@
 <footer class="site-footer">
   <p>All files are processed in your browser and never stored anywhere.</p>
   <p><a href="../../en/about/">About</a> · <a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
+  <p>Operated by Aura Sales (아우라세일즈) | Business registration no. 825-90-01995 | 366 Maesonggosaek-ro, #205, Hwaseong-si, Gyeonggi-do, Republic of Korea</p>
 </footer>
 <script>window.T={"lang":"en","ui":{"choose":"Choose files","orDrop":"or drop them here","pasteHint":"You can also paste with Ctrl+V","processing":"Processing…","waiting":"Waiting","failed":"Failed","download":"Download","downloadAll":"Download all","clear":"Clear all","remove":"Remove","moveUp":"Move up","moveDown":"Move down","privacyBadge":"🔒 Files never leave your device","addMore":"Add files"},"tool":{"scale":"Scale","times":"{n}×","run":"Start upscaling","another":"Another photo","again":"Try another scale","sizeLine":"Original {w}×{h} → Result {W}×{H}","shrunk":"This photo is large, so it will be reduced to {w}×{h} first.","cpuNote":"Graphics acceleration isn't available on this device, so it runs on the CPU. This can take a few minutes.","preparing":"Preparing AI…","downloading":"Downloading AI model… {p}% (first time only, about {size})","workingGpu":"AI is enhancing… (graphics acceleration)","workingCpu":"AI is enhancing… (CPU mode, this takes a while)","tileLine":"Tile {i} of {n}","left":"about {t} left","sec":"{n}s","min":"{m}m {s}s","stop":"Stop","doneLine":"Done! {w}×{h} · took {t}","before":"Simple resize","after":"AI upscaled","compareHint":"Drag the image to look at other areas (shown at actual size)","save":"Save","cancelled":"Stopped.","fail":"Upscaling failed. Try a smaller photo or 2×.","badFile":"This image can't be opened. Try a JPG, PNG or WEBP."}};</script>
 

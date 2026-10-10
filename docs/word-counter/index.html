@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../assets/style.css">
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2722446823587481" crossorigin="anonymous"></script>
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"글자 수 세기","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"자소서는 공백 포함인가요, 제외인가요?","acceptedAnswer":{"@type":"Answer","text":"회사마다 달라요. 대부분의 채용 사이트는 '공백 포함'으로 세지만, 공고에 적힌 기준을 꼭 확인하세요."}},{"@type":"Question","name":"바이트는 어떻게 세나요?","acceptedAnswer":{"@type":"Answer","text":"두 가지로 보여줘요. 한글 2바이트 기준(옛 방식, 일부 채용 사이트)과 한글 3바이트 기준(UTF-8, NEIS 등)이에요."}},{"@type":"Question","name":"쓴 글이 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"서버에는 저장되지 않아요. 실수로 창을 닫아도 되살릴 수 있게 내 브라우저에만 임시로 남겨 둬요."}},{"@type":"Question","name":"읽는 시간은 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"공백을 뺀 글자 수를 1분에 약 500자 읽는다고 보고 계산한 대략적인 값이에요."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"글자 수 세기","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"자소서는 공백 포함인가요, 제외인가요?","acceptedAnswer":{"@type":"Answer","text":"회사와 채용 사이트마다 달라요. 공고나 입력 칸 옆에 적힌 기준을 꼭 확인하고, 기준이 없으면 두 숫자를 모두 보고 여유 있게 맞추세요."}},{"@type":"Question","name":"바이트는 어떻게 세나요?","acceptedAnswer":{"@type":"Answer","text":"두 가지로 보여줘요. '한글 2'는 영문·숫자·기호(아스키)를 1바이트, 그 밖의 글자를 2바이트로 세는 방식이고, 'UTF-8'은 실제 저장 크기라 한글이 3바이트예요. 어느 기준을 쓰는지는 입력하는 사이트의 안내를 확인하세요."}},{"@type":"Question","name":"쓴 글이 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"서버에는 저장되지 않아요. 실수로 창을 닫아도 되살릴 수 있게 내 브라우저에만 임시로 남겨 둬요."}},{"@type":"Question","name":"읽는 시간은 어떻게 계산하나요?","acceptedAnswer":{"@type":"Answer","text":"공백을 뺀 글자 수를 1분에 약 500자 읽는다고 보고 계산한 대략적인 값이에요."}},{"@type":"Question","name":"목표 글자 수를 공백 제외 기준으로 볼 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"목표 막대는 공백 포함 기준으로만 계산돼요. 공백 제외 기준이 필요하면 위쪽 '공백 제외' 숫자를 직접 보면서 맞춰 주세요."}},{"@type":"Question","name":"띄어쓰기를 두 번 하면 두 글자로 세나요?","acceptedAnswer":{"@type":"Answer","text":"네. '공백 포함'에서는 띄어쓰기 하나하나를 모두 한 글자로 세요. 실수로 들어간 연속 띄어쓰기나 문장 끝 공백도 글자 수에 들어가니, 분량이 빠듯하면 확인해 보세요."}},{"@type":"Question","name":"영어 글도 셀 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 단어 수는 띄어쓰기 기준이라 영어 글에도 잘 맞아요. 다만 한국어 페이지의 읽는 시간은 한국어 기준(1분 약 500자)으로 계산돼서, 영어 글의 읽는 시간은 영어 페이지(1분 약 200단어 기준)에서 보는 게 더 맞아요."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -31,6 +31,7 @@
   </a>
   <nav>
     <a href="../#tools">모든 도구</a>
+    <a href="../guide/">사용법·꿀팁</a>
     <a class="lang" href="../en/word-counter/" hreflang="en">🌐 English</a>
   </nav>
 </header>
@@ -45,13 +46,19 @@
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
 <section class="tool-info">
   <h2>이 도구로 할 수 있는 일</h2>
-  <p class="tool-intro">글을 붙여넣으면 공백 포함·제외 글자 수, 단어 수, 문단·줄 수, 원고지(200자) 매수, 바이트, 읽는 시간을 바로 세 주는 도구예요. 자기소개서·과제·블로그 글처럼 분량 기준이 있는 글을 쓸 때 편해요. 목표 글자 수를 적으면 얼마나 남았는지 막대로 보여줘요.</p>
+  <p class="tool-intro">글을 붙여넣으면 공백 포함·제외 글자 수, 단어 수, 문단·줄 수, 원고지(200자) 매수, 바이트, 읽는 시간을 바로 세 주는 도구예요. 자기소개서·과제·블로그 글처럼 분량 기준이 있는 글을 쓸 때 편해요.</p><p class="tool-intro">글자를 쓰거나 지울 때마다 숫자가 바로 바뀌어서, 문장을 다듬으며 분량을 맞추기 좋아요. 목표 글자 수를 적으면 몇 자 남았는지, 또는 몇 자 넘었는지와 함께 진행 막대가 보여요.</p><p class="tool-intro">쓴 글은 서버로 보내지 않고 이 브라우저 안에서만 세요. 다 쓴 글은 '복사' 버튼으로 한 번에 복사해서 지원서 입력 칸에 바로 붙여넣을 수 있어요.</p>
+  <h3 class="tool-sub">이럴 때 쓰면 좋아요</h3><p class="tool-intro">채용 사이트의 자기소개서 문항마다 '1,000자 이내' 같은 제한이 있을 때, 입력 칸에 바로 쓰기보다 여기서 먼저 쓰고 분량을 맞춘 뒤 옮기면 글이 잘리는 일을 줄일 수 있어요.</p><p class="tool-intro">대학 과제나 독후감에 '원고지 ○매' 기준이 있을 때 대략적인 매수를 가늠할 수 있어요.</p><p class="tool-intro">블로그 글이 너무 짧지 않은지, SNS 글이 글자 제한에 걸리지 않는지 올리기 전에 확인할 때 써요.</p><p class="tool-intro">발표 대본을 쓸 때 읽는 시간을 보면 몇 분짜리 분량인지 감을 잡을 수 있어요.</p><h3 class="tool-sub">숫자 읽는 법: 무엇을 어떻게 세나요</h3><p class="tool-intro">'공백 포함'은 띄어쓰기와 줄바꿈까지 모두 한 글자로 세요. '공백 제외'는 띄어쓰기·탭·줄바꿈을 모두 빼고 남은 글자만 세요. 여러 문자가 합쳐진 일부 이모지는 하나로 보여도 2자 이상으로 셀 수 있어요.</p><p class="tool-intro">단어 수는 띄어쓰기로 나뉜 덩어리의 개수예요. 그래서 '안녕하세요 반갑습니다'는 2단어로 세요.</p><p class="tool-intro">문단은 빈 줄로 나뉜 덩어리 수이고, 줄은 줄바꿈으로 나뉜 줄 수(빈 줄 포함)예요.</p><p class="tool-intro">원고지 매수는 공백 포함 글자 수를 200으로 나눠 올림한 값이에요. 실제 원고지는 문단 첫 칸 띄우기나 줄바꿈으로 남는 칸까지 쓰기 때문에, 손으로 옮겨 쓰면 매수가 더 나올 수 있어요.</p><h3 class="tool-sub">다른 방법과 비교</h3><p class="tool-intro">MS 워드는 아래쪽 상태 표시줄에 단어 수가 보이고, 그걸 누르면 글자 수·문단 수·줄 수 같은 자세한 통계를 볼 수 있어요. 문서 프로그램을 이미 쓰고 있다면 그걸로도 충분해요. 이 도구는 프로그램 없이 웹에서 바로 쓸 수 있고, 일부 채용 사이트에서 쓰는 바이트 기준(한글 2바이트·3바이트)과 원고지 매수를 함께 보여 준다는 점이 달라요.</p><p class="tool-intro">채용 사이트 입력 칸에 자체 글자 수 표시가 있다면 최종 기준은 그 사이트의 숫자예요. 여기서 맞춘 뒤 붙여넣고, 사이트에 표시된 숫자와 한 번 더 비교해 보세요.</p><h3 class="tool-sub">주의할 점·한계</h3><p class="tool-intro">줄바꿈은 한 글자로 세요. 사이트마다 줄바꿈을 세는 방식이 다를 수 있어서, 문단을 많이 나눈 글은 몇 자 차이가 날 수 있어요.</p><p class="tool-intro">'바이트 (한글 2)'는 영문·숫자·기본 기호를 1바이트, 그 밖의 문자를 모두 2바이트로 센 값이에요. 시스템마다 계산 방식이 완전히 같지 않을 수 있으니 제한에 딱 맞추기보다 여유를 두세요.</p><p class="tool-intro">임시 저장은 이 브라우저에만 돼요. 다른 기기나 다른 브라우저에서는 보이지 않고, 브라우저 사이트 데이터를 지우면 함께 사라져요. 중요한 글은 따로 저장해 두세요.</p><p class="tool-intro">맞춤법 검사 기능은 없어요. 분량을 맞춘 뒤 맞춤법은 따로 확인하세요.</p>
   <h2>사용 방법</h2>
   <ol class="steps"><li>글을 붙여넣거나 바로 쓰세요.</li><li>공백 포함·제외 글자 수, 바이트, 단어 수가 바로 보여요.</li><li>목표 글자 수를 적으면 얼마나 남았는지 알려줘요.</li></ol>
   <h2>자주 묻는 질문</h2>
-  <div class="faq"><details><summary>자소서는 공백 포함인가요, 제외인가요?</summary><p>회사마다 달라요. 대부분의 채용 사이트는 '공백 포함'으로 세지만, 공고에 적힌 기준을 꼭 확인하세요.</p></details><details><summary>바이트는 어떻게 세나요?</summary><p>두 가지로 보여줘요. 한글 2바이트 기준(옛 방식, 일부 채용 사이트)과 한글 3바이트 기준(UTF-8, NEIS 등)이에요.</p></details><details><summary>쓴 글이 저장되나요?</summary><p>서버에는 저장되지 않아요. 실수로 창을 닫아도 되살릴 수 있게 내 브라우저에만 임시로 남겨 둬요.</p></details><details><summary>읽는 시간은 어떻게 계산하나요?</summary><p>공백을 뺀 글자 수를 1분에 약 500자 읽는다고 보고 계산한 대략적인 값이에요.</p></details></div>
+  <div class="faq"><details><summary>자소서는 공백 포함인가요, 제외인가요?</summary><p>회사와 채용 사이트마다 달라요. 공고나 입력 칸 옆에 적힌 기준을 꼭 확인하고, 기준이 없으면 두 숫자를 모두 보고 여유 있게 맞추세요.</p></details><details><summary>바이트는 어떻게 세나요?</summary><p>두 가지로 보여줘요. '한글 2'는 영문·숫자·기호(아스키)를 1바이트, 그 밖의 글자를 2바이트로 세는 방식이고, 'UTF-8'은 실제 저장 크기라 한글이 3바이트예요. 어느 기준을 쓰는지는 입력하는 사이트의 안내를 확인하세요.</p></details><details><summary>쓴 글이 저장되나요?</summary><p>서버에는 저장되지 않아요. 실수로 창을 닫아도 되살릴 수 있게 내 브라우저에만 임시로 남겨 둬요.</p></details><details><summary>읽는 시간은 어떻게 계산하나요?</summary><p>공백을 뺀 글자 수를 1분에 약 500자 읽는다고 보고 계산한 대략적인 값이에요.</p></details><details><summary>목표 글자 수를 공백 제외 기준으로 볼 수 있나요?</summary><p>목표 막대는 공백 포함 기준으로만 계산돼요. 공백 제외 기준이 필요하면 위쪽 '공백 제외' 숫자를 직접 보면서 맞춰 주세요.</p></details><details><summary>띄어쓰기를 두 번 하면 두 글자로 세나요?</summary><p>네. '공백 포함'에서는 띄어쓰기 하나하나를 모두 한 글자로 세요. 실수로 들어간 연속 띄어쓰기나 문장 끝 공백도 글자 수에 들어가니, 분량이 빠듯하면 확인해 보세요.</p></details><details><summary>영어 글도 셀 수 있나요?</summary><p>네. 단어 수는 띄어쓰기 기준이라 영어 글에도 잘 맞아요. 다만 한국어 페이지의 읽는 시간은 한국어 기준(1분 약 500자)으로 계산돼서, 영어 글의 읽는 시간은 영어 페이지(1분 약 200단어 기준)에서 보는 게 더 맞아요.</p></details></div>
   <h2>알아두면 좋은 팁</h2>
   <ul class="tips"><li>목표 글자 수는 '공백 포함' 기준으로 계산돼요.</li><li>쓴 글은 이 브라우저에만 임시로 남아요. 공용 컴퓨터라면 다 쓴 뒤 '지우기'를 눌러 주세요.</li><li>바이트 제한이 있는 곳은 사이트마다 기준이 달라요. 두 가지 바이트 값 중 해당하는 쪽을 보세요.</li></ul>
+  <h2>함께 읽으면 좋은 글</h2>
+  <div class="guide-list"><a class="guide-card" href="../guide/character-count-resume/">
+    <strong>자기소개서 글자 수, 공백 포함일까 제외일까?</strong>
+    <span>자소서 글자 수 제한, 공백 포함인지 제외인지, 바이트로 세면 한글이 몇 바이트인지 헷갈릴 때. 세는 기준의 차이와 사이트마다 다른 점, 글자 수를 딱 맞추는 요령을 예시 숫자로 정리했어요.</span>
+  </a></div>
 </section>
 
 <section class="related">
@@ -95,6 +102,7 @@
 <footer class="site-footer">
   <p>모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.</p>
   <p><a href="../about/">소개</a> · <a href="../privacy/">개인정보처리방침</a> · 문의 <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 벤토툴</p>
+  <p>아우라세일즈 | 대표 조혜영 | 사업자등록번호 825-90-01995 | 경기도 화성시 매송고색로 366, 205호</p>
 </footer>
 <script>window.T={"lang":"ko","ui":{"choose":"파일 선택","orDrop":"또는 여기로 끌어다 놓기","pasteHint":"Ctrl+V로 붙여넣기도 돼요","processing":"처리 중…","waiting":"대기 중","failed":"실패","download":"다운로드","downloadAll":"모두 다운로드","clear":"모두 지우기","remove":"빼기","moveUp":"위로","moveDown":"아래로","privacyBadge":"🔒 파일은 서버로 전송되지 않아요","addMore":"파일 추가"},"tool":{"placeholder":"여기에 글을 붙여넣거나 쓰세요…","withSpace":"공백 포함","noSpace":"공백 제외","bytes2":"바이트 (한글 2)","bytes3":"바이트 (UTF-8)","words":"단어","lines":"줄","paragraphs":"문단","manuscript":"원고지(200자)","reading":"읽는 시간","minutes":"분","seconds":"초","unit":"자","sheets":"매","goal":"목표 글자 수","goalPh":"예: 1000","left":"{n}자 남았어요","over":"{n}자 넘었어요","copy":"복사","clear":"지우기","copied":"✔ 복사됨"}};</script>
 

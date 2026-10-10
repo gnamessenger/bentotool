@@ -1,4 +1,4 @@
-import { h, TU, EXT, batchTool, field, select, toCanvas, canvasBlob, stripExt, fill, fmtBytes } from "../common.js";
+import { h, TU, EXT, batchTool, field, select, toCanvas, canvasBlob, stripExt, fill } from "../common.js";
 import { decodeAny } from "./heic-to-jpg-decode.js";
 
 // 1KB = 1,000바이트로 계산해요. (1,024로 계산하는 사이트에도 넉넉히 통과)
@@ -19,6 +19,12 @@ function targetBytes() {
   return Math.max(100, Math.round(n * +customUnit.value * KB)); // 최소 0.1KB
 }
 const targetLabel = (t) => (t >= 1000 * KB && t % (1000 * KB) === 0 ? `${t / 1000 / KB}MB` : `${+(t / KB).toFixed(1)}KB`);
+// 결과 용량도 목표와 같은 1,000 기준으로 보여 줘요 (200KB 목표 → "198.0KB"처럼, 목표보다 크게 보이지 않게 내림)
+function fmtKB(n) {
+  if (n < KB) return n + " B";
+  if (n < KB * KB) return (Math.floor((n / KB) * 10) / 10).toFixed(1) + "KB";
+  return (Math.floor((n / KB / KB) * 100) / 100).toFixed(2) + "MB";
+}
 
 // 브라우저가 이 형식으로 저장할 수 있는지 (사파리 일부 버전은 WEBP 저장 불가 → JPG)
 async function encoder(canvas, type) {
@@ -64,6 +70,7 @@ async function fit(img, T, type, keepSize) {
 const tool = batchTool({
   accept: "image/*,.heic,.heif",
   zipName: "resized-kb.zip",
+  fmt: fmtKB,
   options: [
     field(TU.target, preset),
     customBox,
@@ -92,7 +99,7 @@ const tool = batchTool({
     if (r.ok && r.blob.size <= T) {
       return { blob: r.blob, name, note: fill(TU.ok, { t: label, dims, q }) };
     }
-    return { blob: r.blob, name, note: fill(mode.value === "keep" ? TU.failKeep : TU.failAuto, { t: label, min: fmtBytes(r.blob.size) }) };
+    return { blob: r.blob, name, note: fill(mode.value === "keep" ? TU.failKeep : TU.failAuto, { t: label, min: fmtKB(r.blob.size) }) };
   },
 });
 

@@ -258,17 +258,24 @@ function prepImage() {
   const ctx = c.getContext("2d");
   ctx.drawImage(imgSource, 0, 0, c.width, c.height);
   if (whiteBg.checked) {
-    // 흰색에 가까운 부분을 투명하게 (경계는 부드럽게)
+    // 종이 색에 가까운 부분을 투명하게 (경계는 부드럽게)
+    // 종이가 순백이 아니고 가장자리로 갈수록 어두운 사진도 있어서, 자리마다 주변 종이 밝기와 비교해요
     const d = ctx.getImageData(0, 0, c.width, c.height);
     const p = d.data;
-    for (let i = 0; i < p.length; i += 4) {
-      const m = Math.min(p[i], p[i + 1], p[i + 2]);
-      if (m >= 235) p[i + 3] = 0;
-      else if (m > 195) p[i + 3] = Math.round(p[i + 3] * (235 - m) / 40);
+    const bg = paperMap(c);
+    for (let y = 0, i = 0; y < c.height; y++) {
+      for (let x = 0; x < c.width; x++, i += 4) {
+        const lo = Math.min(p[i], p[i + 1], p[i + 2]);
+        if (Math.max(p[i], p[i + 1], p[i + 2]) - lo > 70) continue;   // 빨간 인주처럼 색이 진한 곳은 그대로
+        const diff = bg(x, y) - lo;   // 종이보다 얼마나 진한지
+        if (diff <= 25) p[i + 3] = 0;
+        else if (diff < 60) p[i + 3] = Math.round(p[i + 3] * (diff - 25) / 35);
+      }
     }
     ctx.putImageData(d, 0, 0);
   }
-  imgCanvas = trim(c) || c;
+  // 옅게 남은 그늘·티끌은 무시하고 도장·서명이 있는 곳만 남기기
+  imgCanvas = (whiteBg.checked ? trim(c, 128, 0.004) : trim(c)) || c;
   const view = h("canvas", { class: "sp-img-canvas" });
   view.width = imgCanvas.width;
   view.height = imgCanvas.height;
@@ -316,24 +323,66 @@ async function addText() {
   textIn.value = "";
 }
 
+// 자리별 종이 밝기 지도: 사진을 작은 칸(약 1/24)으로 나눠 칸마다 '밝은 쪽 값'(상위 25%)을 종이 밝기로 봐요.
+// 도장·글씨는 칸 안에서 일부라 밝은 쪽 값에는 영향이 적어요. 칸 사이는 부드럽게 이어 붙여요.
+function paperMap(c) {
+  const w = c.width, hgt = c.height;
+  const p = c.getContext("2d").getImageData(0, 0, w, hgt).data;
+  const cell = Math.max(8, Math.round(Math.max(w, hgt) / 24));
+  const gw = Math.ceil(w / cell), gh = Math.ceil(hgt / cell);
+  const grid = new Float32Array(gw * gh);
+  for (let gy = 0; gy < gh; gy++) {
+    for (let gx = 0; gx < gw; gx++) {
+      const vals = [];
+      for (let y = gy * cell; y < Math.min(hgt, (gy + 1) * cell); y += 2) {
+        for (let x = gx * cell; x < Math.min(w, (gx + 1) * cell); x += 2) {
+          const i = (y * w + x) * 4;
+          vals.push(Math.min(p[i], p[i + 1], p[i + 2]));
+        }
+      }
+      vals.sort((a, b) => a - b);
+      grid[gy * gw + gx] = vals[Math.floor(vals.length * 0.75)] ?? 255;
+    }
+  }
+  // 꽉 찬 도장처럼 칸 하나를 통째로 덮은 잉크를 종이로 착각하지 않게, 주변 5×5칸 중 가장 밝은 값을 써요
+  const raw = grid.slice();
+  for (let gy = 0; gy < gh; gy++) {
+    for (let gx = 0; gx < gw; gx++) {
+      let m = 0;
+      for (let yy = Math.max(0, gy - 2); yy <= Math.min(gh - 1, gy + 2); yy++)
+        for (let xx = Math.max(0, gx - 2); xx <= Math.min(gw - 1, gx + 2); xx++) m = Math.max(m, raw[yy * gw + xx]);
+      grid[gy * gw + gx] = m;
+    }
+  }
+  return (x, y) => {   // 칸 가운데 기준 양선형 보간
+    const fx = Math.min(gw - 1, Math.max(0, x / cell - 0.5)), fy = Math.min(gh - 1, Math.max(0, y / cell - 0.5));
+    const x0 = Math.floor(fx), y0 = Math.floor(fy), x1 = Math.min(gw - 1, x0 + 1), y1 = Math.min(gh - 1, y0 + 1);
+    const tx = fx - x0, ty = fy - y0;
+    const a = grid[y0 * gw + x0], b = grid[y0 * gw + x1], cc = grid[y1 * gw + x0], dd = grid[y1 * gw + x1];
+    return (a * (1 - tx) + b * tx) * (1 - ty) + (cc * (1 - tx) + dd * tx) * ty;
+  };
+}
+
 // 투명한 테두리 잘라내기
-function trim(src) {
+// minAlpha 보다 진한 점이 그 줄(가로·세로)에 minFrac 비율 넘게 있어야 '내용'으로 봐요 (흩어진 티끌 무시)
+function trim(src, minAlpha = 8, minFrac = 0) {
   const ctx = src.getContext("2d");
   const { width: w, height: hgt } = src;
   if (!w || !hgt) return null;
   const d = ctx.getImageData(0, 0, w, hgt).data;
-  let x0 = w, y0 = hgt, x1 = -1, y1 = -1;
+  const cols = new Uint32Array(w), rows = new Uint32Array(hgt);
   for (let y = 0; y < hgt; y++) {
     for (let x = 0; x < w; x++) {
-      if (d[(y * w + x) * 4 + 3] > 8) {
-        if (x < x0) x0 = x;
-        if (x > x1) x1 = x;
-        if (y < y0) y0 = y;
-        if (y > y1) y1 = y;
-      }
+      if (d[(y * w + x) * 4 + 3] > minAlpha) { cols[x]++; rows[y]++; }
     }
   }
-  if (x1 < 0) return null;
+  const colMin = Math.max(1, hgt * minFrac), rowMin = Math.max(1, w * minFrac);
+  let x0 = 0, x1 = w - 1, y0 = 0, y1 = hgt - 1;
+  while (x0 < w && cols[x0] < colMin) x0++;
+  while (x1 >= 0 && cols[x1] < colMin) x1--;
+  while (y0 < hgt && rows[y0] < rowMin) y0++;
+  while (y1 >= 0 && rows[y1] < rowMin) y1--;
+  if (x1 < x0 || y1 < y0) return null;
   const pad2 = 2;
   x0 = Math.max(0, x0 - pad2); y0 = Math.max(0, y0 - pad2);
   x1 = Math.min(w - 1, x1 + pad2); y1 = Math.min(hgt - 1, y1 + pad2);

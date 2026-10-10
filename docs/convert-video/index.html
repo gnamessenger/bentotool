@@ -31,6 +31,7 @@
   </a>
   <nav>
     <a href="../#tools">모든 도구</a>
+    <a href="../guide/">사용법·꿀팁</a>
     <a class="lang" href="../en/convert-video/" hreflang="en">🌐 English</a>
   </nav>
 </header>
@@ -46,12 +47,18 @@
 <section class="tool-info">
   <h2>이 도구로 할 수 있는 일</h2>
   <p class="tool-intro">아이폰 MOV, AVI, MKV, WEBM 같은 동영상을 어디서나 잘 열리는 MP4(H.264·AAC)나 WEBM으로 바꾸는 도구예요. '이 파일은 재생이 안 돼요', '업로드가 안 돼요' 할 때 MP4로 바꾸면 대부분 해결돼요. 해상도를 1080p·720p·480p로 낮춰서 용량도 함께 줄일 수 있어요. 영상 편집 프로그램 ffmpeg를 브라우저용(ffmpeg.wasm)으로 만든 엔진이 내 컴퓨터 안에서 처리해요.</p>
+  
   <h2>사용 방법</h2>
   <ol class="steps"><li>바꿀 형식과 해상도를 고르세요. (보통은 MP4·원본이면 돼요)</li><li>동영상을 올리면 바로 변환을 시작해요.</li><li>끝날 때까지 이 탭을 열어 두고, 완료되면 받으세요.</li></ol>
   <h2>자주 묻는 질문</h2>
   <div class="faq"><details><summary>얼마나 걸리나요?</summary><p>영상을 새로 만들어야 해서 느려요. 저희 테스트 PC(데스크톱)에서 영상 1분당 720p는 약 1분 반, 1080p는 약 3분 걸렸어요. 노트북·휴대폰은 더 오래 걸릴 수 있어요. 이미 MP4에 맞는 코덱(H.264)인 MKV·MOV는 다시 만들지 않고 몇 초 만에 바꿔요.</p></details><details><summary>큰 영상도 되나요?</summary><p>브라우저 안에서 처리하기 때문에 너무 큰 영상은 메모리가 부족해 실패할 수 있어요. 테스트 PC(메모리 16GB, 크롬)에서 1.1GB 영상은 됐지만 2GB 영상은 메모리 부족으로 실패했어요. 메모리가 적은 기기나 휴대폰은 더 작은 영상에서도 실패할 수 있어서 500MB가 넘으면 경고를 보여드려요. 긴 영상은 먼저 '동영상 자르기'로 나누는 게 안전해요.</p></details><details><summary>영상이 업로드되나요?</summary><p>아니요. 내 브라우저 안에서만 변환돼요.</p></details><details><summary>처음에 시간이 걸리는 이유는요?</summary><p>처음 한 번은 변환 엔진(약 9MB 다운로드, 압축을 풀면 약 32MB)을 받아야 해요. 그다음부터는 브라우저에 저장돼서 바로 시작돼요.</p></details></div>
   <h2>알아두면 좋은 팁</h2>
   <ul class="tips"><li>이미 H.264로 된 MKV·MOV를 '원본 그대로' MP4로 바꾸면 다시 만들지 않고 옮겨 담기만 해서 몇 초 만에 끝나요.</li><li>아이폰 영상(HEVC)이 윈도우나 다른 기기에서 안 열리면 MP4로 바꿔 보세요. H.264로 다시 만들어져요.</li><li>변환하는 동안 이 탭을 닫지 마세요. 오래 걸리면 '취소'를 누르고 해상도를 낮추거나 영상을 잘라서 나눠 변환하세요.</li></ul>
+  <h2>함께 읽으면 좋은 글</h2>
+  <div class="guide-list"><a class="guide-card" href="../guide/mov-to-mp4/">
+    <strong>아이폰 MOV 영상, MP4로 어떻게 바꿀까요?</strong>
+    <span>아이폰 MOV 영상이 PC나 업로드 사이트에서 안 열리는 이유(HEVC 코덱)와 MP4로 바꾸는 법. 몇 초면 끝나는 옮겨 담기와 다시 인코딩 시간, 용량 줄이기, 500MB 경고 이유까지 실측으로 정리했어요.</span>
+  </a></div>
 </section>
 
 <section class="related">
@@ -95,6 +102,7 @@
 <footer class="site-footer">
   <p>모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.</p>
   <p><a href="../about/">소개</a> · <a href="../privacy/">개인정보처리방침</a> · 문의 <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 벤토툴</p>
+  <p>아우라세일즈 | 대표 조혜영 | 사업자등록번호 825-90-01995 | 경기도 화성시 매송고색로 366, 205호</p>
 </footer>
 <script>window.T={"lang":"ko","ui":{"choose":"파일 선택","orDrop":"또는 여기로 끌어다 놓기","pasteHint":"Ctrl+V로 붙여넣기도 돼요","processing":"처리 중…","waiting":"대기 중","failed":"실패","download":"다운로드","downloadAll":"모두 다운로드","clear":"모두 지우기","remove":"빼기","moveUp":"위로","moveDown":"아래로","privacyBadge":"🔒 파일은 서버로 전송되지 않아요","addMore":"파일 추가"},"tool":{"format":"바꿀 형식","mp4":"MP4 (H.264·AAC, 추천)","webm":"WEBM (VP8·Opus)","resolution":"해상도","original":"원본 그대로","loading":"변환 엔진 받는 중… {p}% (처음 한 번만, 약 9MB)","preparing":"영상 정보 읽는 중…","working":"변환 중… {p}% (이 탭을 열어 두세요)","left":"남은 시간 약 {t}","cancel":"취소","slowNote":"브라우저 안에서 한 줄(단일 스레드)로 변환해서 프로그램보다 느려요.","bigWarn":"큰 영상({size})이에요. 브라우저 메모리가 부족하면 중간에 실패할 수 있어요. 실패하면 영상을 잘라서 나눠 변환해 보세요.","done":"완료! {a} → {b}","info":"{fmt} · {res} · {len}","remuxed":"영상 코덱이 이미 맞아서 영상은 다시 만들지 않고 그대로 옮겨 담았어요. (화질 그대로, 빠름)","download":"다운로드","another":"다른 영상","noVideo":"영상 트랙을 찾지 못했어요. 동영상 파일이 맞는지 확인해 주세요.","fail":"변환하지 못했어요. 파일이 손상됐거나 메모리가 부족했을 수 있어요.","loadFail":"변환 엔진을 받지 못했어요. 인터넷 연결을 확인하고 다시 시도해 주세요."}};</script>
 

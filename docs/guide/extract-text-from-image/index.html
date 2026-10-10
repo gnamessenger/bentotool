@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사진 글자 복사하기 - 이미지 텍스트 추출(OCR) 정확도 높이는 법 | 벤토툴</title>
+<meta name="description" content="사진·캡처 속 글자를 복사하는 OCR, 직접 만든 샘플로 정확도를 재 봤어요. 잘 읽히는 사진 조건, '사진 보정' 켜는 때, 한글·영문 섞인 글에서 자주 틀리는 것, 휴대폰 기능과 비교까지.">
+<link rel="canonical" href="https://bentotool.com/guide/extract-text-from-image/">
+<meta name="google-site-verification" content="FaPamoQVMZjes4f4_X2-MeLNNxnu2NcGe6pQE8Z2KxA">
+<meta name="naver-site-verification" content="5c69044b719c940fa3668f9390e518f1aadfc9d2">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="사진 글자 복사하기 - 이미지 텍스트 추출(OCR) 정확도 높이는 법 | 벤토툴">
+<meta property="og:description" content="사진·캡처 속 글자를 복사하는 OCR, 직접 만든 샘플로 정확도를 재 봤어요. 잘 읽히는 사진 조건, '사진 보정' 켜는 때, 한글·영문 섞인 글에서 자주 틀리는 것, 휴대폰 기능과 비교까지.">
+<meta property="og:url" content="https://bentotool.com/guide/extract-text-from-image/">
+<meta property="og:site_name" content="벤토툴">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%237D55C7%22/><rect x=%2220%22 y=%2220%22 width=%2226%22 height=%2226%22 rx=%226%22 fill=%22white%22/><rect x=%2254%22 y=%2220%22 width=%2226%22 height=%2226%22 rx=%226%22 fill=%22%23E8E2F5%22/><rect x=%2220%22 y=%2254%22 width=%2260%22 height=%2226%22 rx=%226%22 fill=%22white%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2722446823587481" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"사진이나 캡처 속 글자, 다시 치지 않고 복사하는 법","description":"사진·캡처 속 글자를 복사하는 OCR, 직접 만든 샘플로 정확도를 재 봤어요. 잘 읽히는 사진 조건, '사진 보정' 켜는 때, 한글·영문 섞인 글에서 자주 틀리는 것, 휴대폰 기능과 비교까지.","datePublished":"2026-10-10","dateModified":"2026-10-10","inLanguage":"ko","author":{"@type":"Organization","name":"아우라세일즈","url":"https://bentotool.com/about/"},"publisher":{"@type":"Organization","name":"벤토툴","url":"https://bentotool.com"},"mainEntityOfPage":"https://bentotool.com/guide/extract-text-from-image/"}</script>
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="../../">
+    <span class="logo-mark"><i></i><i></i><i></i></span>벤토툴
+  </a>
+  <nav>
+    <a href="../../#tools">모든 도구</a>
+    <a href="../../guide/">사용법·꿀팁</a>
+    <a class="lang" href="../../en/" hreflang="en">🌐 English</a>
+  </nav>
+</header>
+<main>
+
+<article class="doc article">
+  <p class="crumb"><a href="../../guide/">사용법·꿀팁</a></p>
+  <h1>사진이나 캡처 속 글자, 다시 치지 않고 복사하는 법</h1>
+  <p class="article-meta">글 아우라세일즈 · 2026-10-10</p>
+  <p class="lead">안내문 사진이나 캡처 속 긴 문장을 한 글자씩 다시 치고 있었다면, 글자 인식(OCR)으로 시간을 크게 줄일 수 있어요. 다만 OCR은 완벽하지 않아서 사진 상태에 따라 결과가 크게 달라져요. 직접 만든 샘플로 정확도를 재 본 숫자와 함께, 잘 읽히게 하는 법과 결과를 빨리 고치는 법을 알려 드릴게요.</p>
+  <div class="article-cta"><a class="btn small" href="../../image-to-text/">🔤 이미지 글자 추출 (OCR) 바로 쓰기</a></div>
+  
+<h2>OCR이 뭐고, 벤토툴은 어떻게 읽나요?</h2>
+<p>OCR은 사진 속 글자 모양을 보고 어떤 글자인지 추측해서 텍스트로 바꾸는 기술이에요. 벤토툴 <a href="../../image-to-text/">이미지 글자 추출</a>은 공개된 OCR 엔진(Tesseract)을 브라우저 안에서 돌려요. 처음 한 번은 인식 프로그램과 언어 데이터를 인터넷에서 내려받지만, 내 사진은 어디로도 보내지 않고 내 컴퓨터 안에서 읽어요. 신분증이나 계약서처럼 개인정보가 있는 사진도 부담이 덜한 이유예요.</p>
+<p>쓰는 법은 간단해요. 언어를 고르고(기본은 한국어 + 영어), 사진을 올리거나 캡처한 화면을 Ctrl+V로 붙여 넣으면 오른쪽 칸에 읽어 낸 글자가 나와요. 그 칸에서 바로 고친 뒤 '복사'하거나 '.txt로 저장'하면 끝이에요. 지금은 이미지 파일만 받기 때문에, PDF라면 <a href="../../pdf-to-jpg/">PDF JPG 변환</a>으로 쪽을 그림으로 바꿔서 올려야 해요.</p>
+
+<h2>직접 재 본 정확도</h2>
+<p>한국어와 영문 약어·숫자·이메일이 섞인 가상 공지문을 직접 만들어, 화면 캡처와 휴대폰으로 찍은 듯한 사진 두 가지로 읽혀 봤어요. 정확도는 띄어쓰기를 뺀 원문 글자 중 몇 %가 맞게 나왔는지로 계산했어요.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>사진 상태</th><th>설정</th><th>정확도</th></tr></thead>
+<tbody>
+<tr><td>화면 캡처 (PNG)</td><td>한국어 + 영어, 사진 보정 끔</td><td>95.8%</td></tr>
+<tr><td>화면 캡처 (PNG)</td><td>한국어 + 영어, 사진 보정 켬</td><td>91.4%</td></tr>
+<tr><td>화면 캡처 (PNG)</td><td>한국어만</td><td>84.5%</td></tr>
+<tr><td>고른 빛에서 정면으로 찍은 사진 (JPG)</td><td>사진 보정 켬 (자동)</td><td>94.9%</td></tr>
+<tr><td>고른 빛에서 정면으로 찍은 사진 (JPG)</td><td>사진 보정 끔</td><td>93.5%</td></tr>
+<tr><td>그림자 지고 기울어진 사진 (JPG)</td><td>사진 보정 켬 (자동)</td><td>53.3%</td></tr>
+<tr><td>그림자 지고 기울어진 사진 (JPG)</td><td>사진 보정 끔</td><td>37.8%</td></tr>
+</tbody></table></div>
+<figure><img src="../../assets/guide/extract-text-from-image-1.webp" alt="벤토툴 이미지에서 글자 추출 화면. 왼쪽에 가상 공지문 캡처, 오른쪽 읽어 낸 글자 칸에 대부분 맞게 읽힌 문장들" loading="lazy" width="1064" height="1040"><figcaption>화면 캡처를 읽은 결과. 대부분 맞지만 '앱(iOS/Android)'이 'H(I0S/Android)'로, '10MB'가 '10\08'로 나왔어요.</figcaption></figure>
+<p>또렷한 캡처와 잘 찍은 사진은 95% 안팎으로 꽤 잘 읽었어요. 한 장 읽는 데는 1~3초쯤 걸렸어요. 반면 그림자가 지고 비스듬한 사진은 절반 정도만 맞았어요. 결과를 고치는 시간까지 생각하면, 사진이 나쁠 때는 다시 찍는 게 더 빨라요.</p>
+<p>표가 있는 문서에서는 더 조심해야 해요. 표가 들어간 가상 제품 소개서 캡처를 읽혔더니 표 안의 글자가 통째로 빠져서 정확도가 50.4%에 그쳤고, 사진 보정을 켜자 표 일부가 살아나 70.4%가 됐어요. 표는 칸별로 잘라서 올리거나, 결과에서 빠진 줄이 없는지 꼭 확인하세요.</p>
+
+<h2>잘 읽히는 사진의 조건</h2>
+<ul>
+<li><strong>글자가 크고 반듯하게</strong>: 화면에서 글자가 작으면 확대해서 캡처하세요. 사진이라면 종이와 휴대폰을 나란하게 두고 정면에서 찍어요.</li>
+<li><strong>필요한 부분만</strong>: 여러 단으로 된 글, 표, 그림이 섞여 있으면 읽는 순서가 꼬이기 쉬워요. <a href="../../crop-image/">이미지 자르기</a>로 필요한 문단만 남기면 정확도가 올라가요.</li>
+<li><strong>그림자와 반사 없이</strong>: 그림자가 진 부분은 글자가 배경에 묻혀 엉뚱한 글자로 바뀌어요. 찍는 요령은 <a href="../scan-photo-to-pdf/">서류 사진을 PDF로 만드는 법</a>에 정리해 두었어요.</li>
+<li><strong>손글씨·무늬 배경은 기대를 낮게</strong>: 이번 엔진은 인쇄된 글자에 맞춰져 있어서 손글씨나 무늬 위 글자는 많이 틀려요.</li>
+</ul>
+
+<h2>'사진 보정'은 언제 켜나요?</h2>
+<p>'사진 보정'을 켜면 사진을 흑백으로 바꾸고, 주변보다 어두운 부분만 글자로 남겨서 조명이 고르지 않은 사진을 또렷하게 만든 뒤 읽어요. JPG 사진을 올리면 자동으로 켜지고, PNG 캡처는 꺼진 채로 시작해요.</p>
+<p>측정 결과도 이 기본값과 맞았어요. 깨끗한 캡처는 켜면 오히려 95.8%에서 91.4%로 떨어졌고, 그림자 진 사진은 켜야 37.8%에서 53.3%로 올라갔어요. 결과가 이상하면 체크를 한 번 바꿔 보세요. 체크를 바꾸면 같은 사진을 바로 다시 읽어서 비교가 쉬워요.</p>
+<figure><img src="../../assets/guide/extract-text-from-image-2.webp" alt="그림자 지고 기울어진 공지문 사진을 사진 보정을 켜고 읽은 결과. 줄 앞에 엉뚱한 기호가 붙고 많은 단어가 틀림" loading="lazy" width="1064" height="1002"><figcaption>그림자 지고 기울어진 사진은 보정을 켜도 절반 정도만 맞았어요. 이럴 땐 다시 찍는 게 빨라요.</figcaption></figure>
+
+<h2>한글·영문 섞인 글에서 자주 틀리는 것</h2>
+<p>테스트에서 틀린 곳을 모아 보면 패턴이 보여요. 결과를 검토할 때 이런 곳부터 보면 빨라요.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>원문</th><th>읽힌 결과</th><th>왜 틀렸을까</th></tr></thead>
+<tbody>
+<tr><td>OTP</td><td>010</td><td>영문 O와 숫자 0, 대문자 T와 숫자 1처럼 모양이 비슷한 글자</td></tr>
+<tr><td>iOS</td><td>I0S, i0S</td><td>소문자 i·대문자 I, 영문 O·숫자 0 혼동</td></tr>
+<tr><td>10MB</td><td>10\08, 10\48</td><td>붙어 있는 영문 약어를 기호와 숫자로 착각</td></tr>
+<tr><td>앱, 챗봇</td><td>H, HE</td><td>영문 옆 짧은 한글 단어를 영문으로 읽음</td></tr>
+<tr><td>(목)</td><td>(5)</td><td>괄호 속 한 글자는 앞뒤 단서가 적어 틀리기 쉬움</td></tr>
+</tbody></table></div>
+<p>'한국어만'으로 바꾸면 영문 약어가 대부분 깨졌어요(JPG, PNG, 이메일 주소 등). 반대로 영어만 있는 글이라면 '영어만'이 나아요. 섞여 있으면 기본값인 '한국어 + 영어'를 쓰세요. 이름, 날짜, 금액, 계좌번호, 쿠폰 코드처럼 한 글자만 틀려도 문제가 되는 부분은 반드시 원본과 한 글자씩 대조하세요.</p>
+
+<h3>결과를 빨리 고쳐 쓰는 요령</h3>
+<ol>
+<li>결과 칸에서 바로 고치세요. 줄바꿈은 사진 속 줄 모양대로 나오니, 문단을 이어 붙일 곳의 줄바꿈부터 지우면 정리가 빨라요.</li>
+<li>위 표의 '자주 틀리는 것'을 중심으로 영문·숫자 부분만 원본과 비교해요.</li>
+<li>긴 글이라면 '.txt로 저장'한 뒤 문서 프로그램의 맞춤법 검사를 한 번 돌리면 한글 오타를 더 찾을 수 있어요.</li>
+<li>글자 수 제한이 있는 곳에 붙일 거라면 <a href="../../word-counter/">글자 수 세기</a>로 바로 확인해 보세요.</li>
+</ol>
+
+<h2>휴대폰 기본 기능과 비교</h2>
+<p>휴대폰에도 사진 속 글자를 복사하는 기능이 들어 있어요. 공식 안내에서 확인한 내용은 이래요.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>기능</th><th>공식 안내 내용</th></tr></thead>
+<tbody>
+<tr><td>아이폰 라이브 텍스트</td><td>iPhone XS·XR 이후 모델, iOS 15 이상. 사진 앱에서 단어를 길게 터치하고 핀으로 범위를 맞춘 뒤 '복사'(전체는 '모두 선택'). 애플 기능 지원 페이지에 한국어가 지원 언어로 나와 있어요</td></tr>
+<tr><td>구글 렌즈 (구글 포토)</td><td>구글 포토에서 사진 선택 → 더보기 → Google 렌즈 → 복사할 단어를 탭해서 선택</td></tr>
+</tbody></table></div>
+<p>사진이 휴대폰에 있고 몇 줄만 필요하다면 휴대폰 기능이 가장 빨라요. PC에서 캡처한 화면이나 PC에 저장된 사진을 읽을 때, 결과를 바로 고쳐서 .txt로 저장하고 싶을 때, 사진을 외부로 보내지 않고 처리하고 싶을 때는 벤토툴이 편해요. 어느 쪽이든 결과는 꼭 한 번 읽어 보고 쓰세요.</p>
+
+<h2>참고한 자료</h2>
+<ul>
+<li><a href="https://support.apple.com/ko-kr/120004" target="_blank" rel="noopener">Apple 지원 - iPhone 또는 iPad에서 사진 속 텍스트 복사 및 번역하기</a></li>
+<li><a href="https://www.apple.com/kr/ios/feature-availability/" target="_blank" rel="noopener">Apple - iOS 및 iPadOS 기능 사용 가능 여부 (라이브 텍스트 지원 언어)</a></li>
+<li><a href="https://support.google.com/photos/answer/7539151?hl=ko" target="_blank" rel="noopener">Google 포토 고객센터 - 사진 및 주변 사물 정보 확인하기</a></li>
+</ul>
+  <div class="article-cta end"><p>글에서 소개한 도구, 회원가입 없이 바로 써 보세요.</p><a class="btn small" href="../../image-to-text/">🔤 이미지 글자 추출 (OCR) 바로 쓰기</a></div>
+</article>
+
+<section class="related"><h2>다른 글도 읽어 보세요</h2><div class="guide-list"><a class="guide-card" href="../../guide/iphone-heic-photo-pc/">
+    <strong>아이폰 사진(HEIC)이 PC에서 안 열릴 때, 어떻게 해야 할까요?</strong>
+    <span>아이폰 사진(HEIC)이 윈도우 PC나 업로드 사이트에서 안 열릴 때, 이미 찍은 사진을 JPG로 바꾸는 법과 앞으로 JPG로 찍는 설정, 옮길 때 자동 변환까지 상황별로 정리했어요.</span>
+  </a><a class="guide-card" href="../../guide/photo-size-kb-upload/">
+    <strong>'사진은 ○○KB 이하만 올릴 수 있어요' 오류, 어떻게 해결할까요?</strong>
+    <span>원서·민원·지원서 사이트에서 '사진은 200KB 이하' 같은 오류가 날 때, KB 계산법(1000과 1024 차이)부터 화질을 지키며 용량을 맞추는 순서까지 직접 해 본 숫자로 설명해요.</span>
+  </a><a class="guide-card" href="../../guide/resume-id-photo-size/">
+    <strong>이력서 증명사진, 규격은 뭘로 하고 집에서는 어떻게 만들까요?</strong>
+    <span>이력서·입사지원용 반명함(3×4cm) 등 흔한 증명사진 규격, 여권사진을 집에서 만들 때 주의할 점, 집에서 잘 찍는 요령과 4×6 인화·온라인 접수용 파일 만드는 법까지 정리했어요.</span>
+  </a><a class="guide-card" href="../../guide/pdf-sign-contract/">
+    <strong>PDF 계약서에 프린트 없이 서명·도장 넣는 법</strong>
+    <span>PDF로 받은 계약서·동의서에 출력·스캔 없이 서명을 그려 넣고, 도장 사진을 투명하게 얹고, 이름·날짜까지 넣는 방법. 서명 그림과 전자계약 서비스의 차이도 정리했어요.</span>
+  </a></div></section>
+<aside class="promo-note"><p>🔧 이 도구 사이트, 코딩 몰라도 AI로 만들었어요 → <a href="https://salesscript-mauve.vercel.app/free-ai-tool-site.html" target="_blank" rel="noopener">무료로 만드는 법 보기</a></p></aside>
+</main>
+<footer class="site-footer">
+  <p>모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.</p>
+  <p><a href="../../about/">소개</a> · <a href="../../privacy/">개인정보처리방침</a> · 문의 <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 벤토툴</p>
+  <p>아우라세일즈 | 대표 조혜영 | 사업자등록번호 825-90-01995 | 경기도 화성시 매송고색로 366, 205호</p>
+</footer>
+
+
+
+</body>
+</html>

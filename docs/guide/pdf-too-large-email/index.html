@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PDF 용량 줄이기 - 메일 첨부 용량 초과로 안 보내질 때 해결법 | 벤토툴</title>
+<meta name="description" content="PDF가 커서 메일 첨부나 업로드가 안 될 때, 왜 큰지 확인하는 법부터 압축 강도 고르기, 그래도 크면 나눠 보내기까지. Gmail·Outlook·다음 메일 첨부 한도도 공식 안내로 정리했어요.">
+<link rel="canonical" href="https://bentotool.com/guide/pdf-too-large-email/">
+<meta name="google-site-verification" content="FaPamoQVMZjes4f4_X2-MeLNNxnu2NcGe6pQE8Z2KxA">
+<meta name="naver-site-verification" content="5c69044b719c940fa3668f9390e518f1aadfc9d2">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="PDF 용량 줄이기 - 메일 첨부 용량 초과로 안 보내질 때 해결법 | 벤토툴">
+<meta property="og:description" content="PDF가 커서 메일 첨부나 업로드가 안 될 때, 왜 큰지 확인하는 법부터 압축 강도 고르기, 그래도 크면 나눠 보내기까지. Gmail·Outlook·다음 메일 첨부 한도도 공식 안내로 정리했어요.">
+<meta property="og:url" content="https://bentotool.com/guide/pdf-too-large-email/">
+<meta property="og:site_name" content="벤토툴">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%237D55C7%22/><rect x=%2220%22 y=%2220%22 width=%2226%22 height=%2226%22 rx=%226%22 fill=%22white%22/><rect x=%2254%22 y=%2220%22 width=%2226%22 height=%2226%22 rx=%226%22 fill=%22%23E8E2F5%22/><rect x=%2220%22 y=%2254%22 width=%2260%22 height=%2226%22 rx=%226%22 fill=%22white%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2722446823587481" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"PDF 용량이 커서 메일이 안 보내질 때, 어떻게 할까요?","description":"PDF가 커서 메일 첨부나 업로드가 안 될 때, 왜 큰지 확인하는 법부터 압축 강도 고르기, 그래도 크면 나눠 보내기까지. Gmail·Outlook·다음 메일 첨부 한도도 공식 안내로 정리했어요.","datePublished":"2026-10-10","dateModified":"2026-10-10","inLanguage":"ko","author":{"@type":"Organization","name":"아우라세일즈","url":"https://bentotool.com/about/"},"publisher":{"@type":"Organization","name":"벤토툴","url":"https://bentotool.com"},"mainEntityOfPage":"https://bentotool.com/guide/pdf-too-large-email/"}</script>
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="../../">
+    <span class="logo-mark"><i></i><i></i><i></i></span>벤토툴
+  </a>
+  <nav>
+    <a href="../../#tools">모든 도구</a>
+    <a href="../../guide/">사용법·꿀팁</a>
+    <a class="lang" href="../../en/" hreflang="en">🌐 English</a>
+  </nav>
+</header>
+<main>
+
+<article class="doc article">
+  <p class="crumb"><a href="../../guide/">사용법·꿀팁</a></p>
+  <h1>PDF 용량이 커서 메일이 안 보내질 때, 어떻게 할까요?</h1>
+  <p class="article-meta">글 아우라세일즈 · 2026-10-10</p>
+  <p class="lead">서류를 다 모아 PDF로 만들었는데 메일에 붙이니 '첨부 용량 초과'가 뜨거나, 제출 사이트가 '10MB 이하'라며 받아 주지 않을 때가 있죠? PDF가 왜 커졌는지부터, 압축 강도를 어떻게 고를지, 그래도 크면 어떻게 나눠 보낼지 직접 해 본 숫자로 알려 드릴게요.</p>
+  <div class="article-cta"><a class="btn small" href="../../compress-pdf/">📉 PDF 용량 줄이기 바로 쓰기</a><a class="btn small" href="../../split-pdf/">🗂️ PDF 나누기 바로 쓰기</a></div>
+  
+<h2>PDF가 큰 이유는 대부분 '사진'이에요</h2>
+<p>글자로만 된 PDF는 수십 쪽이어도 보통 1MB가 안 돼요. 테스트로 만든 4쪽짜리 글자 PDF는 142KB였어요. 반면 스캔한 서류나 휴대폰으로 찍은 사진을 묶은 PDF는 쪽마다 사진 한 장이 통째로 들어 있어서, 쪽수만큼 용량이 불어나요. 이번에 휴대폰 사진(4032×3024) 28장을 원본 그대로 넣어 만든 28쪽 PDF는 26.7MB였어요.</p>
+<p>파일 크기는 윈도우 파일 탐색기의 '크기' 칸이나 휴대폰 파일 앱의 정보 화면에서 볼 수 있어요. 메일에 여러 파일을 함께 붙인다면 한 파일이 아니라 모두 더한 크기가 기준이라는 점도 기억하세요. 아래 표의 Gmail 안내도 '총 첨부파일 크기'를 기준으로 말하고 있어요.</p>
+<p>내 PDF가 어느 쪽인지 알아보는 간단한 방법이 있어요. PDF를 열어 글자를 마우스로 끌어 선택해 보세요. 글자가 한 글자씩 선택되면 글자 PDF, 쪽 전체가 그림처럼 한 덩어리로 잡히거나 아예 선택이 안 되면 스캔(사진) PDF예요. 용량 줄이기 효과가 큰 건 스캔 PDF 쪽이에요.</p>
+
+<h2>메일 첨부 한도는 서비스마다 달라요</h2>
+<p>각 서비스의 공식 안내에서 확인한 내용이에요. 한도는 바뀔 수 있으니 보내기 전에 한 번 더 확인하세요.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>서비스</th><th>공식 안내 내용</th></tr></thead>
+<tbody>
+<tr><td>Gmail (개인 계정)</td><td>첨부파일 제한 25MB. 넘으면 첨부파일을 Google Drive 링크로 바꿔 넣음. 회사·학교 계정은 관리자가 정함</td></tr>
+<tr><td>Outlook.com</td><td>전자 메일 크기 제한 20MB(첨부와 본문 포함). 회사용 Exchange 계정은 기본 10MB</td></tr>
+<tr><td>다음 메일</td><td>첨부 합계가 25MB를 넘으면 이후 파일은 대용량 첨부로 바뀌어 발송(다음 메일 주소로 보낼 때)</td></tr>
+</tbody></table></div>
+<p>Gmail과 다음 메일처럼 한도를 넘으면 자동으로 링크로 바꿔 주는 곳도 있지만, 받는 쪽 회사가 외부 링크를 막아 두었거나 링크 보관 기간이 지나면 열리지 않을 수 있어요. 받는 사람이 파일 자체를 원한다면 용량을 줄이는 게 확실해요. 그리고 받는 쪽 메일 서버에도 따로 한도가 있을 수 있으니, 한도에 딱 맞추기보다 여유 있게 줄이는 게 안전해요.</p>
+
+<h2>압축 강도, 이렇게 고르세요</h2>
+<p>벤토툴 <a href="../../compress-pdf/">PDF 용량 줄이기</a>는 각 쪽을 그림으로 다시 그린 뒤 JPG로 저장해서 새 PDF를 만들어요. 강도에 따라 그리는 해상도와 JPG 품질이 달라지는데, 26.7MB짜리 28쪽 스캔 PDF로 세 가지를 모두 해 봤어요.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>강도</th><th>결과 용량</th><th>A4 한 쪽의 그림 크기</th><th>어울리는 경우</th></tr></thead>
+<tbody>
+<tr><td>약하게 (화질 우선)</td><td>2.3MB</td><td>1190×1683 (약 144dpi)</td><td>작은 글씨·도장이 많은 서류, 출력할 문서</td></tr>
+<tr><td>보통 (추천)</td><td>1.3MB (-95%)</td><td>892×1262 (약 108dpi)</td><td>대부분의 메일 첨부·제출 서류</td></tr>
+<tr><td>강하게 (가장 작게)</td><td>718.3KB</td><td>654×926 (약 79dpi)</td><td>용량 제한이 아주 빡빡할 때</td></tr>
+</tbody></table></div>
+<figure><img src="../../assets/guide/pdf-too-large-email-1.webp" alt="벤토툴 PDF 용량 줄이기 결과 화면. 26.7 MB에서 1.3 MB로 95% 줄었다는 표시와 압축된 PDF 받기 버튼" loading="lazy" width="1064" height="411"><figcaption>28쪽 스캔 PDF를 '보통'으로 줄인 결과. 파일을 고르고 약 11초 만에 끝났어요.</figcaption></figure>
+<p>같은 부분을 확대해 보면 차이가 보여요. '보통'까지는 글자가 또렷했고, '강하게'는 글자 둘레가 번지고 얼룩이 생겼지만 읽는 데는 문제가 없었어요. 작은 각주나 흐린 도장이 있는 서류라면 '강하게'는 피하는 게 좋아요.</p>
+<figure><img src="../../assets/guide/pdf-too-large-email-2.webp" alt="같은 서류 부분을 원본, 약하게, 보통, 강하게로 압축해 확대한 비교. 강하게로 갈수록 글자 둘레가 흐려짐" loading="lazy" width="1200" height="550"><figcaption>같은 쪽의 같은 부분을 확대했어요. 괄호 안은 28쪽 전체 파일 용량이에요.</figcaption></figure>
+<h3>압축 전에 꼭 알아 둘 점</h3>
+<ul>
+<li><strong>글자 선택·검색이 안 돼요</strong>: 쪽을 그림으로 바꾸기 때문에 압축한 PDF에서는 글자를 선택하거나 검색할 수 없고, 문서 안 링크도 사라져요. 원본은 따로 보관하세요.</li>
+<li><strong>글자 PDF는 거의 안 줄어요</strong>: 142KB짜리 글자 PDF를 넣어 보니 '보통'과 '약하게'는 오히려 커져서 도구가 원본을 그대로 돌려주며 '더 줄어들지 않았어요'라고 알려 줬어요. '강하게'는 108.9KB(-23%)가 됐지만 글자 선택이 안 되는 PDF가 됐어요. 글자 PDF가 크다면 사진이 들어 있는지 먼저 보세요.</li>
+<li><strong>강도는 파일을 올리기 전에</strong>: 파일을 고르는 즉시 압축이 시작돼요. 강도를 바꾸고 싶으면 '다른 PDF'를 누르고 강도를 고친 뒤 다시 올리세요.</li>
+</ul>
+
+<h2>그래도 크면: 나눠서 보내기</h2>
+<p>쪽수가 아주 많으면 줄여도 한도를 넘을 수 있어요. 이럴 땐 <a href="../../split-pdf/">PDF 나누기</a>로 쪽 범위를 나눠 메일 여러 통으로 보내면 돼요. 26.7MB짜리 28쪽 PDF를 '1-14'와 '15-28'로 나누니 각각 13.4MB, 13.3MB가 됐어요. Gmail 25MB 안에는 각각 들어가요.</p>
+<figure><img src="../../assets/guide/pdf-too-large-email-3.webp" alt="벤토툴 PDF 나누기 화면. big28.pdf 26.7 MB 28쪽이 올라가 있고 원하는 페이지만 뽑기 칸에 1-14가 입력됨" loading="lazy" width="1064" height="545"><figcaption>'원하는 페이지만 뽑기'에 1-14처럼 적으면 그 쪽들만 새 PDF가 돼요.</figcaption></figure>
+<p>순서는 <strong>먼저 나누고, 나눈 파일을 각각 압축</strong>하는 걸 권해요. 나누기는 뽑은 쪽에 실제로 들어 있는 그림만 새 파일에 담아요. 직접 해 보니 사진 한 장씩 들어간 6쪽짜리 1.66MB PDF에서 1쪽만 뽑으면 277KB가 됐어요. 쪽마다 사진 크기가 비슷하면 쪽수에 거의 비례해서 줄어드는 셈이에요. 나눈 파일이 아직 크면 그 파일만 다시 압축하면 되고, 압축은 남은 쪽만 다시 그리기 때문에 통째로 압축할 때보다 기다리는 시간도 짧아요. 휴대폰 사진으로 PDF를 만드는 중이라면, 처음부터 사진을 두 묶음으로 나눠 <a href="../../image-to-pdf/">이미지 PDF 변환</a>을 두 번 하는 것도 간단한 방법이에요.</p>
+<p>나눌 때 범위는 쪽수를 반으로 자르기보다 내용 단위로 나누는 게 좋아요. 예를 들어 '신청서·계약서'와 '증빙 서류'처럼 나누면 받는 사람이 필요한 파일만 열어 볼 수 있어요. '한 장씩 모두 나누기'를 고르면 쪽마다 따로 된 PDF가 ZIP 파일 하나로 내려오는데, 메일 첨부가 너무 많아지니 쪽수가 적을 때만 쓰세요.</p>
+<p>나눠 보낼 때는 메일 제목에 '(1/2)', '(2/2)'처럼 번호를 붙이고, 파일 이름에도 쪽 범위를 적어 두면 받는 사람이 헷갈리지 않아요. 나눈 파일을 받는 쪽에서 다시 하나로 합쳐야 한다면 <a href="../merge-pdf-documents/">PDF 합치는 법</a>을 함께 알려 주세요.</p>
+
+<h2>상황별 정리</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>상황</th><th>추천 순서</th></tr></thead>
+<tbody>
+<tr><td>스캔 PDF가 한도를 조금 넘어요</td><td>'보통'으로 압축</td></tr>
+<tr><td>작은 글씨·도장이 중요해요</td><td>'약하게'로 압축, 그래도 크면 나누기</td></tr>
+<tr><td>한도가 아주 작아요 (예: 2MB)</td><td>'강하게'로 압축 후 글자가 읽히는지 확인</td></tr>
+<tr><td>쪽수가 아주 많아요</td><td>먼저 나누고, 나눈 파일을 각각 압축</td></tr>
+<tr><td>글자 위주 PDF인데 커요</td><td>압축 효과가 작아요. 들어 있는 사진을 줄여 다시 만들거나 나누기</td></tr>
+</tbody></table></div>
+<p>파일은 서버로 올라가지 않고 내 브라우저 안에서 처리돼요. 휴대폰 사진으로 서류 PDF를 처음 만드는 과정은 <a href="../scan-photo-to-pdf/">서류 사진을 PDF로 만드는 법</a>에 정리해 두었어요.</p>
+
+<h2>참고한 자료</h2>
+<ul>
+<li><a href="https://support.google.com/mail/answer/6584?hl=ko" target="_blank" rel="noopener">Gmail 고객센터 - 첨부파일 보내기</a></li>
+<li><a href="https://support.microsoft.com/ko-kr/topic/8c698842-b462-4a4c-8d53-5c5dd04f77ef" target="_blank" rel="noopener">Microsoft 지원 - Outlook에서 대용량 파일을 보내기 위한 첨부 파일 크기 축소</a></li>
+<li><a href="https://cs.daum.net/faq/43/14487.html?faqId=28248" target="_blank" rel="noopener">다음 고객센터 - 메일 첨부 용량 안내</a></li>
+</ul>
+  <div class="article-cta end"><p>글에서 소개한 도구, 회원가입 없이 바로 써 보세요.</p><a class="btn small" href="../../compress-pdf/">📉 PDF 용량 줄이기 바로 쓰기</a><a class="btn small" href="../../split-pdf/">🗂️ PDF 나누기 바로 쓰기</a></div>
+</article>
+
+<section class="related"><h2>다른 글도 읽어 보세요</h2><div class="guide-list"><a class="guide-card" href="../../guide/scan-photo-to-pdf/">
+    <strong>휴대폰으로 찍은 서류 사진, 어떻게 PDF로 만들까요?</strong>
+    <span>휴대폰으로 찍은 서류 사진을 깔끔한 PDF로 만드는 법. 그림자·기울기 없이 찍는 요령, 필요한 부분만 자르기, A4로 묶기, 용량 줄이기, 아이폰·구글 드라이브 스캔 기능까지 정리했어요.</span>
+  </a><a class="guide-card" href="../../guide/iphone-heic-photo-pc/">
+    <strong>아이폰 사진(HEIC)이 PC에서 안 열릴 때, 어떻게 해야 할까요?</strong>
+    <span>아이폰 사진(HEIC)이 윈도우 PC나 업로드 사이트에서 안 열릴 때, 이미 찍은 사진을 JPG로 바꾸는 법과 앞으로 JPG로 찍는 설정, 옮길 때 자동 변환까지 상황별로 정리했어요.</span>
+  </a><a class="guide-card" href="../../guide/photo-size-kb-upload/">
+    <strong>'사진은 ○○KB 이하만 올릴 수 있어요' 오류, 어떻게 해결할까요?</strong>
+    <span>원서·민원·지원서 사이트에서 '사진은 200KB 이하' 같은 오류가 날 때, KB 계산법(1000과 1024 차이)부터 화질을 지키며 용량을 맞추는 순서까지 직접 해 본 숫자로 설명해요.</span>
+  </a><a class="guide-card" href="../../guide/resume-id-photo-size/">
+    <strong>이력서 증명사진, 규격은 뭘로 하고 집에서는 어떻게 만들까요?</strong>
+    <span>이력서·입사지원용 반명함(3×4cm) 등 흔한 증명사진 규격, 여권사진을 집에서 만들 때 주의할 점, 집에서 잘 찍는 요령과 4×6 인화·온라인 접수용 파일 만드는 법까지 정리했어요.</span>
+  </a></div></section>
+<aside class="promo-note"><p>🔧 이 도구 사이트, 코딩 몰라도 AI로 만들었어요 → <a href="https://salesscript-mauve.vercel.app/free-ai-tool-site.html" target="_blank" rel="noopener">무료로 만드는 법 보기</a></p></aside>
+</main>
+<footer class="site-footer">
+  <p>모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.</p>
+  <p><a href="../../about/">소개</a> · <a href="../../privacy/">개인정보처리방침</a> · 문의 <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 벤토툴</p>
+  <p>아우라세일즈 | 대표 조혜영 | 사업자등록번호 825-90-01995 | 경기도 화성시 매송고색로 366, 205호</p>
+</footer>
+
+
+
+</body>
+</html>

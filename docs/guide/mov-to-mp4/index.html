@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOV MP4 변환 - 아이폰 동영상이 안 열릴 때, 화질 그대로 바꾸는 법 | 벤토툴</title>
+<meta name="description" content="아이폰 MOV 영상이 PC나 업로드 사이트에서 안 열리는 이유(HEVC 코덱)와 MP4로 바꾸는 법. 몇 초면 끝나는 옮겨 담기와 다시 인코딩 시간, 용량 줄이기, 500MB 경고 이유까지 실측으로 정리했어요.">
+<link rel="canonical" href="https://bentotool.com/guide/mov-to-mp4/">
+<meta name="google-site-verification" content="FaPamoQVMZjes4f4_X2-MeLNNxnu2NcGe6pQE8Z2KxA">
+<meta name="naver-site-verification" content="5c69044b719c940fa3668f9390e518f1aadfc9d2">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="MOV MP4 변환 - 아이폰 동영상이 안 열릴 때, 화질 그대로 바꾸는 법 | 벤토툴">
+<meta property="og:description" content="아이폰 MOV 영상이 PC나 업로드 사이트에서 안 열리는 이유(HEVC 코덱)와 MP4로 바꾸는 법. 몇 초면 끝나는 옮겨 담기와 다시 인코딩 시간, 용량 줄이기, 500MB 경고 이유까지 실측으로 정리했어요.">
+<meta property="og:url" content="https://bentotool.com/guide/mov-to-mp4/">
+<meta property="og:site_name" content="벤토툴">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%237D55C7%22/><rect x=%2220%22 y=%2220%22 width=%2226%22 height=%2226%22 rx=%226%22 fill=%22white%22/><rect x=%2254%22 y=%2220%22 width=%2226%22 height=%2226%22 rx=%226%22 fill=%22%23E8E2F5%22/><rect x=%2220%22 y=%2254%22 width=%2260%22 height=%2226%22 rx=%226%22 fill=%22white%22/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/style.css">
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2722446823587481" crossorigin="anonymous"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"아이폰 MOV 영상, MP4로 어떻게 바꿀까요?","description":"아이폰 MOV 영상이 PC나 업로드 사이트에서 안 열리는 이유(HEVC 코덱)와 MP4로 바꾸는 법. 몇 초면 끝나는 옮겨 담기와 다시 인코딩 시간, 용량 줄이기, 500MB 경고 이유까지 실측으로 정리했어요.","datePublished":"2026-10-10","dateModified":"2026-10-10","inLanguage":"ko","author":{"@type":"Organization","name":"아우라세일즈","url":"https://bentotool.com/about/"},"publisher":{"@type":"Organization","name":"벤토툴","url":"https://bentotool.com"},"mainEntityOfPage":"https://bentotool.com/guide/mov-to-mp4/"}</script>
+</head>
+<body>
+<header class="site-header">
+  <a class="logo" href="../../">
+    <span class="logo-mark"><i></i><i></i><i></i></span>벤토툴
+  </a>
+  <nav>
+    <a href="../../#tools">모든 도구</a>
+    <a href="../../guide/">사용법·꿀팁</a>
+    <a class="lang" href="../../en/" hreflang="en">🌐 English</a>
+  </nav>
+</header>
+<main>
+
+<article class="doc article">
+  <p class="crumb"><a href="../../guide/">사용법·꿀팁</a></p>
+  <h1>아이폰 MOV 영상, MP4로 어떻게 바꿀까요?</h1>
+  <p class="article-meta">글 아우라세일즈 · 2026-10-10</p>
+  <p class="lead">아이폰으로 찍은 영상을 PC로 옮겼더니 재생이 안 되거나, 사이트에 올리려는데 'MP4만 가능'이라고 나와 막히셨죠? 이 글에서는 왜 그런지부터, 화질 그대로 몇 초 만에 바꾸는 경우와 시간이 걸리는 경우를 구분해서, 용량까지 줄이는 방법을 직접 해 본 숫자로 알려 드릴게요.</p>
+  <div class="article-cta"><a class="btn small" href="../../convert-video/">🔄 동영상 형식 변환 바로 쓰기</a><a class="btn small" href="../../compress-video/">📦 동영상 용량 줄이기 바로 쓰기</a></div>
+  
+<h2>MOV가 안 열리는 진짜 이유: 껍데기와 내용물</h2>
+<p>동영상 파일은 '껍데기(컨테이너)' 안에 '압축된 영상과 소리(코덱)'가 들어 있는 구조예요. MOV와 MP4는 껍데기 이름이고, 그 안의 영상은 H.264나 HEVC(H.265) 같은 코덱으로 압축돼 있어요. 아이폰 영상은 보통 파일 이름 끝이 .MOV인데, 안 열리는 원인은 대부분 껍데기보다 안에 든 코덱이에요.</p>
+<p>애플 지원 문서에 따르면 아이폰 7 이후 모델은 iOS 11부터 동영상을 HEVC로 찍을 수 있고, HEVC는 H.264보다 압축률이 높아서 같은 화질을 더 적은 용량으로 저장해요. 문제는 HEVC를 바로 못 읽는 곳이 있다는 거예요. 마이크로소프트 도움말은 윈도우에서 재생이 안 되는 형식은 많은 경우 마이크로소프트 스토어의 코덱 확장(HEVC 등)을 설치해 지원을 추가할 수 있다고 안내하고 있어요. 확장이 없는 PC, 오래된 기기, 일부 업로드 사이트에서는 HEVC 영상이 안 열리거나 소리만 나올 수 있어요.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>아이폰 카메라 포맷 설정</th><th>동영상 코덱</th><th>MP4로 바꿀 때</th></tr></thead>
+<tbody>
+<tr><td>고효율성 (기본)</td><td>HEVC</td><td>다시 인코딩 필요 → 몇 분 걸림</td></tr>
+<tr><td>높은 호환성</td><td>H.264</td><td>옮겨 담기만 → 몇 초</td></tr>
+</tbody></table></div>
+<p>애플 문서에 나온 대로 '설정 &gt; 카메라 &gt; 포맷'에서 '높은 호환성'을 고르면 그다음부터 찍는 동영상은 H.264로 저장돼요. 대신 용량이 더 커지고, 이미 찍은 영상은 바뀌지 않아요. 사진 쪽 이야기는 <a href="../iphone-heic-photo-pc/">아이폰 사진(HEIC)이 PC에서 안 열릴 때</a>에 정리해 두었어요.</p>
+
+<h2>벤토툴로 MOV를 MP4로 바꾸기</h2>
+<ol>
+<li><a href="../../convert-video/">동영상 형식 변환</a>을 열고, '바꿀 형식'은 MP4(H.264·AAC), '해상도'는 원본 그대로 두세요.</li>
+<li>MOV 파일을 올리면 바로 변환을 시작해요. 처음 한 번은 변환 엔진(약 9MB)을 내려받아요.</li>
+<li>끝날 때까지 탭을 열어 두고, 완료되면 결과 영상을 재생해 본 뒤 '다운로드'를 누르세요.</li>
+</ol>
+<p>도구가 영상 코덱을 먼저 확인해서, 이미 H.264면 다시 만들지 않고 MP4 껍데기로 옮겨 담기만 해요. HEVC면 어디서나 열리는 H.264로 새로 만들어요. 직접 고를 필요 없이 알아서 정해져요.</p>
+
+<h2>코덱이 맞으면 몇 초 만에 끝나는 '옮겨 담기'</h2>
+<p>H.264로 찍은 1분짜리 1080p MOV(42.0MB)를 넣어 보니 2.5~3초 만에 끝났어요. 용량은 42.0MB 그대로, 해상도 1920×1080, 길이 1분 그대로였고, '영상 코덱이 이미 맞아서 그대로 옮겨 담았어요'라는 안내가 떴어요. 영상을 다시 압축하지 않았으니 화질 손실도 없어요.</p>
+<figure><img src="../../assets/guide/mov-to-mp4-1.webp" alt="형식 변환 완료 화면. 42.0MB에서 42.0MB, MP4(H264·AAC) 1920×1080 1분, 영상 코덱이 이미 맞아서 그대로 옮겨 담았다는 안내" loading="lazy" width="1048" height="690"><figcaption>H.264 MOV는 다시 만들지 않고 옮겨 담기만 해서 3초 안에 끝났어요.</figcaption></figure>
+
+<h2>HEVC 영상은 다시 인코딩, 시간이 걸려요</h2>
+<p>아이폰 기본 설정과 같은 HEVC 코덱으로 만든 1분짜리 1080p MOV(46.6MB)는 사정이 달라요. 영상을 H.264로 새로 만들어야 해서 원본 해상도 그대로는 약 3분(185초)이 걸렸고, 결과는 33.0MB였어요. 해상도를 720p로 고르니 약 1분 50초 만에 끝났고 9.5MB가 됐어요.</p>
+<figure><img src="../../assets/guide/mov-to-mp4-2.webp" alt="HEVC MOV를 720p로 변환한 완료 화면. 46.6MB에서 9.5MB, MP4(H264·AAC) 1280×720 1분" loading="lazy" width="1048" height="658"><figcaption>HEVC MOV를 720p MP4로 바꾼 결과. 약 1분 50초 걸렸고 46.6MB가 9.5MB가 됐어요.</figcaption></figure>
+<p>이 도구는 브라우저 안에서 한 줄(단일 스레드)로 처리해서 설치형 프로그램보다 느려요. 도구 안내 기준으로 1분 영상에 720p는 약 1분 반, 1080p는 약 3분이고, 노트북이나 휴대폰은 더 걸릴 수 있어요. 변환하는 동안 탭을 닫지 마세요. 참고로 이 숫자는 컴퓨터로 만든 색 막대 테스트 영상으로 잰 값이라, 실제 촬영 영상은 결과 용량이 다를 수 있어요.</p>
+<h3>바꾼 뒤 꼭 확인할 것</h3>
+<ul>
+<li><strong>정보 줄 보기</strong>: 완료 화면의 'MP4 (H264 · AAC) · 해상도 · 길이' 줄에서 H264가 보이면 어디서나 열리는 형식이에요. 길이가 원본과 같은지도 함께 보세요.</li>
+<li><strong>올릴 곳에서 한 번 열어 보기</strong>: 받은 파일을 실제로 쓸 PC 플레이어나 업로드 사이트에 먼저 올려 보세요. 안 열리던 원인이 코덱이었다면 이제 열려야 해요.</li>
+<li><strong>원본 MOV는 지우지 마세요</strong>: 다시 인코딩한 MP4는 원본보다 화질이 조금 낮아질 수 있어요. 나중에 다시 편집할 일을 생각해서 원본은 남겨 두세요.</li>
+</ul>
+<p>맥이 있다면 애플 문서에 나온 방법도 있어요. QuickTime Player에서 HEVC 비디오를 열고 '파일 &gt; 다음으로 내보내기'를 고른 뒤, '더 작은 파일 크기(HEVC)'를 '더 향상된 호환성(H.264)'으로 바꿔 저장하면 돼요.</p>
+
+<h2>용량도 줄이고 싶다면: 압축 도구와 비교</h2>
+<p>카톡이나 메일로 보내려고 용량을 크게 줄이고 싶다면 두 가지 방법이 있어요.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>방법</th><th>같은 HEVC 1분 영상 결과</th><th>특징</th></tr></thead>
+<tbody>
+<tr><td><a href="../../convert-video/">형식 변환</a>에서 해상도 720p</td><td>46.6MB → 9.5MB, 약 1분 50초</td><td>MP4(H.264) 형식이 확실하게 나와요. 탭을 다른 데로 옮겨도 계속돼요.</td></tr>
+<tr><td><a href="../../compress-video/">동영상 용량 줄이기</a> 720p·보통</td><td>46.6MB → 8.4~9.1MB, 약 1분</td><td>영상을 한 번 재생하면서 다시 녹화해서 영상 길이만큼 걸려요. 압축하는 동안 탭을 화면에 켜 둬야 해요.</td></tr>
+</tbody></table></div>
+<p>용량 줄이기 도구는 실시간으로 다시 녹화하는 방식이라 같은 영상도 할 때마다 결과 용량이 조금씩 달랐어요(두 번 해서 8.4MB, 9.1MB). 이 도구는 브라우저가 직접 재생할 수 있는 영상만 처리할 수 있는데, 테스트한 PC의 크롬은 HEVC MOV를 재생할 수 있어서 바로 됐어요. 브라우저가 HEVC를 재생하지 못하는 환경이라면 형식 변환 도구로 먼저 MP4로 바꾼 뒤 줄이세요. 긴 영상은 먼저 필요한 부분만 남기면 시간과 용량이 함께 줄어요. 자르는 법은 <a href="../trim-video-without-app/">앱 설치 없이 동영상 앞뒤 자르기</a>를 보세요.</p>
+
+<h2>500MB가 넘으면 경고가 뜨는 이유</h2>
+<p>형식 변환은 서버가 아니라 내 브라우저 안에서 돌아가요. 영상이 어디로도 올라가지 않는 대신, 브라우저가 쓸 수 있는 메모리 안에서 처리해야 해서 너무 큰 영상은 중간에 실패할 수 있어요. 도구 안내에 따르면 메모리 16GB PC의 크롬에서 1.1GB 영상은 됐지만 2GB 영상은 메모리 부족으로 실패했어요. 메모리가 적은 기기를 고려해서 500MB가 넘으면 미리 경고를 보여 줘요.</p>
+<ul>
+<li>경고가 떠도 바로 실패하는 건 아니에요. 다른 탭을 닫고 한 번 시도해 보세요.</li>
+<li>실패하면 <a href="../../trim-video/">동영상 자르기</a>로 몇 부분으로 나눈 뒤 하나씩 바꾸세요.</li>
+<li>아이폰에 원본이 남아 있다면 USB로 옮기는 방법도 있어요. 애플 문서에 따르면 USB로 PC에 가져올 때 HEVC 영상이 H.264로 변환될 수 있고, 변환을 막는 설정이 '설정 &gt; 앱 &gt; 사진'의 '원본 유지'예요. HEVC 그대로 넘어온다면 이 항목이 켜져 있지 않은지 확인해 보세요.</li>
+</ul>
+
+<h2>참고한 자료</h2>
+<ul>
+<li><a href="https://support.apple.com/ko-kr/116944" target="_blank" rel="noopener">Apple 지원 - Apple 기기에서 HEIF 또는 HEVC 미디어 사용하기</a></li>
+<li><a href="https://support.microsoft.com/en-us/windows/apps/windowsmediaplayer/codecs-faq" target="_blank" rel="noopener">Microsoft 지원 - Codecs FAQ (코덱 자주 묻는 질문, 영문)</a></li>
+</ul>
+  <div class="article-cta end"><p>글에서 소개한 도구, 회원가입 없이 바로 써 보세요.</p><a class="btn small" href="../../convert-video/">🔄 동영상 형식 변환 바로 쓰기</a><a class="btn small" href="../../compress-video/">📦 동영상 용량 줄이기 바로 쓰기</a></div>
+</article>
+
+<section class="related"><h2>다른 글도 읽어 보세요</h2><div class="guide-list"><a class="guide-card" href="../../guide/iphone-heic-photo-pc/">
+    <strong>아이폰 사진(HEIC)이 PC에서 안 열릴 때, 어떻게 해야 할까요?</strong>
+    <span>아이폰 사진(HEIC)이 윈도우 PC나 업로드 사이트에서 안 열릴 때, 이미 찍은 사진을 JPG로 바꾸는 법과 앞으로 JPG로 찍는 설정, 옮길 때 자동 변환까지 상황별로 정리했어요.</span>
+  </a><a class="guide-card" href="../../guide/photo-size-kb-upload/">
+    <strong>'사진은 ○○KB 이하만 올릴 수 있어요' 오류, 어떻게 해결할까요?</strong>
+    <span>원서·민원·지원서 사이트에서 '사진은 200KB 이하' 같은 오류가 날 때, KB 계산법(1000과 1024 차이)부터 화질을 지키며 용량을 맞추는 순서까지 직접 해 본 숫자로 설명해요.</span>
+  </a><a class="guide-card" href="../../guide/resume-id-photo-size/">
+    <strong>이력서 증명사진, 규격은 뭘로 하고 집에서는 어떻게 만들까요?</strong>
+    <span>이력서·입사지원용 반명함(3×4cm) 등 흔한 증명사진 규격, 여권사진을 집에서 만들 때 주의할 점, 집에서 잘 찍는 요령과 4×6 인화·온라인 접수용 파일 만드는 법까지 정리했어요.</span>
+  </a><a class="guide-card" href="../../guide/pdf-sign-contract/">
+    <strong>PDF 계약서에 프린트 없이 서명·도장 넣는 법</strong>
+    <span>PDF로 받은 계약서·동의서에 출력·스캔 없이 서명을 그려 넣고, 도장 사진을 투명하게 얹고, 이름·날짜까지 넣는 방법. 서명 그림과 전자계약 서비스의 차이도 정리했어요.</span>
+  </a></div></section>
+<aside class="promo-note"><p>🔧 이 도구 사이트, 코딩 몰라도 AI로 만들었어요 → <a href="https://salesscript-mauve.vercel.app/free-ai-tool-site.html" target="_blank" rel="noopener">무료로 만드는 법 보기</a></p></aside>
+</main>
+<footer class="site-footer">
+  <p>모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.</p>
+  <p><a href="../../about/">소개</a> · <a href="../../privacy/">개인정보처리방침</a> · 문의 <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 벤토툴</p>
+  <p>아우라세일즈 | 대표 조혜영 | 사업자등록번호 825-90-01995 | 경기도 화성시 매송고색로 366, 205호</p>
+</footer>
+
+
+
+</body>
+</html>

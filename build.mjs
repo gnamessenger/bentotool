@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { config } from "./src/config.mjs";
 import { site, tools } from "./src/content.mjs";
 import { guides } from "./src/guides.mjs";
+import { articles } from "./src/articles.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, "docs");
@@ -41,11 +42,22 @@ function promo(lang) {
   return `<aside class="promo-note"><p>${esc(p.text)} → <a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.cta)}</a></p></aside>`;
 }
 
-function layout({ lang, path, title, desc, main, T = null, libs = [], script = null, schema = null, showPromo = true }) {
+// 운영자 정보 한 줄 (푸터)
+function bizLine(lang) {
+  const B = config.business?.[lang];
+  if (!B) return "";
+  return lang === "ko"
+    ? `<p>${esc(B.name)} | 대표 ${esc(B.ceo)} | 사업자등록번호 ${esc(B.regNo)} | ${esc(B.address)}</p>`
+    : `<p>Operated by ${esc(B.name)} | Business registration no. ${esc(B.regNo)} | ${esc(B.address)}</p>`;
+}
+
+// altLangs=false: 한국어에만 있는 페이지(사용법·꿀팁 글) — hreflang 없이, 언어 버튼은 상대 언어 홈으로
+function layout({ lang, path, title, desc, main, T = null, libs = [], script = null, schema = null, showPromo = true, altLangs = true, ogType = "website" }) {
   const S = site[lang];
   const root = rootFor(lang, path);
   const other = lang === "ko" ? "en" : "ko";
   const url = (l) => `${config.domain}/${pathFor(l, path)}`;
+  const switchHref = altLangs ? `${root}${pathFor(other, path)}` : `${root}${pathFor(other, "")}`;
   return `<!DOCTYPE html>
 <html lang="${lang}">
 <head>
@@ -56,10 +68,10 @@ function layout({ lang, path, title, desc, main, T = null, libs = [], script = n
 <link rel="canonical" href="${url(lang)}">
 ${config.verify?.google ? `<meta name="google-site-verification" content="${esc(config.verify.google)}">` : ""}
 ${config.verify?.naver ? `<meta name="naver-site-verification" content="${esc(config.verify.naver)}">` : ""}
-<link rel="alternate" hreflang="ko" href="${url("ko")}">
+${altLangs ? `<link rel="alternate" hreflang="ko" href="${url("ko")}">
 <link rel="alternate" hreflang="en" href="${url("en")}">
-<link rel="alternate" hreflang="x-default" href="${url("en")}">
-<meta property="og:type" content="website">
+<link rel="alternate" hreflang="x-default" href="${url("en")}">` : ""}
+<meta property="og:type" content="${ogType}">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${url(lang)}">
@@ -79,7 +91,8 @@ ${schema ? `<script type="application/ld+json">${json(schema)}</script>` : ""}
   </a>
   <nav>
     <a href="${root}${lang === "ko" ? "" : "en/"}#tools">${S.nav.tools}</a>
-    <a class="lang" href="${root}${pathFor(other, path)}" hreflang="${other}">🌐 ${S.switchLabel}</a>
+    ${lang === "ko" && articles.length ? `<a href="${root}guide/">${S.nav.guide}</a>` : ""}
+    <a class="lang" href="${switchHref}" hreflang="${other}">🌐 ${S.switchLabel}</a>
   </nav>
 </header>
 <main>
@@ -89,6 +102,7 @@ ${showPromo ? promo(lang) : ""}
 <footer class="site-footer">
   <p>${S.footer.note}</p>
   <p><a href="${root}${pathFor(lang, "about/")}">${S.footer.about}</a> · <a href="${root}${pathFor(lang, "privacy/")}">${S.footer.privacy}</a> · ${S.footer.contact} <a href="mailto:${config.contact}">${config.contact}</a> · © ${new Date().getFullYear()} ${esc(config.name[lang])}</p>
+  ${bizLine(lang)}
 </footer>
 ${T ? `<script>window.T=${json(T)};</script>` : ""}
 ${libs.filter((l) => !isCss(l)).map((l) => `<script src="${LIBS[l]}"></script>`).join("\n")}
@@ -122,6 +136,11 @@ function homePage(lang) {
     ${tools.filter((t) => t.cat === c).map((t) => toolCard(lang, t, root)).join("")}
   </div>`).join("")}
 </section>
+${lang === "ko" && articles.length ? `<section class="home-guides">
+  <h2>${S.guide.homeTitle}</h2>
+  <div class="guide-list">${articles.slice(0, 6).map((a) => guideCard(a, root)).join("")}</div>
+  <p class="more-link"><a href="${root}guide/">${S.guide.more} →</a></p>
+</section>` : ""}
 <section class="features">
   ${S.home.features.map(([icon, h, p]) => `<div><span>${icon}</span><strong>${esc(h)}</strong><p>${esc(p)}</p></div>`).join("")}
 </section>
@@ -149,13 +168,16 @@ ${adSlot("top")}
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
 <section class="tool-info">
   ${g.intro ? `<h2>${S.about}</h2>
-  <p class="tool-intro">${esc(g.intro)}</p>` : ""}
+  ${[].concat(g.intro).map((p) => `<p class="tool-intro">${esc(p)}</p>`).join("")}` : ""}
+  ${(g.sections || []).map(([h, ps]) => `<h3 class="tool-sub">${esc(h)}</h3>${[].concat(ps).map((p) => `<p class="tool-intro">${esc(p)}</p>`).join("")}`).join("")}
   <h2>${S.how}</h2>
   <ol class="steps">${c.steps.map((s) => `<li>${esc(s)}</li>`).join("")}</ol>
   <h2>${S.faq}</h2>
   <div class="faq">${faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join("")}</div>
   ${g.tips?.length ? `<h2>${S.tips}</h2>
   <ul class="tips">${g.tips.map((s) => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}
+  ${lang === "ko" && relatedArticles(t.slug).length ? `<h2>${S.guide.relatedTitle}</h2>
+  <div class="guide-list">${relatedArticles(t.slug).map((a) => guideCard(a, root)).join("")}</div>` : ""}
 </section>
 ${adSlot("bottom")}
 <section class="related">
@@ -187,11 +209,69 @@ function privacyPage(lang) {
   return layout({ lang, path: "privacy/", title: P.title, desc: P.desc, showPromo: false, main: `<article class="doc"><h1>${P.h1}</h1>${P.body}<h2>${P.contactTitle}</h2><p>${P.contactText} <a href="mailto:${config.contact}">${config.contact}</a></p></article>` });
 }
 
+// ---------- 사용법·꿀팁 글 (한국어만) ----------
+const relatedArticles = (slug) => articles.filter((a) => a.tools.includes(slug));
+const toolBySlug = (slug) => tools.find((t) => t.slug === slug);
+
+function guideCard(a, root) {
+  return `<a class="guide-card" href="${root}guide/${a.slug}/">
+    <strong>${esc(a.ko.h1)}</strong>
+    <span>${esc(a.ko.desc)}</span>
+  </a>`;
+}
+
+function articlePage(a) {
+  const S = site.ko;
+  const path = `guide/${a.slug}/`;
+  const root = rootFor("ko", path);
+  const B = config.business.ko;
+  const toolBtns = a.tools.map(toolBySlug).filter(Boolean)
+    .map((t) => `<a class="btn small" href="${root}${t.slug}/">${t.icon} ${esc(t.ko.name)} ${S.guide.useTool}</a>`).join("");
+  const more = articles.filter((x) => x !== a && x.tools.some((s) => a.tools.includes(s)))
+    .concat(articles.filter((x) => x !== a && !x.tools.some((s) => a.tools.includes(s)))).slice(0, 4);
+  const main = `
+<article class="doc article">
+  <p class="crumb"><a href="${root}guide/">${S.nav.guide}</a></p>
+  <h1>${esc(a.ko.h1)}</h1>
+  <p class="article-meta">${S.guide.by} ${esc(B.name)} · ${a.date}${a.updated ? ` (${S.guide.updated} ${a.updated})` : ""}</p>
+  <p class="lead">${a.ko.lead}</p>
+  ${toolBtns ? `<div class="article-cta">${toolBtns}</div>` : ""}
+  ${a.ko.body}
+  ${toolBtns ? `<div class="article-cta end"><p>${S.guide.ctaText}</p>${toolBtns}</div>` : ""}
+</article>
+${adSlot("bottom")}
+${more.length ? `<section class="related"><h2>${S.guide.moreTitle}</h2><div class="guide-list">${more.map((x) => guideCard(x, root)).join("")}</div></section>` : ""}`;
+  return layout({
+    lang: "ko", path, title: a.ko.title, desc: a.ko.desc, main, altLangs: false, ogType: "article",
+    schema: {
+      "@context": "https://schema.org", "@type": "Article", headline: a.ko.h1, description: a.ko.desc,
+      datePublished: a.date, dateModified: a.updated || a.date, inLanguage: "ko",
+      author: { "@type": "Organization", name: B.name, url: `${config.domain}/about/` },
+      publisher: { "@type": "Organization", name: config.name.ko, url: config.domain },
+      mainEntityOfPage: `${config.domain}/${path}`,
+    },
+  });
+}
+
+function guideIndexPage() {
+  const S = site.ko;
+  const root = rootFor("ko", "guide/");
+  return layout({
+    lang: "ko", path: "guide/", title: S.guide.indexTitle, desc: S.guide.indexDesc, altLangs: false,
+    main: `<section class="doc"><h1>${S.guide.indexH1}</h1><p>${esc(S.guide.indexSub)}</p></section>
+<div class="guide-list wide">${articles.map((a) => guideCard(a, root)).join("")}</div>`,
+  });
+}
+
 function aboutPage(lang) {
   const P = site[lang].aboutPage;
+  const B = config.business[lang];
+  const op = lang === "ko"
+    ? `<h2>운영자 정보</h2><ul class="biz"><li>상호: ${esc(B.name)}</li><li>대표: ${esc(B.ceo)}</li><li>사업자등록번호: ${esc(B.regNo)}</li><li>주소: ${esc(B.address)}</li><li>이메일: <a href="mailto:${config.contact}">${config.contact}</a></li></ul>`
+    : `<h2>Operator</h2><ul class="biz"><li>Business name: ${esc(B.name)}</li><li>Representative: ${esc(B.ceo)}</li><li>Business registration no.: ${esc(B.regNo)}</li><li>Address: ${esc(B.address)}</li><li>Email: <a href="mailto:${config.contact}">${config.contact}</a></li></ul>`;
   return layout({
     lang, path: "about/", title: P.title, desc: P.desc,
-    main: `<article class="doc"><h1>${P.h1}</h1>${P.body}<h2>${P.contactTitle}</h2><p>${P.contactText} <a href="mailto:${config.contact}">${config.contact}</a></p></article>`,
+    main: `<article class="doc"><h1>${P.h1}</h1>${P.body}${op}<h2>${P.contactTitle}</h2><p>${P.contactText} <a href="mailto:${config.contact}">${config.contact}</a></p></article>`,
     schema: { "@context": "https://schema.org", "@type": "AboutPage", name: P.h1, url: `${config.domain}/${pathFor(lang, "about/")}` },
   });
 }
@@ -223,6 +303,14 @@ for (const lang of LANGS) {
   write(pathFor(lang, "about/index.html"), aboutPage(lang));
   write(pathFor(lang, "privacy/index.html"), privacyPage(lang));
   urls.push(pathFor(lang, "about/"), pathFor(lang, "privacy/"));
+}
+if (articles.length) {
+  write("guide/index.html", guideIndexPage());
+  urls.push("guide/");
+  for (const a of articles) {
+    write(`guide/${a.slug}/index.html`, articlePage(a));
+    urls.push(`guide/${a.slug}/`);
+  }
 }
 
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>

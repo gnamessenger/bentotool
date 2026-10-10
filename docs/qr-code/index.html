@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../assets/style.css">
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2722446823587481" crossorigin="anonymous"></script>
-<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"QR코드 만들기","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"QR코드에 유효기간이 있나요?","acceptedAnswer":{"@type":"Answer","text":"없어요. 여기서 만든 QR코드는 내용이 코드 안에 직접 들어 있어서 영원히 작동해요. (링크 주소 자체가 사라지면 그 링크는 안 열려요)"}},{"@type":"Question","name":"인쇄용은 어떤 걸 받나요?","acceptedAnswer":{"@type":"Answer","text":"SVG를 받으세요. 아무리 크게 인쇄해도 깨지지 않아요."}},{"@type":"Question","name":"색을 바꿔도 잘 찍히나요?","acceptedAnswer":{"@type":"Answer","text":"배경은 밝게, 코드는 진하게 해야 잘 찍혀요. 반대로 하면 못 읽는 휴대폰이 있어요."}},{"@type":"Question","name":"만든 QR코드를 나중에 수정할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 내용이 코드 안에 직접 들어가서, 바꾸려면 새로 만들어야 해요. 인쇄하기 전에 휴대폰으로 꼭 한 번 찍어 보세요."}}]}]</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"WebApplication","name":"QR코드 만들기","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"QR코드에 유효기간이 있나요?","acceptedAnswer":{"@type":"Answer","text":"없어요. 여기서 만든 QR코드는 내용이 코드 안에 직접 들어 있어서 영원히 작동해요. (링크 주소 자체가 사라지면 그 링크는 안 열려요)"}},{"@type":"Question","name":"인쇄용은 어떤 걸 받나요?","acceptedAnswer":{"@type":"Answer","text":"SVG를 받으세요. 아무리 크게 인쇄해도 깨지지 않아요."}},{"@type":"Question","name":"색을 바꿔도 잘 찍히나요?","acceptedAnswer":{"@type":"Answer","text":"배경은 밝게, 코드는 진하게 해야 잘 찍혀요. 반대로 하면 못 읽는 휴대폰이 있어요."}},{"@type":"Question","name":"만든 QR코드를 나중에 수정할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 내용이 코드 안에 직접 들어가서, 바꾸려면 새로 만들어야 해요. 인쇄하기 전에 휴대폰으로 꼭 한 번 찍어 보세요."}},{"@type":"Question","name":"QR코드를 찍으려면 앱이 따로 필요한가요?","acceptedAnswer":{"@type":"Answer","text":"요즘 휴대폰은 대부분 기본 카메라 앱으로 QR코드를 읽어요. 아이폰은 카메라 앱이나 제어 센터의 코드 스캐너로 찍을 수 있어요."}},{"@type":"Question","name":"스캔 횟수를 알 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 중간에 거치는 서버가 없어서 누가 몇 번 찍었는지 기록되지 않아요. 방문 수를 보고 싶다면 QR에 넣는 링크 자체를 방문 통계를 볼 수 있는 주소로 만들어 넣어야 해요."}},{"@type":"Question","name":"PNG 배경을 투명하게 할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"배경은 항상 고른 배경 색으로 채워져요. 투명 배경이 필요하면 SVG를 받아 디자인 프로그램에서 배경 사각형을 지우면 돼요."}}]}]</script>
 </head>
 <body>
 <header class="site-header">
@@ -31,6 +31,7 @@
   </a>
   <nav>
     <a href="../#tools">모든 도구</a>
+    <a href="../guide/">사용법·꿀팁</a>
     <a class="lang" href="../en/qr-code/" hreflang="en">🌐 English</a>
   </nav>
 </header>
@@ -45,13 +46,19 @@
 <section id="tool" class="tool-root"><noscript>JavaScript is required.</noscript></section>
 <section class="tool-info">
   <h2>이 도구로 할 수 있는 일</h2>
-  <p class="tool-intro">링크·글·와이파이 정보를 담은 QR코드를 만드는 도구예요. 명함, 전단지, 매장 테이블, 행사 안내문에 넣기 좋아요. 코드 색과 배경 색을 바꿀 수 있고, PNG(256~2048px)나 인쇄용 SVG로 받을 수 있어요. 내용이 코드 안에 직접 들어가서 따로 서버를 거치지 않아요.</p>
+  <p class="tool-intro">링크·글·와이파이 정보를 담은 QR코드를 만드는 도구예요. 명함, 전단지, 매장 테이블, 행사 안내문에 넣기 좋아요.</p><p class="tool-intro">코드 색과 배경 색을 바꿀 수 있고, PNG(256·512·1024·2048px)나 인쇄용 SVG로 받을 수 있어요. 입력하는 동안 미리보기가 바로 바뀌어서, 결과를 보면서 내용을 고치면 돼요.</p><p class="tool-intro">내용이 코드 안에 직접 들어가서 따로 서버를 거치지 않아요. 그래서 이 사이트가 없어지더라도 이미 만든 QR코드는 그대로 작동해요.</p>
+  <h3 class="tool-sub">이럴 때 쓰면 좋아요</h3><p class="tool-intro">카페·매장 테이블에 와이파이 QR을 붙여 두면 손님이 비밀번호를 묻거나 받아 적지 않아도 돼요.</p><p class="tool-intro">명함이나 전단지에 홈페이지·예약 페이지·카카오톡 채널 링크를 QR로 넣으면, 받는 사람이 주소를 직접 칠 필요가 없어요.</p><p class="tool-intro">행사장 안내판이나 포스터에 신청서·설문 링크를 넣어 현장에서 바로 참여하게 할 수 있어요.</p><p class="tool-intro">링크가 아니라 짧은 안내문이나 연락처 같은 글도 그대로 담을 수 있어요. 찍었을 때 글이 어떻게 보이는지는 휴대폰 카메라 앱마다 조금씩 달라요.</p><h3 class="tool-sub">설정 고르는 법</h3><p class="tool-intro">이 도구는 QR코드 표준의 오류 복원 단계 중 'M'(약 15%까지 복원)을 써요. 인쇄물이 조금 긁히거나 더러워져도 읽히는 데 도움이 되지만, 코드 위에 로고나 스티커를 크게 덮으면 읽히지 않을 수 있어요.</p><p class="tool-intro">PNG는 256·512·1024·2048px 중에서 고르고 기본값은 1024px이에요. 웹페이지나 메신저에 올릴 때는 512px나 1024px면 충분하고, 현수막처럼 아주 크게 쓰거나 디자인 프로그램에 넣을 때는 SVG가 좋아요.</p><p class="tool-intro">코드 둘레에는 칸 4개 너비의 여백이 자동으로 들어가요. QR 규격에서 정한 여백이라, 디자인에 넣을 때도 이 여백을 남겨 두세요.</p><p class="tool-intro">와이파이 탭에서는 보안 방식을 WPA/WPA2, WEP, 없음 중에서 골라요. 공유기에 설정된 방식과 같게 골라야 연결되니, 만든 뒤 꼭 휴대폰으로 찍어서 연결되는지 확인하세요.</p><h3 class="tool-sub">다른 방법과 비교</h3><p class="tool-intro">안드로이드 휴대폰은 설정의 네트워크 및 인터넷 &gt; 인터넷에서 연결된 와이파이를 고르고 '공유'를 누르면 그 자리에서 QR코드를 보여 줘요(기종에 따라 메뉴 이름이 다를 수 있어요). 옆 사람에게 바로 보여 줄 때는 그쪽이 빠르고, 매장에 붙여 둘 인쇄용 QR 파일이 필요하면 이 도구가 편해요.</p><p class="tool-intro">아이폰은 기본 카메라 앱으로 QR코드를 비추면 화면에 링크가 나타나요. 인쇄하기 전에 아이폰과 안드로이드 둘 다로 찍어 보면 더 안심이에요.</p><p class="tool-intro">유료 QR 서비스 중에는 중간 주소를 거치게 해서 나중에 연결 링크를 바꾸거나 스캔 횟수를 보여 주는 '동적 QR'을 제공하는 곳이 있어요. 이 도구는 중간 주소 없이 내용을 그대로 담는 '정적 QR'이라 기한이나 구독이 없는 대신, 나중에 내용을 바꾸거나 스캔 수를 볼 수는 없어요.</p><h3 class="tool-sub">주의할 점·한계</h3><p class="tool-intro">담을 수 있는 양에 한계가 있어요. 이 설정(오류 복원 M)에서 QR 규격상 최대치는 영문 기준 약 2,300자, 한글은 한 글자가 3바이트라 약 770자예요. 그보다 짧아도 내용이 길수록 코드가 촘촘해져 작게 인쇄하면 잘 안 찍히니, 긴 글은 링크로 바꿔 넣는 게 좋아요.</p><p class="tool-intro">코드 가운데에 로고를 넣는 기능은 없어요.</p><p class="tool-intro">와이파이 QR에는 비밀번호가 그대로 들어가요. QR 스캐너 앱에 따라 비밀번호가 글자로 보일 수 있으니, 손님용 와이파이를 따로 만들어 그 정보를 넣는 게 안전해요. 이름을 숨긴 와이파이(숨김 네트워크) 설정은 지원하지 않아요.</p>
   <h2>사용 방법</h2>
   <ol class="steps"><li>링크나 글을 입력하세요. 와이파이 탭에서는 이름과 비밀번호를 넣으세요.</li><li>색상과 크기를 고르면 미리보기가 바로 바뀌어요.</li><li>PNG(일반용)나 SVG(인쇄용)로 받으세요.</li></ol>
   <h2>자주 묻는 질문</h2>
-  <div class="faq"><details><summary>QR코드에 유효기간이 있나요?</summary><p>없어요. 여기서 만든 QR코드는 내용이 코드 안에 직접 들어 있어서 영원히 작동해요. (링크 주소 자체가 사라지면 그 링크는 안 열려요)</p></details><details><summary>인쇄용은 어떤 걸 받나요?</summary><p>SVG를 받으세요. 아무리 크게 인쇄해도 깨지지 않아요.</p></details><details><summary>색을 바꿔도 잘 찍히나요?</summary><p>배경은 밝게, 코드는 진하게 해야 잘 찍혀요. 반대로 하면 못 읽는 휴대폰이 있어요.</p></details><details><summary>만든 QR코드를 나중에 수정할 수 있나요?</summary><p>아니요. 내용이 코드 안에 직접 들어가서, 바꾸려면 새로 만들어야 해요. 인쇄하기 전에 휴대폰으로 꼭 한 번 찍어 보세요.</p></details></div>
+  <div class="faq"><details><summary>QR코드에 유효기간이 있나요?</summary><p>없어요. 여기서 만든 QR코드는 내용이 코드 안에 직접 들어 있어서 영원히 작동해요. (링크 주소 자체가 사라지면 그 링크는 안 열려요)</p></details><details><summary>인쇄용은 어떤 걸 받나요?</summary><p>SVG를 받으세요. 아무리 크게 인쇄해도 깨지지 않아요.</p></details><details><summary>색을 바꿔도 잘 찍히나요?</summary><p>배경은 밝게, 코드는 진하게 해야 잘 찍혀요. 반대로 하면 못 읽는 휴대폰이 있어요.</p></details><details><summary>만든 QR코드를 나중에 수정할 수 있나요?</summary><p>아니요. 내용이 코드 안에 직접 들어가서, 바꾸려면 새로 만들어야 해요. 인쇄하기 전에 휴대폰으로 꼭 한 번 찍어 보세요.</p></details><details><summary>QR코드를 찍으려면 앱이 따로 필요한가요?</summary><p>요즘 휴대폰은 대부분 기본 카메라 앱으로 QR코드를 읽어요. 아이폰은 카메라 앱이나 제어 센터의 코드 스캐너로 찍을 수 있어요.</p></details><details><summary>스캔 횟수를 알 수 있나요?</summary><p>아니요. 중간에 거치는 서버가 없어서 누가 몇 번 찍었는지 기록되지 않아요. 방문 수를 보고 싶다면 QR에 넣는 링크 자체를 방문 통계를 볼 수 있는 주소로 만들어 넣어야 해요.</p></details><details><summary>PNG 배경을 투명하게 할 수 있나요?</summary><p>배경은 항상 고른 배경 색으로 채워져요. 투명 배경이 필요하면 SVG를 받아 디자인 프로그램에서 배경 사각형을 지우면 돼요.</p></details></div>
   <h2>알아두면 좋은 팁</h2>
   <ul class="tips"><li>와이파이 QR은 대부분의 휴대폰에서 카메라로 찍기만 하면 비밀번호를 입력하지 않고 연결돼요.</li><li>링크가 길수록 코드가 촘촘해져요. 작게 인쇄할 거라면 짧은 주소를 쓰세요.</li><li>코드 주변 흰 여백은 인식에 필요하니 잘라내지 마세요.</li></ul>
+  <h2>함께 읽으면 좋은 글</h2>
+  <div class="guide-list"><a class="guide-card" href="../guide/qr-code-free-make/">
+    <strong>가게·명함용 QR코드, 무료로 만들어도 괜찮을까요?</strong>
+    <span>가게·명함·전단지에 넣을 QR코드를 무료로 만드는 법. 기한 없는 정적 QR과 유료 동적 QR의 차이, 와이파이 QR, 인쇄 크기·여백·색 대비, 인쇄 전 휴대폰 확인까지 정리했어요.</span>
+  </a></div>
 </section>
 
 <section class="related">
@@ -95,6 +102,7 @@
 <footer class="site-footer">
   <p>모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.</p>
   <p><a href="../about/">소개</a> · <a href="../privacy/">개인정보처리방침</a> · 문의 <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 벤토툴</p>
+  <p>아우라세일즈 | 대표 조혜영 | 사업자등록번호 825-90-01995 | 경기도 화성시 매송고색로 366, 205호</p>
 </footer>
 <script>window.T={"lang":"ko","ui":{"choose":"파일 선택","orDrop":"또는 여기로 끌어다 놓기","pasteHint":"Ctrl+V로 붙여넣기도 돼요","processing":"처리 중…","waiting":"대기 중","failed":"실패","download":"다운로드","downloadAll":"모두 다운로드","clear":"모두 지우기","remove":"빼기","moveUp":"위로","moveDown":"아래로","privacyBadge":"🔒 파일은 서버로 전송되지 않아요","addMore":"파일 추가"},"tool":{"tabText":"링크·글","tabWifi":"와이파이","textPh":"https://… 또는 아무 글","ssid":"와이파이 이름","password":"비밀번호","security":"보안","none":"없음","fg":"코드 색","bg":"배경 색","size":"크기","png":"PNG 다운로드","svg":"SVG 다운로드","empty":"내용을 입력하면 QR코드가 나타나요","tooLong":"내용이 너무 길어요"}};</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>

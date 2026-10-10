@@ -40,7 +40,40 @@ export function pdfjs() {
   return lib;
 }
 
-export const stripExt = (name) => (name || "file").replace(/\.[^.]+$/, "") || "file";
+// PDF 쪽마다 실제로 그리는 그림(XObject)만 남기기 (pdf-lib 문서, 메모리 안에서만)
+// 이미지→PDF·PDF 압축처럼 모든 쪽이 그림 목록 하나를 같이 쓰는 PDF는, 한 쪽만 뽑아도 모든 그림이 따라와 용량이 안 줄어요.
+// copyPages 전에 원본 문서에 한 번 돌리면, 뽑은 쪽이 쓰는 그림만 복사돼요.
+export function pruneUnusedXObjects(doc) {
+  const { PDFName, PDFDict, PDFArray, PDFRawStream, decodePDFRawStream } = window.PDFLib;
+  const XO = PDFName.of("XObject");
+  const latin1 = new TextDecoder("latin1");
+  for (const page of doc.getPages()) {
+    const node = page.node;
+    const res = node.Resources();
+    const xo = res?.lookup(XO, PDFDict);
+    if (!xo) continue;
+    let text = "";
+    try {
+      const c = node.Contents();
+      const parts = c instanceof PDFArray ? c.asArray().map((r) => doc.context.lookup(r)) : [c];
+      for (const s of parts) {
+        if (!s) continue;
+        const bytes = s instanceof PDFRawStream ? decodePDFRawStream(s).decode() : s.getContents();
+        text += latin1.decode(bytes) + "\n";
+      }
+    } catch { continue; }   // 내용을 못 읽으면 건드리지 않아요
+    const keys = xo.keys();
+    const used = keys.filter((k) => new RegExp(k.asString().replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\s+Do\\b").test(text));
+    if (used.length === keys.length) continue;
+    const newXo = doc.context.obj({});
+    for (const k of used) newXo.set(k, xo.get(k));
+    const newRes = res.clone(doc.context);
+    newRes.set(XO, newXo);
+    node.set(PDFName.of("Resources"), newRes);
+  }
+}
+
+export const stripExt =(name) => (name || "file").replace(/\.[^.]+$/, "") || "file";
 export const EXT = { "image/jpeg": ".jpg", "image/png": ".png", "image/webp": ".webp" };
 
 export function download(blob, filename) {
@@ -153,7 +186,8 @@ function thumbFor(file) {
 
 // ---------- 여러 장 일괄 처리 도구 (압축·크기·변환) ----------
 // process(file) → { blob, name, note? }  |  옵션이 바뀌면 전체를 다시 처리해요.
-export function batchTool({ accept, options = [], process, zipName }) {
+// fmt: 용량 표시 방식 (기본 1024 기준, 'KB 맞추기'는 목표와 같은 1000 기준을 넘겨요)
+export function batchTool({ accept, options = [], process, zipName, fmt = fmtBytes }) {
   const rows = [];
   const list = h("div", { class: "file-list" });
   const actions = h("div", { class: "batch-actions", hidden: true },
@@ -183,7 +217,7 @@ export function batchTool({ accept, options = [], process, zipName }) {
   function run(item) {
     const token = (item.token = {});
     item.result = null;
-    item.meta.replaceChildren(`${fmtBytes(item.file.size)} · ${U.waiting}`);
+    item.meta.replaceChildren(`${fmt(item.file.size)} · ${U.waiting}`);
     item.acts.replaceChildren(h("span", { class: "mini-spin" }), removeBtn(item));
     queue = queue.then(async () => {
       if (item.token !== token || !rows.includes(item)) return;
@@ -193,7 +227,7 @@ export function batchTool({ accept, options = [], process, zipName }) {
         item.result = r;
         const diff = Math.round((1 - r.blob.size / item.file.size) * 100);
         item.meta.replaceChildren(
-          `${fmtBytes(item.file.size)} → ${fmtBytes(r.blob.size)} `,
+          `${fmt(item.file.size)} → ${fmt(r.blob.size)} `,
           diff > 0 ? h("span", { class: "good" }, `-${diff}%`) : "",
           r.note ? ` · ${r.note}` : "");
         item.acts.replaceChildren(

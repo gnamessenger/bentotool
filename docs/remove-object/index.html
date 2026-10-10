@@ -31,6 +31,7 @@
   </a>
   <nav>
     <a href="../#tools">모든 도구</a>
+    <a href="../guide/">사용법·꿀팁</a>
     <a class="lang" href="../en/remove-object/" hreflang="en">🌐 English</a>
   </nav>
 </header>
@@ -46,12 +47,18 @@
 <section class="tool-info">
   <h2>이 도구로 할 수 있는 일</h2>
   <p class="tool-intro">사진에서 필요 없는 사람·물체·잡동사니를 붓으로 칠하면, AI가 그 자리를 주변 배경과 어울리게 새로 채워 주는 도구예요. 여행 사진에 끼어든 행인, 하늘을 가로지르는 전선, 바닥의 쓰레기나 얼룩을 지울 때 쓰면 좋아요. 한 번 지운 뒤에도 남은 자국을 다시 칠해서 여러 번 이어서 지울 수 있고, 되돌리기로 앞 단계로 돌아갈 수도 있어요. AI 모델이 내 브라우저 안에서 돌아가서 사진이 서버로 올라가지 않아요.</p>
+  
   <h2>사용 방법</h2>
   <ol class="steps"><li>사진을 올리세요.</li><li>지우고 싶은 부분을 붓으로 칠하세요. 붓 크기는 조절할 수 있고, 잘못 칠하면 '되돌리기'를 누르세요.</li><li>'AI로 지우기'를 누르고, 마음에 들면 저장하세요. 남은 자국은 다시 칠해서 한 번 더 지우면 돼요.</li></ol>
   <h2>자주 묻는 질문</h2>
   <div class="faq"><details><summary>사진이 서버로 가나요?</summary><p>아니요. AI가 내 브라우저 안에서 돌아가서 사진은 어디로도 전송되지 않아요.</p></details><details><summary>처음에 왜 오래 걸리나요?</summary><p>처음 한 번은 AI 모델(약 28MB)과 실행 프로그램(약 6MB)을 내려받아요. 그다음부터는 브라우저에 저장된 걸 써서 바로 시작돼요.</p></details><details><summary>얼마나 걸리나요?</summary><p>모델을 받은 뒤 한 번 지우는 데 보통 몇 초면 돼요. 저희 PC(크롬)에서 재 보니 그래픽 가속(WebGPU)이 될 때 0.2~0.8초, 안 될 때(CPU) 2~2.5초 걸렸어요. 기기에 따라 더 걸릴 수 있어요.</p></details><details><summary>지운 자리가 뭉개져 보여요.</summary><p>AI는 가려진 뒤쪽을 실제로 아는 게 아니라 주변을 보고 그럴듯하게 그려 넣어요. 하늘·바다·잔디·벽처럼 단순한 배경의 작은 물체는 자연스럽지만, 사진에서 아주 큰 부분이나 글자·얼굴처럼 복잡한 곳은 흐릿하거나 어색할 수 있어요. 이럴 땐 조금씩 나눠서 여러 번 지워 보세요.</p></details></div>
   <h2>알아두면 좋은 팁</h2>
   <ul class="tips"><li>물체보다 조금 넉넉하게, 그림자까지 같이 칠하면 자국이 덜 남아요.</li><li>큰 물체는 한 번에 칠하기보다 부분부분 나눠서 지우면 더 깔끔할 때가 많아요.</li><li>긴 변이 4096px보다 큰 사진은 4096px로 줄여서 작업하고, 저장도 그 크기로 돼요.</li></ul>
+  <h2>함께 읽으면 좋은 글</h2>
+  <div class="guide-list"><a class="guide-card" href="../guide/remove-object-photo/">
+    <strong>여행 사진 속 지나가는 사람·전깃줄, 어떻게 지울까요?</strong>
+    <span>여행 사진에 끼어든 행인, 하늘을 가로지르는 전깃줄, 바닥의 잡동사니를 AI로 지우는 법. 붓 크기 고르기, 나눠서 지우기, 잘 되는 경우와 안 되는 경우를 직접 해 본 결과로 정리했어요.</span>
+  </a></div>
 </section>
 
 <section class="related">
@@ -95,6 +102,7 @@
 <footer class="site-footer">
   <p>모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.</p>
   <p><a href="../about/">소개</a> · <a href="../privacy/">개인정보처리방침</a> · 문의 <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 벤토툴</p>
+  <p>아우라세일즈 | 대표 조혜영 | 사업자등록번호 825-90-01995 | 경기도 화성시 매송고색로 366, 205호</p>
 </footer>
 <script>window.T={"lang":"ko","ui":{"choose":"파일 선택","orDrop":"또는 여기로 끌어다 놓기","pasteHint":"Ctrl+V로 붙여넣기도 돼요","processing":"처리 중…","waiting":"대기 중","failed":"실패","download":"다운로드","downloadAll":"모두 다운로드","clear":"모두 지우기","remove":"빼기","moveUp":"위로","moveDown":"아래로","privacyBadge":"🔒 파일은 서버로 전송되지 않아요","addMore":"파일 추가"},"tool":{"brush":"붓 크기","undo":"되돌리기","clearMask":"칠한 것 지우기","compare":"누르고 있으면 원본","run":"AI로 지우기","save":"저장","another":"다른 사진","hint":"지울 곳을 넉넉하게 칠하세요 · 그림자까지 같이 칠하면 더 자연스러워요","ready":"지우고 싶은 곳을 붓으로 칠하세요.","painted":"다 칠했으면 'AI로 지우기'를 누르세요.","shrunk":"사진이 커서 {w}×{h}로 줄여서 작업해요.","downloading":"AI 모델 내려받는 중… {p}% (처음 한 번만, 약 {size})","preparing":"AI 준비 중…","erasingGpu":"AI가 지우는 중… (그래픽 가속)","erasingCpu":"AI가 지우는 중… (CPU 모드라 조금 걸려요)","done":"다 지웠어요! 남은 자국은 다시 칠해서 한 번 더 지울 수 있어요.","fail":"지우기에 실패했어요. 페이지를 새로 고치거나 크롬·엣지 최신 버전으로 다시 해 주세요.","modelFail":"AI 모델을 못 받았어요. 인터넷 연결을 확인하고 'AI로 지우기'를 다시 눌러 주세요.","badFile":"이 사진은 열 수 없어요. JPG·PNG·WEBP로 시도해 주세요."}};</script>
 

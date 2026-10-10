@@ -1,4 +1,4 @@
-import { h, U, TU, root, dropzone, field, download, zipDownload, stripExt, fill, fmtBytes } from "../common.js";
+import { h, U, TU, root, dropzone, field, download, zipDownload, stripExt, fill, fmtBytes, pruneUnusedXObjects } from "../common.js";
 
 const { PDFDocument } = window.PDFLib;
 
@@ -30,6 +30,7 @@ async function load(file) {
   error.hidden = true;
   try {
     src = await PDFDocument.load(await file.arrayBuffer());
+    pruneUnusedXObjects(src);   // 뽑은 쪽이 쓰는 그림만 따라오게
   } catch {
     error.textContent = TU.encrypted;
     error.hidden = false;

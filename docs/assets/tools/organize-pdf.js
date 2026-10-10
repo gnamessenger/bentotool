@@ -1,4 +1,4 @@
-import { h, TU, root, dropzone, download, stripExt, fill, fmtBytes, pdfjs, canvasBlob, progressBox } from "../common.js";
+import { h, TU, root, dropzone, download, stripExt, fill, fmtBytes, pdfjs, canvasBlob, progressBox, pruneUnusedXObjects } from "../common.js";
 
 const { PDFDocument, degrees } = window.PDFLib;
 const lib = pdfjs();
@@ -206,6 +206,7 @@ async function save() {
   saveBtn.textContent = TU.saving;
   try {
     const src = await PDFDocument.load(srcBytes);
+    pruneUnusedXObjects(src);   // 뺀 쪽의 그림이 결과에 남지 않게
     const out = await PDFDocument.create();
     const pages = await out.copyPages(src, items.map((it) => it.idx));
     pages.forEach((p, k) => {

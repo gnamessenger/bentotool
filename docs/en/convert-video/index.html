@@ -31,6 +31,7 @@
   </a>
   <nav>
     <a href="../../en/#tools">All tools</a>
+    
     <a class="lang" href="../../convert-video/" hreflang="ko">🌐 한국어</a>
   </nav>
 </header>
@@ -46,12 +47,14 @@
 <section class="tool-info">
   <h2>What this tool does</h2>
   <p class="tool-intro">This tool converts videos such as iPhone MOV, AVI, MKV and WEBM into MP4 (H.264 · AAC) that opens almost everywhere, or into WEBM. When a file won't play or won't upload, converting it to MP4 usually fixes it. You can also lower the resolution to 1080p, 720p or 480p to make the file smaller. It runs ffmpeg compiled for the browser (ffmpeg.wasm) on your own device.</p>
+  
   <h2>How to use</h2>
   <ol class="steps"><li>Choose the output format and resolution (MP4 · Original works for most).</li><li>Add your video — conversion starts right away.</li><li>Keep this tab open and download when it's done.</li></ol>
   <h2>FAQ</h2>
   <div class="faq"><details><summary>How long does it take?</summary><p>Re-encoding is slow. On our test desktop, each minute of video took about 1.5 minutes at 720p and about 3 minutes at 1080p. Laptops and phones may take longer. MKV or MOV files that already use H.264 are repackaged in seconds without re-encoding.</p></details><details><summary>Do large videos work?</summary><p>Everything runs inside your browser, so very large videos can fail when memory runs out. On our test PC (16 GB RAM, Chrome) a 1.1 GB video worked but a 2 GB video failed. Devices with less memory, and phones, may fail with smaller files, so you'll see a warning above 500 MB. For long videos, splitting them first with 'Trim Video' is safer.</p></details><details><summary>Is my video uploaded?</summary><p>No. Conversion happens in your browser.</p></details><details><summary>Why does the first run take longer?</summary><p>The first time, your browser downloads the video engine (about 9 MB, roughly 32 MB unpacked). After that it's cached and starts right away.</p></details></div>
   <h2>Tips</h2>
   <ul class="tips"><li>MKV or MOV files that already use H.264, converted to MP4 at 'Keep original', are just repackaged — it takes seconds.</li><li>If iPhone (HEVC) videos won't open on Windows or other devices, convert them to MP4 — they're re-encoded to H.264.</li><li>Keep this tab open while converting. If it's taking too long, click Cancel and lower the resolution, or trim the video into parts first.</li></ul>
+  
 </section>
 
 <section class="related">
@@ -95,6 +98,7 @@
 <footer class="site-footer">
   <p>All files are processed in your browser and never stored anywhere.</p>
   <p><a href="../../en/about/">About</a> · <a href="../../en/privacy/">Privacy Policy</a> · Contact <a href="mailto:aurasalesedu@gmail.com">aurasalesedu@gmail.com</a> · © 2026 BentoTool</p>
+  <p>Operated by Aura Sales (아우라세일즈) | Business registration no. 825-90-01995 | 366 Maesonggosaek-ro, #205, Hwaseong-si, Gyeonggi-do, Republic of Korea</p>
 </footer>
 <script>window.T={"lang":"en","ui":{"choose":"Choose files","orDrop":"or drop them here","pasteHint":"You can also paste with Ctrl+V","processing":"Processing…","waiting":"Waiting","failed":"Failed","download":"Download","downloadAll":"Download all","clear":"Clear all","remove":"Remove","moveUp":"Move up","moveDown":"Move down","privacyBadge":"🔒 Files never leave your device","addMore":"Add files"},"tool":{"format":"Convert to","mp4":"MP4 (H.264 · AAC, recommended)","webm":"WEBM (VP8 · Opus)","resolution":"Resolution","original":"Keep original","loading":"Downloading the video engine… {p}% (first time only, about 9 MB)","preparing":"Reading video info…","working":"Converting… {p}% (keep this tab open)","left":"About {t} left","cancel":"Cancel","slowNote":"It runs single-threaded inside your browser, so it's slower than desktop apps.","bigWarn":"This is a large video ({size}). It may fail partway if your browser runs out of memory. If it does, trim it into parts and convert them separately.","done":"Done! {a} → {b}","info":"{fmt} · {res} · {len}","remuxed":"The video codec already matched, so the video was repackaged without re-encoding (original quality, fast).","download":"Download","another":"Another video","noVideo":"No video track found. Please check that this is a video file.","fail":"Couldn't convert. The file may be damaged or your browser ran out of memory.","loadFail":"Couldn't download the video engine. Check your connection and try again."}};</script>
 

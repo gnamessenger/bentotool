@@ -4,6 +4,12 @@ export const config = {
   name: { ko: "벤토툴", en: "BentoTool" },
   contact: "aurasalesedu@gmail.com",   // 문의 이메일 (푸터·개인정보처리방침에 표시)
 
+  // 운영자(사업자) 정보 — 푸터·소개 페이지에 표시 (아우라세일즈 스토어와 같은 정보)
+  business: {
+    ko: { name: "아우라세일즈", ceo: "조혜영", regNo: "825-90-01995", mailOrder: "제2025-화성매송-0003호", address: "경기도 화성시 매송고색로 366, 205호" },
+    en: { name: "Aura Sales (아우라세일즈)", ceo: "조혜영", regNo: "825-90-01995", mailOrder: "2025-Hwaseong Maesong-0003", address: "366 Maesonggosaek-ro, #205, Hwaseong-si, Gyeonggi-do, Republic of Korea" },
+  },
+
   // 검색엔진 소유권 확인용 코드 (구글 서치콘솔·네이버 서치어드바이저의 "HTML 태그" content 값)
   verify: { google: "FaPamoQVMZjes4f4_X2-MeLNNxnu2NcGe6pQE8Z2KxA", naver: "5c69044b719c940fa3668f9390e518f1aadfc9d2" },
 
