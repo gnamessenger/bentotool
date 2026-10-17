@@ -556,3 +556,21 @@ body.dragging .dropzone { border-color: var(--purple); background: var(--purple-
   .vs-row .vs-text { grid-column: 1 / -1; grid-row: 2; }
   .vs-player.is-video .vs-caption { bottom: 60px; font-size: 14px; }
 }
+
+/* 오픈소스 고지 */
+.doc.licenses { max-width: 960px; }
+.doc .table-wrap { overflow-x: auto; margin: 16px 0 8px; }
+.doc table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.doc th, .doc td { border-bottom: 1px solid #E8E2F5; padding: 8px 10px; text-align: left; vertical-align: top; color: #4A4460; }
+.doc th { background: #F6F3FC; color: #2A2440; font-weight: 700; white-space: nowrap; }
+.doc td:nth-child(2), .doc td:nth-child(3) { white-space: nowrap; }
+@media (max-width: 640px) {
+  .doc.licenses { min-width: 0; overflow-wrap: anywhere; }
+  .doc.licenses table, .doc.licenses tbody { display: block; width: 100%; }
+  .doc.licenses tr:first-child { display: none; }
+  .doc.licenses tr { display: grid; grid-template-columns: auto auto 1fr; gap: 2px 10px; padding: 10px 0; border-bottom: 1px solid #E8E2F5; }
+  .doc.licenses td { border: 0; padding: 0; white-space: normal !important; }
+  .doc.licenses td:nth-child(1) { grid-column: 1 / -1; font-weight: 700; }
+  .doc.licenses td:nth-child(2), .doc.licenses td:nth-child(3) { font-size: 13px; }
+  .doc.licenses td:nth-child(4) { grid-column: 1 / -1; font-size: 13px; }
+}

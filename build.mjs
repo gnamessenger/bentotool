@@ -6,6 +6,7 @@ import { config } from "./src/config.mjs";
 import { site, tools } from "./src/content.mjs";
 import { guides } from "./src/guides.mjs";
 import { articles } from "./src/articles.mjs";
+import { licenses, licensesText } from "./src/licenses.mjs";
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT = join(ROOT, "docs");
@@ -101,7 +102,7 @@ ${showPromo ? promo(lang) : ""}
 </main>
 <footer class="site-footer">
   <p>${S.footer.note}</p>
-  <p><a href="${root}${pathFor(lang, "about/")}">${S.footer.about}</a> · <a href="${root}${pathFor(lang, "privacy/")}">${S.footer.privacy}</a> · ${S.footer.contact} <a href="mailto:${config.contact}">${config.contact}</a> · © ${new Date().getFullYear()} ${esc(config.name[lang])}</p>
+  <p><a href="${root}${pathFor(lang, "about/")}">${S.footer.about}</a> · <a href="${root}${pathFor(lang, "privacy/")}">${S.footer.privacy}</a> · <a href="${root}${pathFor(lang, "licenses/")}">${S.footer.licenses}</a> · ${S.footer.contact} <a href="mailto:${config.contact}">${config.contact}</a> · © ${new Date().getFullYear()} ${esc(config.name[lang])}</p>
   ${bizLine(lang)}
 </footer>
 ${T ? `<script>window.T=${json(T)};</script>` : ""}
@@ -209,6 +210,12 @@ function privacyPage(lang) {
   return layout({ lang, path: "privacy/", title: P.title, desc: P.desc, showPromo: false, main: `<article class="doc"><h1>${P.h1}</h1>${P.body}<h2>${P.contactTitle}</h2><p>${P.contactText} <a href="mailto:${config.contact}">${config.contact}</a></p></article>` });
 }
 
+function licensesPage(lang) {
+  const L = licensesText[lang];
+  const rows = licenses.map((x) => `<tr><td><a href="${x.url}" rel="noopener">${esc(x.name)}</a></td><td>${esc(x.ver)}</td><td>${esc(lang === "en" && x.licEn ? x.licEn : x.lic)}</td><td>${esc(x[lang])}</td></tr>`).join("\n");
+  const head = `<tr>${L.cols.map((c) => `<th>${c}</th>`).join("")}</tr>`;
+  return layout({ lang, path: "licenses/", title: L.title, desc: L.desc, showPromo: false, main: `<article class="doc licenses"><h1>${L.h1}</h1>${L.intro}<div class="table-wrap"><table>${head}\n${rows}</table></div>${L.photos}${L.outro}<p>${L.contact} <a href="mailto:${config.contact}">${config.contact}</a></p></article>` });
+}
 // ---------- 사용법·꿀팁 글 (한국어만) ----------
 const relatedArticles = (slug) => articles.filter((a) => a.tools.includes(slug));
 const toolBySlug = (slug) => tools.find((t) => t.slug === slug);
@@ -302,7 +309,8 @@ for (const lang of LANGS) {
   }
   write(pathFor(lang, "about/index.html"), aboutPage(lang));
   write(pathFor(lang, "privacy/index.html"), privacyPage(lang));
-  urls.push(pathFor(lang, "about/"), pathFor(lang, "privacy/"));
+  write(pathFor(lang, "licenses/index.html"), licensesPage(lang));
+  urls.push(pathFor(lang, "about/"), pathFor(lang, "privacy/"), pathFor(lang, "licenses/"));
 }
 if (articles.length) {
   write("guide/index.html", guideIndexPage());

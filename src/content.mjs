@@ -41,6 +41,7 @@ export const site = {
     footer: {
       about: "소개",
       privacy: "개인정보처리방침",
+      licenses: "오픈소스 고지",
       contact: "문의",
       note: "모든 파일은 브라우저 안에서만 처리되며 어디에도 저장되지 않습니다.",
     },
@@ -127,6 +128,7 @@ export const site = {
     footer: {
       about: "About",
       privacy: "Privacy Policy",
+      licenses: "Open Source Notices",
       contact: "Contact",
       note: "All files are processed in your browser and never stored anywhere.",
     },
