@@ -231,7 +231,6 @@ function articlePage(a) {
   const S = site.ko;
   const path = `guide/${a.slug}/`;
   const root = rootFor("ko", path);
-  const B = config.business.ko;
   const toolBtns = a.tools.map(toolBySlug).filter(Boolean)
     .map((t) => `<a class="btn small" href="${root}${t.slug}/">${t.icon} ${esc(t.ko.name)} ${S.guide.useTool}</a>`).join("");
   const more = articles.filter((x) => x !== a && x.tools.some((s) => a.tools.includes(s)))
@@ -240,7 +239,7 @@ function articlePage(a) {
 <article class="doc article">
   <p class="crumb"><a href="${root}guide/">${S.nav.guide}</a></p>
   <h1>${esc(a.ko.h1)}</h1>
-  <p class="article-meta">${S.guide.by} ${esc(B.name)} · ${a.date}${a.updated ? ` (${S.guide.updated} ${a.updated})` : ""}</p>
+  <p class="article-meta">${S.guide.by} ${esc(config.name.ko)} · ${a.date}${a.updated ? ` (${S.guide.updated} ${a.updated})` : ""}</p>
   <p class="lead">${a.ko.lead}</p>
   ${toolBtns ? `<div class="article-cta">${toolBtns}</div>` : ""}
   ${a.ko.body}
@@ -253,7 +252,7 @@ ${more.length ? `<section class="related"><h2>${S.guide.moreTitle}</h2><div clas
     schema: {
       "@context": "https://schema.org", "@type": "Article", headline: a.ko.h1, description: a.ko.desc,
       datePublished: a.date, dateModified: a.updated || a.date, inLanguage: "ko",
-      author: { "@type": "Organization", name: B.name, url: `${config.domain}/about/` },
+      author: { "@type": "Organization", name: config.name.ko, url: `${config.domain}/about/` },
       publisher: { "@type": "Organization", name: config.name.ko, url: config.domain },
       mainEntityOfPage: `${config.domain}/${path}`,
     },

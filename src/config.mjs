@@ -2,12 +2,14 @@
 export const config = {
   domain: "https://bentotool.com",   // 도메인 구매 후 확정
   name: { ko: "벤토툴", en: "BentoTool" },
-  contact: "aurasalesedu@gmail.com",   // 문의 이메일 (푸터·개인정보처리방침에 표시)
+  contact: "hello@bentotool.com",   // 문의 이메일 (2026-10-20 Forward Email → aurasalesedu 받은편지함) (푸터·개인정보처리방침에 표시)
 
-  // 운영자(사업자) 정보 — 푸터·소개 페이지에 표시 (아우라세일즈 스토어와 같은 정보)
+  // 운영자(사업자) 정보 — 푸터·소개 페이지에 표시
+  // 2026-10-17 세무사 답: 애드센스 광고 수익은 과세 → 일반과세자 '날개달고'로 운영
+  // 주소는 집이 아닌 비상주 사무실(마인오피스). ✅ 2026-10-19 새 사업자등록증(정정) 발급 — 주소는 등록증 표기 그대로
   business: {
-    ko: { name: "아우라세일즈", ceo: "조혜영", regNo: "825-90-01995", mailOrder: "제2025-화성매송-0003호", address: "경기도 화성시 매송고색로 366, 205호" },
-    en: { name: "Aura Sales (아우라세일즈)", ceo: "조혜영", regNo: "825-90-01995", mailOrder: "2025-Hwaseong Maesong-0003", address: "366 Maesonggosaek-ro, #205, Hwaseong-si, Gyeonggi-do, Republic of Korea" },
+    ko: { name: "날개달고", ceo: "조혜영", regNo: "899-05-00540", address: "경기도 화성시 병점구 효행로 1069, 6층 601호-K236호(진안동, 메디피아)" },
+    en: { name: "날개달고 (Nalgaedalgo)", ceo: "조혜영", regNo: "899-05-00540", address: "6F #601-K236, Medipia, 1069 Hyohaeng-ro, Byeongjeom-gu, Hwaseong-si, Gyeonggi-do, Republic of Korea" },
   },
 
   // 검색엔진 소유권 확인용 코드 (구글 서치콘솔·네이버 서치어드바이저의 "HTML 태그" content 값)
